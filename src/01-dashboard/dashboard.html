@@ -1,0 +1,112 @@
+@@include('head.html', {
+	"title": "RPA-dashboard"
+})
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+		<div class="dashBoard innerArea">
+			<div class="row">
+				<section class="state">
+					<strong class="title">운영 진행현황</strong>
+					<div class="boxWrap">
+						<div class="box">
+							<p class="text">활성</p>
+							<p class="big"><b>12</b>건</p>
+						</div>
+						<div class="box">
+							<p class="text">일시중지</p>
+							<p class="big"><b>10</b>건</p>
+						</div>
+						<div class="box">
+							<p class="text">알 수 없음</p>
+							<p class="big"><b>5</b>건</p>
+						</div>
+						<div class="box">
+							<p class="text">입력 대기중</p>
+							<p class="big"><b>7</b>건</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<strong class="title">BOT 사용현황</strong>
+					<div class="boxWrap">
+						<div class="box">
+							<ul class="state">
+								<li>
+									<p class="text">BOT condition</p>
+									<p class="big"><b>Good</b></p>
+								</li>
+								<li>
+									<p class="text">사용</p>
+									<p class="big"><b>15</b>건</p>
+								</li>
+								<li>
+									<p class="text">미사용</p>
+									<p class="big"><b>15</b>건</p>
+								</li>
+								<li>
+									<p class="text">폐기</p>
+									<p class="big"><b>10</b>건</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="row">
+				<div class="grid">
+					<section>
+						<strong class="title">ROI</strong>
+						<div class="boxWrap">
+							<div class="box">123</div>
+						</div>
+					</section>
+					<div class="row">
+						<section>
+							<strong class="title">완료 성공률</strong>
+							<div class="boxWrap">
+								<div class="box">123</div>
+							</div>
+						</section>
+						<section>
+							<strong class="title">운영 수행률</strong>
+							<div class="boxWrap">
+								<div class="box">123</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="grid">
+					<section>
+						<strong class="title">BOT 사용현황</strong>
+						<div class="boxWrap">
+							<div class="box">123</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+
+</div>
+</body>
+</html>

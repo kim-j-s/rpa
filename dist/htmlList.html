@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> RPA Portal 퍼블목록</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Hind', 'Noto Sans KR', Arial, Verdana;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            letter-spacing: -.01em;
+            background-color: #fefefe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        legend,
+        caption {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        fieldset,
+        button {
+            background: none;
+            border: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .wrap {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wrap h1 {
+            font-size: 30px;
+            line-height: 1;
+            color: #000
+        }
+
+        table {
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background-color: #fff
+        }
+
+        table thead {
+            color: #fff;
+            background-color: #80b29d;
+            font-size: 15px
+        }
+
+        table thead th {
+            padding: 8px;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #f3f3f3
+        }
+
+        table tbody th {
+            padding: 5px 12px;
+            text-align: left;
+        }
+
+        table tbody td {
+            padding: 5px 12px;
+            transform: rotate(0.1deg);
+        }
+
+        table tbody td a {
+            display: inline-block;
+            padding: 0 5px;
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        table tbody td a:hover {
+            background-color: yellow;
+        }
+
+        table tbody tr:hover th,
+        table tbody tr:hover td {
+            background: #eee
+        }
+
+        table .line th,
+        table .line td {
+            border-top: 1px solid #eee;
+        }
+
+        table .line th {
+            padding-right: 20px;
+            padding-left: 20px;
+            line-height: 21px;
+            border-right: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        @media only screen and (max-width:760px) {
+            table {
+                table-layout: auto;
+                overflow-y: auto;
+            }
+
+            th,
+            td {
+                white-space: nowrap;
+                /*font-size:11px;*/
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function() {
+            var size = 0;
+            $('.line').each(function(idx) {
+                $(this).children('th').attr('rowspan',
+                    $(this).nextAll('.line').index() < 0 ? size = $(this).nextAll().length + 1 : $(this).nextAll('.line').index() - size
+                );
+                size = $(this).nextAll('.line').index();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <section class="wrap">
+
+        <h1>RPA Portal</h1>
+
+        <table>
+            <colgroup>
+                <col style="width: auto">
+                <col style="width: auto">
+                <col style="width: auto">
+                <col style="width: 30%">
+                <col style="width: auto">
+                <col style="width: 120px">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>1depth</th>
+                    <th>2depth</th>
+                    <th>3depth</th>
+                    <th>Link</th>
+                    <th>Description</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- 퍼블 -->
+                <tr class="line" style="display: none;">
+                    <th>publishing</th>
+                    <td>layout</td>
+                    <td></td>
+                    <td><a href="layout.html" target="_blank">layout.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="display: none;">
+                    <td>component</td>
+                    <td></td>
+                    <td><a href="component.html" target="_blank">component.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 퍼블 -->
+
+                <!-- 00. Common -->
+                <tr class="line">
+                    <th><span>00. common</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 00. Common -->
+
+                <!-- 01. dashboard -->
+                <tr class="line">
+                    <th><span>01. dashboard</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 01. dashboard -->
+
+                <!-- 02. task -->
+                <tr class="line">
+                    <th><span>02. task</span></th>
+                    <td>과제 요청 관리</td>
+                    <td></td>
+                    <td><a href="02-task/TA-01.html" target="_blank">TA-01.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 02. task -->
+
+                <!-- 03. operate -->
+                <tr class="line">
+                    <th><span>03. operate</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 03. operate -->
+
+                <!-- 04. community -->
+                <tr class="line">
+                    <th><span>04. community</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 04. community -->
+
+                <!-- 05. helpdesk -->
+                <tr class="line">
+                    <th><span>05. help desk</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 05. helpdesk -->
+
+                <!-- 06. resource -->
+                <tr class="line">
+                    <th><span>06. resource</span></th>
+                    <td>BOT 관리</td>
+                    <td></td>
+                    <td><a href="06-resource/RS-01.html" target="_blank">RS-01.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>팝업- BOT 추가하기</td>
+                    <td></td>
+                    <td><a href="06-resource/RS-01-p01.html" target="_blank">RS-01-p01.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>팝업- BOT 상세</td>
+                    <td></td>
+                    <td><a href="06-resource/RS-01-p02.html" target="_blank">RS-01-p02.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>팝업- 부서 선택</td>
+                    <td></td>
+                    <td><a href="06-resource/RS-01-p03.html" target="_blank">RS-01-p03.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>팝업- 담당자 선택</td>
+                    <td></td>
+                    <td><a href="06-resource/RS-01-p04.html" target="_blank">RS-01-p04.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 06. resource -->
+
+                <!-- 07. stats -->
+                <tr class="line">
+                    <th><span>07. stats</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 07. stats -->
+
+                <!-- 08. mypage -->
+                <tr class="line">
+                    <th><span>08. my page</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 08. mypage -->
+
+                <!-- 09. masterdata -->
+                <tr class="line">
+                    <th><span>09. master data</span></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 09. masterdata -->
+
+            </tbody>
+        </table>
+
+    </section>
+    <!-- //contents -->
+
+</body>
+
+</html>

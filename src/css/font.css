@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@font-face{
+font-family:'Nanum Square';
+font-weight:400;
+src:url('../font/NanumSquareR.eot');
+src:url('../font/NanumSquareR.eot?#iefix')format('embedded-opentype'),
+url('../font/NanumSquareR.woff')format('woff');
+}
+
+@font-face{
+font-family:'Nanum Square';
+font-weight:500;
+src:url('../font/NanumSquareB.eot');
+src:url('../font/NanumSquareB.eot?#iefix')format('embedded-opentype'),
+url('../font/NanumSquareB.woff')format('woff');
+}
+
+@font-face{
+font-family:'Nanum Square';
+font-weight:700;
+src:url('../font/NanumSquareEB.eot');
+src:url('../font/NanumSquareEB.eot?#iefix')format('embedded-opentype'),
+url('../font/NanumSquareEB.woff')format('woff');
+}
+
+@font-face{
+font-family:'Nanum Barun Gothic';
+font-weight:400;
+src:url('../font/NanumBarunGothicR.eot');
+src:url('../font/NanumBarunGothicR.eot?#iefix')format('embedded-opentype'),
+url('../font/NanumBarunGothicR.woff')format('woff');
+}
+
+@font-face{
+font-family:'Nanum Barun Gothic';
+font-weight:500;
+src:url('../font/NanumBarunGothicB.eot');
+src:url('../font/NanumBarunGothicB.eot?#iefix')format('embedded-opentype'),
+url('../font/NanumBarunGothicB.woff')format('woff');
+}

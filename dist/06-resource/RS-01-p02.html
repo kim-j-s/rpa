@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>팝업-BOT상세</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ui.js"></script>
+</head>
+
+<body>
+
+    <!-- BOT 상세 pop-up -->
+    <div class="popup botDetail">
+        <div class="dimm"></div>
+        <div class="popBox type1">
+            <div class="popTop">
+                <h3>BOT 상세</h3>
+            </div>
+            <div class="popCont scrollArea">
+                <div class="tableWrap">
+                    <strong class="tableTitle">BOT 정보</strong>
+                    <table class="table form">
+                        <tbody>
+                            <tr>
+                                <th>RPA 구분</th>
+                                <td><span>AA/BP</span></td>
+                                <th>BOT 별명</th>
+                                <td><input type="text" class="inpTxt"></td>
+                                <th>예약가능시간</th>
+                                <td>
+                                    <div class="inpWrap">
+                                        <select name="" id="" class="selectD">
+                                            <option value="">00</option>
+                                            <option value="">01</option>
+                                            <option value="">02</option>
+                                            <option value="">03</option>
+                                            <option value="">04</option>
+                                            <option value="">05</option>
+                                            <option value="">06</option>
+                                            <option value="">07</option>
+                                            <option value="">08</option>
+                                            <option value="">09</option>
+                                            <option value="">10</option>
+                                            <option value="">11</option>
+                                            <option value="">12</option>
+                                            <option value="">13</option>
+                                            <option value="">14</option>
+                                            <option value="">15</option>
+                                            <option value="">16</option>
+                                            <option value="">17</option>
+                                            <option value="">18</option>
+                                            <option value="">19</option>
+                                            <option value="">20</option>
+                                            <option value="">21</option>
+                                            <option value="">22</option>
+                                            <option value="">23</option>
+                                        </select>
+                                        <span>시 ~ </span>
+                                        <select name="" id="" class="selectD">
+                                            <option value="">00</option>
+                                            <option value="">01</option>
+                                            <option value="">02</option>
+                                            <option value="">03</option>
+                                            <option value="">04</option>
+                                            <option value="">05</option>
+                                            <option value="">06</option>
+                                            <option value="">07</option>
+                                            <option value="">08</option>
+                                            <option value="">09</option>
+                                            <option value="">10</option>
+                                            <option value="">11</option>
+                                            <option value="">12</option>
+                                            <option value="">13</option>
+                                            <option value="">14</option>
+                                            <option value="">15</option>
+                                            <option value="">16</option>
+                                            <option value="">17</option>
+                                            <option value="">18</option>
+                                            <option value="">19</option>
+                                            <option value="">20</option>
+                                            <option value="">21</option>
+                                            <option value="">22</option>
+                                            <option value="">23</option>
+                                        </select>
+                                        <span>시</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상태</th>
+                                <td><span>상태값 노출</span></td>
+                                <th>누적업무시간</th>
+                                <td><span><em>00</em> 시간 <em>00</em> 분</span></td>
+                                <th>할당과제수</th>
+                                <td><span>5</span></td>
+                            </tr>
+                            <tr>
+                                <th>역할</th>
+                                <td colspan="5"><input type="text" class="inpTxt"></td>
+                            </tr>
+                            <tr>
+                                <th>BOT 명</th>
+                                <td><span>hostname</span></td>
+                                <th>BOT 상태</th>
+                                <td><span>대기중</span></td>
+                                <th>접속상태</th>
+                                <td><span>오프라인</span></td>
+                            </tr>
+                            <tr>
+                                <th>BOT 아이디</th>
+                                <td><span>Username</span></td>
+                                <th>담당부서</th>
+                                <td>
+                                    <div class="inpWrap">
+                                        <input type="text" class="inpTxt">
+                                        <button type="button" class="btnSelect">선택</button>
+                                    </div>
+                                </td>
+                                <th>담당자</th>
+                                <td>
+                                    <div class="inpWrap">
+                                        <input type="text" class="inpTxt">
+                                        <button type="button" class="btnSelect">선택</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>라이선스기간</th>
+                                <td><span>YYYY-MM-DD</span></td>
+                                <th>아이피</th>
+                                <td><input type="text" class="inpTxt"></td>
+                                <th>포트</th>
+                                <td><input type="text" class="inpTxt"></td>
+                            </tr>
+                            <tr>
+                                <th>로그인 정보</th>
+                                <td colspan="3">
+                                    <div class="inpWrap">
+                                        <span>아이디</span>
+                                        <input type="text" class="inpTxt">
+                                        <span>비밀번호</span>
+                                        <input type="password" class="inpTxt">
+                                    </div>
+                                </td>
+                                <th>위치</th>
+                                <td><input type="text" class="inpTxt"></td>
+                            </tr>
+                            <tr>
+                                <th>BOT 사양</th>
+                                <td colspan="5">
+                                    <div class="inpWrap">
+                                        <span>운영체제</span>
+                                        <input type="text" class="inpTxt">
+                                        <span>CPU</span>
+                                        <input type="text" class="inpTxt">
+                                        <span>RAM</span>
+                                        <input type="text" class="inpTxt">
+                                        <span>그래픽카드</span>
+                                        <input type="text" class="inpTxt">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableWrap">
+                    <strong class="tableTitle">BOT 일정</strong>
+                    <table class="table text">
+                        <colgroup>
+                            <col style="width: 230px">
+                            <col style="width: 280px">
+                            <col style="width: auto">
+                            <col style="width: auto">
+                            <col style="width: auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>다음 스케쥴</th>
+                                <th>과제명</th>
+                                <th>프로세스명</th>
+                                <th>담당부서</th>
+                                <th>담당자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>법인카드 매출전표 정산</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>it사업본부</span></td>
+                                <td><span>김관리</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>매출 보고서 생성</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>개발본부</span></td>
+                                <td><span>안담당</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>BW보고서 생성</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>디지털혁신사업본부</span></td>
+                                <td><span>김관리</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>Invoice Draft 업체 송부</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>네트워크사업부</span></td>
+                                <td><span>김관리</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>BW보고서 생성</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>디지털혁신사업본부</span></td>
+                                <td><span>김관리</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+									<em>YYYY-MM-DD</em>
+									<em>hh:mm:ss</em>
+								</span>
+                                </td>
+                                <td class="taL"><span>Invoice Draft 업체 송부</span></td>
+                                <td><span>테스트 프로세스 A</span></td>
+                                <td><span>네트워크사업부</span></td>
+                                <td><span>김관리</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="btnGroup">
+                <button type="button">저장</button>
+                <button type="button">취소</button>
+            </div>
+            <button type="button" class="btnPopClose">팝업닫기</button>
+        </div>
+    </div>
+    <!-- //BOT 상세 pop-up -->
+
+</body>
+
+</html>

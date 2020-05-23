@@ -1,0 +1,70 @@
+@@include('head.html', {
+	"title": "팝업-담당자선택"
+})
+<body>	
+
+<!-- 담당자 선택 pop-up -->
+<div class="popup">
+	<div class="dimm"></div>	
+	<div class="popBox type2">
+		<div class="popTop"><h3>담당자 선택</h3></div>
+		<div class="popCont">
+			<div class="searchWrap">
+				<select name="" id="" class="selectD">
+					<option value="">담당자명</option>
+					<option value="">부서명</option>
+				</select>
+				<input type="text" class="inpTxt">
+				<button type="button" class="btnTxt">검색</button>
+			</div>
+			<div class="tableWrap">
+				<table class="table text">
+					<colgroup>
+						<col style="width: auto">
+						<col style="width: 120px">
+						<col style="width: 110px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>부서</th>
+							<th>담당자</th>
+							<th>선택</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="taL"><span>it사업본부</span></td>
+							<td><span>김관리</span></td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL"><span>개발본부</span></td>
+							<td><span>김관리</span></td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL"><span>디지털혁신사업본부</span></td>
+							<td><span>김관리</span></td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL"><span>네트워크사업부</span></td>
+							<td><span>김관리</span></td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL"><span>컨설턴트본부</span></td>
+							<td><span>김관리</span></td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //담당자 선택 pop-up -->
+	
+</body>
+</html>
