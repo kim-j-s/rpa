@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AX5UI</title>
+
+	<!-- reset -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<!-- grid -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/ax5ui/ax5ui-grid/master/dist/ax5grid.css">
+	<style>
+		td {
+			vertical-align: middle;
+		}
+
+		strong {
+			font-weight: bold;
+		}
+	</style>
+
+	<!-- jquery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- ax5core -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/ax5ui/ax5core/master/dist/ax5core.min.js"></script>
+	<!-- grid -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/ax5ui/ax5ui-grid/master/dist/ax5grid.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+
+			ax5.ui.grid.formatter["date"] = function () {
+				var date = this.value;
+				if (date.length == 8) {
+					return date.substr(0, 4) + "-" + date.substr(4, 2) + "-" + date.substr(6);
+				} else {
+					return date;
+				}
+			}
+
+			var firstGrid = new ax5.ui.grid();
+			firstGrid.setConfig({
+				target: $('[data-ax5grid="first-grid"]'),
+				showLineNumber: true,
+				//showRowSelector: true,
+				showRowSelector: false,
+				multipleSelect: true,
+				lineNumberColumnWidth: 40,
+				rowSelectorColumnWidth: 27,
+				columns: [{
+					key: "birthday",
+					label: "날짜",
+					formatter: "date",
+					sortable: true,
+					align: "center"
+				}, {
+					key: "gender",
+					label: "구분",
+					sortable: true,
+					align: "center"
+				}, {
+					key: "name",
+					label: "<strong>이름</strong>",
+					sortable: true,
+					align: "center"
+				}, {
+					key: "rank",
+					label: "석차",
+					sortable: true,
+					align: "center"
+				}]
+			});
+
+			var list = [];
+			for (var i = 0; i < 50; i++) { list.push({birthday: "20170101", gender: "주유", name: 25, rank: (i + 1) * 100}); }
+
+
+			firstGrid.setData(list);
+		});
+	</script>
+</head>
+
+<body>
+
+	<div data-ax5grid="first-grid" data-ax5grid-config="{}" style="width:100%; height: 300px;"></div>
+
+</body>
+
+</html>

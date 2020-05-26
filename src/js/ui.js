@@ -55,7 +55,7 @@ function calendarSet(){
 		dateFormat: 'yy-mm-dd',
 		changeMonth: true, 
 		changeYear: true, 
-		showButtonPanel: true, 
+		showButtonPanel: false,
 		nextText: '다음 달',
 		prevText: '이전 달',
 		currentText: '오늘 날짜', 
