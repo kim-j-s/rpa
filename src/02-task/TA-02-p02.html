@@ -1,0 +1,93 @@
+@@include('head.html', {
+	"title": "수신자-상세"
+})
+</head>
+<body>	
+
+<!-- 수신자-상세 pop-up -->
+<div class="popup botDetail">
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>수신자</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<strong class="tableTitle">기본정보</strong>
+				<table class="table form">
+					<tbody>
+						<tr>
+							<th>과제코드</th>
+							<td></td>
+							<th>과제명</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th>수신자그룹코드</th>
+							<td></td>
+							<th>수신자그룹명</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th>작성자</th>
+							<td colspan="3">김관리</td>
+						</tr>
+						<tr>
+							<th>작성일</th>
+							<td>YYYY-MM-DD</td>
+							<th>마지막 수정일</th>
+							<td>YYYY-MM-DD</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">속성</strong>
+					<span class="totalNum">
+						<em>100</em>개
+					</span>
+				</div>
+				<table class="table text">
+					<colgroup>
+						<col style="width: 240px">
+						<col style="width: 240px">
+						<col style="width: auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>속성코드</th>
+							<th>속성명</th>
+							<th>속성값</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Attribute name A</td>
+							<td>Attribute value A</td>
+							<td>Description A</td>
+						</tr>
+						<tr>
+							<td>Attribute name B</td>
+							<td>Attribute value B</td>
+							<td>Description B</td>
+						</tr>
+						<tr>
+							<td>Attribute name C</td>
+							<td>Attribute value C</td>
+							<td>Description C</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="reset">취소</button>
+			<button type="button" class="delete">삭제</button>
+			<button type="button" class="confirm">저장</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //수신자-상세 pop-up -->
+</body>
+</html>
