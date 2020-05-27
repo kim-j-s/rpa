@@ -17,15 +17,6 @@
 
     <script type="text/javascript">
         $(function() {
-            /* dash(-)로 구분되는 날짜 포맷터 */
-            ax5.ui.grid.formatter["date"] = function() {
-                var date = this.value;
-                if (date.length == 8) {
-                    return date.substr(0, 4) + "-" + date.substr(4, 2) + "-" + date.substr(6);
-                } else {
-                    return date;
-                }
-            }
 
             /* 그리드 객체 생성 */
             firstGrid = new ax5.ui.grid();
@@ -58,7 +49,7 @@
                     key: "col02",
                     label: "과제명",
                     sortable: true,
-                    align: "center",
+                    align: "left",
                     width: 317
                 }, {
                     key: "col03",
@@ -81,7 +72,7 @@
                 }, {
                     key: "col06",
                     label: "작성일",
-                    formatter: "date",
+                    //formatter: "date",
                     sortable: true,
                     align: "center",
                     width: 150
@@ -91,9 +82,7 @@
                     height: 40,
                     display: true,
                     //firstIcon: '|<',
-                    //prevIcon: '<',
                     prevIcon: '<i class="direction prev"></i>',
-                    //nextIcon: '>',
                     nextIcon: '<i class="direction next"></i>',
                     //lastIcon: '>|',
                     onChange: function() {
@@ -107,7 +96,6 @@
 
 
         function search(_pageNo) {
-            console.log('eq : ' + _pageNo);
             var list = [];
 
             // 리스트 안변하는거 같아서 pageNo 붙여서 변화되는거 확인
@@ -119,7 +107,7 @@
                     col03: "내용",
                     col04: "내용",
                     col05: "김관리",
-                    col06: "20170102"
+                    col06: "2020-05-11"
                 });
             }
             firstGrid.setData({

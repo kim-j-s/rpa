@@ -11,28 +11,33 @@
 		<div class="popTop"><h3>수신자</h3></div>
 		<div class="popCont scrollArea">
 			<div class="tableWrap">
-				<strong class="tableTitle">기본정보</strong>
-				<table class="table form">
-					<tbody>
-						<tr>
-							<th>과제코드</th>
-							<td>
-								<div class="inpWrap">
-									<input type="text" class="inpTxt">
-									<button type="button" class="btnSelect">선택</button>
-								</div>
-							</td>
-							<th>과제명</th>
-							<td><input type="text" class="inpTxt"></td>
-						</tr>
-						<tr>
-							<th>수신자그룹코드</th>
-							<td><input type="text" class="inpTxt"></td>
-							<th>수신자그룹명</th>
-							<td><input type="text" class="inpTxt"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기본정보</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>과제코드</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">선택</button>
+									</div>
+								</td>
+								<th>과제명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>수신자그룹코드</th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>수신자그룹명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			<div class="tableWrap">
@@ -41,56 +46,59 @@
 					<span class="totalNum">
 						<em>100</em>개
 					</span>
+					<button type="button" class="slideBtn">접기/펼치기</button>
 				</div>
-				<table class="table text">
-					<colgroup>
-						<col style="width: 230px">
-						<col style="width: 230px">
-						<col style="width: auto">
-						<col style="width: 130px">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>속성코드</th>
-							<th>속성명</th>
-							<th>속성값</th>
-							<th>추가/삭제</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td>
-								<div class="addRemoveWrap">
-									<button type="button" class="btnRemoveIcon">삭제</button>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td>
-								<div class="addRemoveWrap">
-									<button type="button" class="btnAddIcon">추가</button>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td><input type="text" class="inpTxt full"></td>
-							<td>
-								<div class="addRemoveWrap">
-									<button type="button" class="btnAddIcon">추가</button>
-									<button type="button" class="btnRemoveIcon">삭제</button>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="tblSlide">
+					<table class="table text">
+						<colgroup>
+							<col style="width: 230px">
+							<col style="width: 230px">
+							<col style="width: auto">
+							<col style="width: 130px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>속성코드</th>
+								<th>속성명</th>
+								<th>속성값</th>
+								<th>추가/삭제</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td>
+									<div class="addRemoveWrap">
+										<button type="button" class="btn removeBtn">삭제</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td>
+									<div class="addRemoveWrap">
+										<button type="button" class="btn btnAddIcon">추가</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td><input type="text" class="inpTxt full"></td>
+								<td>
+									<div class="addRemoveWrap">
+										<button type="button" class="btn btnAddIcon">추가</button>
+										<button type="button" class="btn removeBtn">삭제</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<div class="btnGroup">

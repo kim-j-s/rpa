@@ -54,7 +54,8 @@ function calendarSet(){
 		showOn: 'button',
 		dateFormat: 'yy-mm-dd',
 		changeMonth: true, 
-		changeYear: true, 
+		changeYear: false, 
+		showMonthAfterYear: true,
 		showButtonPanel: false,
 		nextText: '다음 달',
 		prevText: '이전 달',
@@ -63,6 +64,34 @@ function calendarSet(){
 		dayNamesMin: ['일','월', '화', '수', '목', '금', '토'], 
 		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	});
+}
+
+function popTableSlide(){
+	$(document).on('click', '.slideBtn', function(){
+		if ( $(this).closest('.tableWrap').find('.tblSlide').css('display') == 'block' )
+		{
+			$(this).closest('.tableWrap').addClass('on').find('.tblSlide').slideUp(500);
+			$(this).addClass('on');
+		} else {
+			$(this).closest('.tableWrap').removeClass('on').find('.tblSlide').slideDown(500);
+			$(this).removeClass('on');
+		}
+	});
+}
+
+
+// fileUploadAdd
+function fileUploadAdd(e) {
+	$(e).closest('.inpFileWrap').find('.inpfile').val('');
+	$(e).closest('.inpFileWrap').find('.inpTxt').val('');
+	$(e).closest('.inpFileWrap').find('.inpfile').trigger('click');
+}
+
+function inpfile(){
+	$('.inpfile').change(function(){
+		g = $(this).val().split('\\').pop();
+		$(this).closest('.inpFileWrap').find('.inpTxt').val(g);
 	});
 }
 
@@ -75,5 +104,8 @@ $(function(){
 		inputDesign();
 	});
 	if($('.datePicker').length > 0){calendarSet()}
+	popTableSlide();
+	inpfile();
 
 });
+
