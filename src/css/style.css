@@ -285,9 +285,14 @@
 
 
 /* 팝업 윈도우 형으로 변경 */
+/*
 .popup .dimm {display:none;}
 .popup {position:static;}
 .popup .popBox{position: relative; top: auto; left: auto; padding-bottom: 32px; background-color: #fff; transform:none;}
+*/
+
+.popup.windowPop {position:static;}
+.popup.windowPop .popBox {position: relative; top: auto; left: auto; padding-bottom: 32px; background-color: #fff; transform:none;}
 
 
 
