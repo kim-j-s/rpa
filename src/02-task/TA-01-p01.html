@@ -238,26 +238,7 @@
 							<tr>
 								<th>관련파일</th>
 								<td>
-									<div class="inpFileWrap">
-										<input type="file" class="inpfile">
-										<input type="text" class="inpTxt" placeholder="파일을 첨부하세요" readonly>
-										<div class="inpFileBtnEle">
-											<button type="button" class="btnSelect" onclick="fileUploadAdd(this)">파일 첨부</button>
-										</div>
-									</div>
-									<ul class="fileList">
-										<li>
-											<span class="fileName">파일.txt</span>
-											<button type="button" class="btn removeBtn">삭제</button>
-											<a href="#" class="btn downloadBtn">다운로드</a>
-										</li>
-										<li>
-											<span class="fileName">파일.txt</span>
-											<button type="button" class="btn removeBtn">삭제</button>
-											<a href="#" class="btn downloadBtn">다운로드</a>
-										</li>
-									</ul>
-									<p class="downloadInfoText">- 파일 1개당 크기 50MB, 전체 파일 크기 300M까지 지원</p>
+									@@include('download.html')
 								</td>
 							</tr>
 						</tbody>

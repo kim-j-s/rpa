@@ -81,19 +81,40 @@ function popTableSlide(){
 }
 
 
-// fileUploadAdd
+// fileUpload
 function fileUploadAdd(e) {
-	$(e).closest('.inpFileWrap').find('.inpfile').val('');
-	$(e).closest('.inpFileWrap').find('.inpTxt').val('');
-	$(e).closest('.inpFileWrap').find('.inpfile').trigger('click');
+	$(e).closest('.inpFileList').find('.inpfile').val('');
+	$(e).closest('.inpFileList').find('.inpTxt').val('');
+	$(e).closest('.inpFileList').find('.inpfile').trigger('click');
+}
+
+// fileUploadListDelete
+function fileUploadListDelete(e) {
+	$(e).closest('.inpFileList').remove();
+}
+
+// fileUploadListAdd
+function fileUploadListAdd(e) {
+	var html = '' +
+	' <div class="inpFileList">' +
+	'	<div class="inpFileBtnEle">' +
+	'		<button type="button" class="btnSelect" onclick="fileUploadAdd(this)">찾기</button>' +
+	'	</div>' +
+	'	<input type="file" class="inpfile">' +
+	'	<input type="text" class="inpTxt" placeholder="파일을 첨부하세요" readonly>' +
+	'	<button type="button" class="btn UploadListDelete" onclick="fileUploadListDelete(this)">삭제</button>' +
+	'	<button type="button" class="btn UploadListAdd" onclick="fileUploadListAdd(this)">추가</button>' +
+	'</div>' ;
+	$(html).appendTo($(e).closest('.inpFileWrap'));
 }
 
 function inpfile(){
-	$('.inpfile').change(function(){
+	$(document).on('change', '.inpfile', function(){
 		g = $(this).val().split('\\').pop();
-		$(this).closest('.inpFileWrap').find('.inpTxt').val(g);
+		$(this).closest('.inpFileList').find('.inpTxt').val(g);
 	});
 }
+
 
 $(function(){
 	openPop();
