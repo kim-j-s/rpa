@@ -91,6 +91,12 @@
 .essential {position:relative; display:inline-block; vertical-align:top; font-size:14px; text-indent:-999px; color:#4b7efe;}
 .essential:before {content:'*'; position:absolute; left:0; text-indent:0;}
 
+.reMark {position:relative; padding-left:12px; vertical-align:middle; }
+.reMark:before {content:''; position:absolute; top:-2px; left:0; width:8px; height:12px; background:url(../images/icon/icon_remark.png) no-repeat left top;}
+.reMark > .text {display:inline-block; padding:1px 4px; font-size:10px; color:#0c79f8; border:1px solid #0c79f8; border-radius:3px;}
+.reMark + .reMark {padding-left:0; margin-left:1px; background:none;}
+.reMark + .reMark:before {content:none;}
+
 
 
 /* 검색 조건 설정 */
@@ -292,7 +298,8 @@
 	.popup .btnPopClose{position: absolute; top: 0; right: 0; text-indent: -9999px;}
 	.popup .inpTxt{padding: 0 10px;}
 	.popup .selectD{min-width: 70px; padding-left: 9px;}
-	.popup .scrollArea{overflow-y: scroll;}
+	/* .popup .scrollArea{overflow-y: scroll;} */
+	.popup .scrollArea{overflow:auto;}
 
 	.type1 .popTop{padding: 16px 23px 14px; border-top: 8px solid #0c79f8; border-bottom: 1px solid #e7eaef}
 	.type1 .popTop h3{font-size: 24px; line-height: 25px; color: #0c79f8}
@@ -361,6 +368,10 @@ table + .innerContHeader {margin-top:20px;}
 .ui-datepicker table{line-height: 1.6}
 
 
+/* ck editor */
+.ck-editor__editable_inline {min-height: 340px;}
+
+
 
 /* ax5ui Grid resizer display */
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-resizer] {display:none;}
@@ -375,6 +386,7 @@ table + .innerContHeader {margin-top:20px;}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td.hasBorder {border-right:none;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {font-size:14px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td .reMark:last-child {margin-right:9px;}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="status"] {display:none;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] {display:inline-block;}

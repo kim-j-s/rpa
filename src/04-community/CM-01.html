@@ -4,511 +4,119 @@
 
 <script type="text/javascript">
 $(function () {
-	ax5.ui.grid.formatter["date"] = function () {
-		var date = this.value;
-		if (date.length == 8) {
-			return date.substr(0, 4) + "-" + date.substr(4, 2) + "-" + date.substr(6);
-		} else {
-			return date;
-		}
-	}
 
-	var firstGrid = new ax5.ui.grid();
+	var re = '<span class="reMark"><span class="text">Re</span></span>';
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
 	firstGrid.setConfig({
 		target: $('[data-ax5grid="first-grid"]'),
-		showLineNumber: true,
+		showLineNumber: false,
 		showRowSelector: false,
-		multipleSelect: true,
-		lineNumberColumnWidth: 40,
-		rowSelectorColumnWidth: 27,
-		columns: [{
-			key: "birthday",
-			label: "날짜",
-			formatter: "date",
-			sortable: true,
-			align: "center"
+        multipleSelect: false,
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "no",
+			label: "순서",
+			align: "center",
+			width: 100
 		}, {
-			key: "gender",
-			label: "구분",
+			key: "col01",
+			label: "제목",
 			sortable: true,
-			align: "center"
+			align: "left",
+			width: 737,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "reply01" :
+						returnValue = re + '제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
+						break;
+					case "reply02" :
+						returnValue = re + re + '제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
+						break;
+					case "reply03" :
+						returnValue = re + re + re +'제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
 		}, {
-			key: "name",
-			label: "<strong>이름</strong>",
+			key: "col02",
+			label: "작성자",
 			sortable: true,
-			align: "center"
+			align: "center",
+			width: 110
 		}, {
-			key: "rank",
-			label: "석차",
+			key: "col03",
+			label: "작성일",
 			sortable: true,
-			align: "center"
-		}]
+			align: "center",
+			width: 157
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+            //firstIcon: '|<',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            //lastIcon: '>|',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
 	});
-
-	var list = [];
-	for (var i = 0; i < 50; i++) { list.push({birthday: "20170101", gender: "주유", name: 25, rank: (i + 1) * 100}); }
-
-
-	firstGrid.setData(list);
-
-
+	search(0);
 });
+
+
+function search(_pageNo) {
+
+	var list = [
+		{no: (_pageNo*10)+1, col01: "reply01", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+2, col01: "reply02", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+3, col01: "reply03", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+4, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+5, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+6, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+7, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+8, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+9, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+10, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+
+}
 </script>
 
 </head>
 <body>
-
-<!-- BOT 추가하기 pop-up -->
-<div class="popup" id="popAddBot" style="display: none;">
-	<div class="dimm"></div>
-	<div class="popBox type2">
-		<div class="popTop"><h3>BOT 추가</h3></div>
-		<div class="popCont">
-			<div class="tableWrap">
-				<table class="table text">
-					<colgroup>
-						<col style="width: 70px">
-						<col style="width: auto">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>선택</th>
-							<th>BOT명</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT1BOT1BOT1BOT1BOT1BOT1BOT1BOT1BOT1</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT2</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT3BOT3BOT3</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT4BOT4BOT4BOT4BOT4BOT4</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT5</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="inpD check">
-									<label><input type="checkbox"></label>
-								</span>
-							</td>
-							<td class="taL"><span>BOT6</span></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="btnGroup">
-			<button type="button">추가</button>
-			<button type="button">취소</button>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //BOT 추가하기 pop-up -->
-
-<!-- BOT 상세 pop-up -->
-<div class="popup botDetail" id="popBotDetail" style="display: none;">
-	<div class="dimm"></div>
-	<div class="popBox type1">
-		<div class="popTop"><h3>BOT 상세</h3></div>
-		<div class="popCont scrollArea">
-			<div class="tableWrap">
-				<strong class="tableTitle">BOT 정보</strong>
-				<table class="table form">
-					<tbody>
-						<tr>
-							<th>RPA 구분</th>
-							<td><span>AA/BP</span></td>
-							<th>BOT 별명</th>
-							<td><input type="text" class="inpTxt"></td>
-							<th>예약가능시간</th>
-							<td>
-								<div class="inpWrap">
-									<select name="" id="" class="selectD">
-										<option value="">00</option>
-										<option value="">01</option>
-										<option value="">02</option>
-										<option value="">03</option>
-										<option value="">04</option>
-										<option value="">05</option>
-										<option value="">06</option>
-										<option value="">07</option>
-										<option value="">08</option>
-										<option value="">09</option>
-										<option value="">10</option>
-										<option value="">11</option>
-										<option value="">12</option>
-										<option value="">13</option>
-										<option value="">14</option>
-										<option value="">15</option>
-										<option value="">16</option>
-										<option value="">17</option>
-										<option value="">18</option>
-										<option value="">19</option>
-										<option value="">20</option>
-										<option value="">21</option>
-										<option value="">22</option>
-										<option value="">23</option>
-									</select>
-									<span>시 ~ </span>
-									<select name="" id="" class="selectD">
-										<option value="">00</option>
-										<option value="">01</option>
-										<option value="">02</option>
-										<option value="">03</option>
-										<option value="">04</option>
-										<option value="">05</option>
-										<option value="">06</option>
-										<option value="">07</option>
-										<option value="">08</option>
-										<option value="">09</option>
-										<option value="">10</option>
-										<option value="">11</option>
-										<option value="">12</option>
-										<option value="">13</option>
-										<option value="">14</option>
-										<option value="">15</option>
-										<option value="">16</option>
-										<option value="">17</option>
-										<option value="">18</option>
-										<option value="">19</option>
-										<option value="">20</option>
-										<option value="">21</option>
-										<option value="">22</option>
-										<option value="">23</option>
-									</select>
-									<span>시</span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>상태</th>
-							<td><span>상태값 노출</span></td>
-							<th>누적업무시간</th>
-							<td><span><em>00</em> 시간 <em>00</em> 분</span></td>
-							<th>할당과제수</th>
-							<td><span>5</span></td>
-						</tr>
-						<tr>
-							<th>역할</th>
-							<td colspan="5"><input type="text" class="inpTxt"></td>
-						</tr>
-						<tr>
-							<th>BOT 명</th>
-							<td><span>hostname</span></td>
-							<th>BOT 상태</th>
-							<td><span>대기중</span></td>
-							<th>접속상태</th>
-							<td><span>오프라인</span></td>
-						</tr>
-						<tr>
-							<th>BOT 아이디</th>
-							<td><span>Username</span></td>
-							<th>담당부서</th>
-							<td>
-								<div class="inpWrap">
-									<input type="text" class="inpTxt">
-									<a href="#popSelectTeam" class="openPop btnSelect">선택</a>
-								</div>
-							</td>
-							<th>담당자</th>
-							<td>
-								<div class="inpWrap">
-									<input type="text" class="inpTxt">
-									<a href="#popSelectPerson" class="openPop btnSelect">선택</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>라이선스기간</th>
-							<td><span>YYYY-MM-DD</span></td>
-							<th>아이피</th>
-							<td><input type="text" class="inpTxt"></td>
-							<th>포트</th>
-							<td><input type="text" class="inpTxt"></td>
-						</tr>
-						<tr>
-							<th>로그인 정보</th>
-							<td colspan="3">
-								<div class="inpWrap">
-									<span>아이디</span>
-									<input type="text" class="inpTxt">
-									<span>비밀번호</span>
-									<input type="password" class="inpTxt">
-								</div>
-							</td>
-							<th>위치</th>
-							<td><input type="text" class="inpTxt"></td>
-						</tr>
-						<tr>
-							<th>BOT 사양</th>
-							<td colspan="5">
-								<div class="inpWrap">
-									<span>운영체제</span>
-									<input type="text" class="inpTxt">
-									<span>CPU</span>
-									<input type="text" class="inpTxt">
-									<span>RAM</span>
-									<input type="text" class="inpTxt">
-									<span>그래픽카드</span>
-									<input type="text" class="inpTxt">
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="tableWrap">
-				<strong class="tableTitle">BOT 일정</strong>
-				<table class="table text">
-					<colgroup>
-						<col style="width: 230px">
-						<col style="width: 280px">
-						<col style="width: auto">
-						<col style="width: auto">
-						<col style="width: auto">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>다음 스케쥴</th>
-							<th>과제명</th>
-							<th>프로세스명</th>
-							<th>담당부서</th>
-							<th>담당자</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>법인카드 매출전표 정산</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>it사업본부</span></td>
-							<td><span>김관리</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>매출 보고서 생성</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>개발본부</span></td>
-							<td><span>안담당</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>BW보고서 생성</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>디지털혁신사업본부</span></td>
-							<td><span>김관리</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>Invoice Draft 업체 송부</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>네트워크사업부</span></td>
-							<td><span>김관리</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>BW보고서 생성</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>디지털혁신사업본부</span></td>
-							<td><span>김관리</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span>
-									<em>YYYY-MM-DD</em>
-									<em>hh:mm:ss</em>
-								</span>
-							</td>
-							<td class="taL"><span>Invoice Draft 업체 송부</span></td>
-							<td><span>테스트 프로세스 A</span></td>
-							<td><span>네트워크사업부</span></td>
-							<td><span>김관리</span></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="btnGroup">
-			<button type="button">저장</button>
-			<button type="button">취소</button>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //BOT 상세 pop-up -->
-
-<!-- 부서 선택 pop-up -->
-<div class="popup" id="popSelectTeam" style="display: none;">
-	<div class="dimm"></div>	
-	<div class="popBox type2">
-		<div class="popTop"><h3>부서 선택</h3></div>
-		<div class="popCont">
-			<div class="searchWrap">
-				<input type="text" class="inpTxt">
-				<button type="button" class="btnTxt">검색</button>
-			</div>
-			<div class="tableWrap">
-				<table class="table text">
-					<colgroup>
-						<col style="width: auto">
-						<col style="width: 110px">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>부서</th>
-							<th>선택</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="taL"><span>it사업본부</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>개발본부</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>디지털혁신사업본부</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>네트워크사업부</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>컨설턴트본부</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //부서 선택 pop-up -->
-
-<!-- 담당자 선택 pop-up -->
-<div class="popup" id="popSelectPerson" style="display: none;">
-	<div class="dimm"></div>	
-	<div class="popBox type2">
-		<div class="popTop"><h3>담당자 선택</h3></div>
-		<div class="popCont">
-			<div class="searchWrap">
-				<select name="" id="" class="selectD">
-					<option value="">담당자명</option>
-					<option value="">부서명</option>
-				</select>
-				<input type="text" class="inpTxt">
-				<button type="button" class="btnTxt">검색</button>
-			</div>
-			<div class="tableWrap">
-				<table class="table text">
-					<colgroup>
-						<col style="width: auto">
-						<col style="width: 120px">
-						<col style="width: 110px">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>부서</th>
-							<th>담당자</th>
-							<th>선택</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="taL"><span>it사업본부</span></td>
-							<td><span>김관리</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>개발본부</span></td>
-							<td><span>김관리</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>디지털혁신사업본부</span></td>
-							<td><span>김관리</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>네트워크사업부</span></td>
-							<td><span>김관리</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-						<tr>
-							<td class="taL"><span>컨설턴트본부</span></td>
-							<td><span>김관리</span></td>
-							<td><button type="button" class="btnTxt white">선택</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //담당자 선택 pop-up -->
 
 <div class="wrap">
 
@@ -561,19 +169,10 @@ $(function () {
 
 
 
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 500px;"></div>
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
 
 
 
-					<div class="paging">
-						<a href="#" class="direction prev">이전</a>
-						<a href="#" class="num active">1</a>
-						<a href="#" class="num">2</a>
-						<a href="#" class="num">3</a>
-						<a href="#" class="num">4</a>
-						<a href="#" class="num">5</a>
-						<a href="#" class="direction next">다음</a>
-					</div>
 				</div>
 			</div>
 		</div>
