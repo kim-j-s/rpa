@@ -1,5 +1,5 @@
 @@include('head.html', {
-	"title": "수신자"
+	"title": "템플릿"
 })
 
 <script type="text/javascript">
@@ -32,37 +32,43 @@ $(function () {
 			label: "과제코드",
 			sortable: true,
 			align: "center",
-			width: 100
+			width: 120
 		}, {
 			key: "col02",
 			label: "과제명",
 			sortable: true,
 			align: "left",
-			width: 317
+			width: 234
 		}, {
 			key: "col03",
-			label: "수신자 그룹코드",
+			label: "템플릿 코드",
 			sortable: true,
 			align: "center",
-			width: 157
+			width: 160
 		}, {
 			key: "col04",
-			label: "수신자 그룹명",
+			label: "템플릿명",
 			sortable: true,
 			align: "center",
-			width: 150
+			width: 160
 		}, {
 			key: "col05",
 			label: "작성자",
 			sortable: true,
 			align: "center",
-			width: 130
+			width: 110
 		}, {
 			key: "col06",
 			label: "작성일",
 			sortable: true,
 			align: "center",
-			width: 150
+			width: 120
+		}, {
+			key: "col07",
+			label: "사용여부",
+			sortable: true,
+			align: "center",
+			width: 100
 		}
 		],
 		page: {
@@ -84,14 +90,20 @@ $(function () {
 
 
 function search(_pageNo) {
-    var list = [];
 
-	// 리스트 안변하는거 같아서 pageNo 붙여서 변화되는거 확인
-    for (var i = 0; i < 10; i++) {
-		list.push({
-			no: _pageNo*10+i+1, col01: "AA-"+ _pageNo + "01", col02: "법인카드", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11"
-		}); 
-    }
+    var list = [
+		{no: (_pageNo*10)+1, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "사용"},
+		{no: (_pageNo*10)+2, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-12", col07: "미사용"},
+		{no: (_pageNo*10)+3, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-13", col07: "사용"},
+		{no: (_pageNo*10)+4, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "미사용"},
+		{no: (_pageNo*10)+5, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "사용"},
+		{no: (_pageNo*10)+6, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "미사용"},
+		{no: (_pageNo*10)+7, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "사용"},
+		{no: (_pageNo*10)+8, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "미사용"},
+		{no: (_pageNo*10)+9, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "사용"},
+		{no: (_pageNo*10)+10, col01: "AA-101", col02: "법인카드 매출전표 정산", col03: "내용", col04: "내용", col05: "김관리", col06: "2020-05-11", col07: "미사용"}
+	];
+
 	firstGrid.setData(
 		{
 	        list: list,
@@ -128,11 +140,11 @@ function search(_pageNo) {
 
 		<div class="topBox">
 			<div class="innerArea">
-				<h2>수신자</h2>
+				<h2>템플릿</h2>
 				<div class="navigation">
 					<a href="#">홈</a>
 					<a href="#">과제관리</a>
-					<a href="#">수신자</a>
+					<a href="#">템플릿</a>
 				</div>
 			</div>
 		</div>
@@ -144,8 +156,8 @@ function search(_pageNo) {
 						<select name="" id="" class="selectD">
 							<option value="">과제명</option>
 							<option value="">과제코드</option>
-							<option value="">수신자그룹코드</option>
-							<option value="">수신자그룹명</option>
+							<option value="">템플릿코드</option>
+							<option value="">템플릿명</option>
 							<option value="">작성자</option>
 						</select>
 						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
