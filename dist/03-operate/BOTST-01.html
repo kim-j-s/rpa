@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>BOT상태</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+
+    <script type="text/javascript">
+        $(function() {
+
+            var colorBox1 = '<span class="colorBox"></span>';
+            var colorBox2 = '<span class="colorBox ty1"></span>';
+            var colorBox3 = '<span class="colorBox ty2"></span>';
+            var colorBox4 = '<span class="colorBox ty3"></span>';
+            var colorBox5 = '<span class="colorBox ty4"></span>';
+
+            /* 그리드 객체 생성 */
+            firstGrid = new ax5.ui.grid();
+
+            firstGrid.setConfig({
+                target: $('[data-ax5grid="first-grid"]'),
+                showLineNumber: false,
+                showRowSelector: false,
+                multipleSelect: false,
+                header: {
+                    align: "center",
+                    columnHeight: 46
+                },
+                body: {
+                    align: "center",
+                    columnHeight: 46
+                },
+                columns: [{
+                    key: "col01",
+                    label: "BOT명",
+                    sortable: true,
+                    align: "center",
+                    width: 120
+                }, {
+                    key: "col02",
+                    label: "연결상태",
+                    sortable: true,
+                    align: "center",
+                    width: 120
+                }, {
+                    key: undefined,
+                    label: "시간",
+                    columns: [{
+                        key: "time1",
+                        label: "1",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time2",
+                        label: "2",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time3",
+                        label: "3",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time4",
+                        label: "4",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time5",
+                        label: "5",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time6",
+                        label: "6",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time7",
+                        label: "7",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time8",
+                        label: "8",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time9",
+                        label: "9",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time10",
+                        label: "10",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time11",
+                        label: "11",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time12",
+                        label: "12",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time13",
+                        label: "13",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time14",
+                        label: "14",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time15",
+                        label: "15",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time16",
+                        label: "16",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time17",
+                        label: "17",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time18",
+                        label: "18",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time19",
+                        label: "19",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time20",
+                        label: "20",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time21",
+                        label: "21",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time22",
+                        label: "22",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time23",
+                        label: "23",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }, {
+                        key: "time24",
+                        label: "24",
+                        align: "center",
+                        width: 36,
+                        formatter: function() {
+                            var returnValue = "";
+                            switch (this.value) {
+                                case "box1":
+                                    returnValue = colorBox1 + colorBox1 + colorBox1;
+                                    break;
+                                case "box2":
+                                    returnValue = colorBox2 + colorBox2 + colorBox2;
+                                    break;
+                                case "box3":
+                                    returnValue = colorBox3 + colorBox3 + colorBox3;
+                                    break;
+                                case "box4":
+                                    returnValue = colorBox4 + colorBox4 + colorBox4;
+                                    break;
+                                case "box5":
+                                    returnValue = colorBox5 + colorBox5 + colorBox5;
+                                    break;
+                                default:
+                                    returnValue = this.value;
+                                    break;
+                            } // end switch
+                            return returnValue;
+                        }
+                    }]
+                }, ],
+            });
+
+
+            firstGrid.setData([{
+                    col01: "BOT1",
+                    col02: "온라인",
+                    time1: "box2",
+                    time2: "box2",
+                    time3: "box2",
+                    time4: "box2"
+                },
+                {
+                    col01: "BOT2",
+                    col02: "온라인",
+                    time5: "box3",
+                    time6: "box3",
+                    time7: "box3",
+                    time8: "box3"
+                },
+                {
+                    col01: "BOT3",
+                    col02: "온라인",
+                    time9: "box4",
+                    time10: "box4",
+                    time11: "box4",
+                    time12: "box4"
+                },
+                {
+                    col01: "BOT4",
+                    col02: "온라인",
+                    time13: "box5",
+                    time14: "box5",
+                    time15: "box5",
+                    time16: "box5"
+                },
+                {
+                    col01: "BOT5",
+                    col02: "온라인",
+                    time17: "box2",
+                    time18: "box2",
+                    time19: "box2",
+                    time20: "box2"
+                },
+                {
+                    col01: "BOT6",
+                    col02: "온라인",
+                    time21: "box3",
+                    time22: "box3",
+                    time23: "box3",
+                    time24: "box3"
+                },
+                {
+                    col01: "BOT7",
+                    col02: "온라인",
+                    time1: "box2",
+                    time2: "box2",
+                    time3: "box2",
+                    time4: "box2"
+                },
+                {
+                    col01: "BOT8",
+                    col02: "온라인",
+                    time5: "box3",
+                    time6: "box3",
+                    time7: "box3",
+                    time8: "box3"
+                },
+                {
+                    col01: "BOT9",
+                    col02: "온라인",
+                    time9: "box4",
+                    time10: "box4",
+                    time11: "box4",
+                    time12: "box4"
+                },
+                {
+                    col01: "BOT10",
+                    col02: "온라인",
+                    time13: "box5",
+                    time14: "box5",
+                    time15: "box5",
+                    time16: "box5"
+                },
+            ]);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <!-- HEADER -->
+        <header>
+            <div class="innerArea">
+                <h1 class="logo"><a href="#">RPA Portal</a></h1>
+                <ul class="utilMenu">
+                    <li><button type="button" class="mypage">마이페이지</button></li>
+                    <li><button type="button" class="system">시스템</button></li>
+                    <li><button type="button" class="logout">로그아웃</button></li>
+                </ul>
+            </div>
+            <div class="gnbWrap">
+                <ul class="gnbTop">
+                    <li class=""><span>과제관리</span></li>
+                    <li class="active"><span>운영업무</span></li>
+                    <li class=""><span>커뮤니티</span></li>
+                    <li class=""><span>헬프데스크</span></li>
+                    <li class=""><span>통계</span></li>
+                    <li class=""><span>자원관리</span></li>
+                    <li class=""><span>기준정보</span></li>
+                </ul>
+                <div class="gnbAll" style="display: none;">
+                    <div class="gnbCont">
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>과제관리</strong>
+                                <ul>
+                                    <li><a href="#">요청관리</a></li>
+                                    <li><a href="#">요청검토관리</a></li>
+                                    <li><a href="#">개발진행현황</a></li>
+                                    <li><a href="#">사용템플릿관리</a></li>
+                                </ul>
+                            </div>
+                            <div class="menuWrap">
+                                <strong>자원관리</strong>
+                                <ul>
+                                    <li><a href="#">BOT 관리</a></li>
+                                    <li><a href="#">Device Pool 관리</a></li>
+                                    <li><a href="#">Queue 관리</a></li>
+                                    <li><a href="#">라이선스 관리</a></li>
+                                    <li><a href="#">Credential관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>운영업무</strong>
+                                <ul>
+                                    <li><a href="#">정기(스케쥴) 실행</a></li>
+                                    <li><a href="#">비정기 실행</a></li>
+                                    <li><a href="#">시스템 상태</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">전체시스템 상태정보 조회</a></li>
+                                            <li><a href="#">시스템 장애이력 조회</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">BPM업무</a></li>
+                                    <li><a href="#">BOT 산정</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">과제별 BOT산정 사용율 분석</a></li>
+                                            <li><a href="#">전체 BOT 개수 적정량 산정</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">이슈 관리</a></li>
+                                    <li><a href="#">장애 관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>통계</strong>
+                                <ul>
+                                    <li><a href="#">BOT 별 ROI</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">산출/조회</a></li>
+                                            <li><a href="#">업무처리결과 조회</a></li>
+                                            <li><a href="#">가동시간 조회</a></li>
+                                            <li><a href="#">실패시간</a></li>
+                                            <li><a href="#">상세업무 건수</a></li>
+                                            <li><a href="#">업무처리 시간</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">과제 별 ROI</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">산출/조회</a></li>
+                                            <li><a href="#">과제별 업무처리결과</a></li>
+                                            <li><a href="#">과제별 가동시간</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">부서별 집계</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">ROI TOP5</a></li>
+                                            <li><a href="#">과제개수 TOP5</a></li>
+                                            <li><a href="#">자동화적용시간 TOP5</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>기준정보</strong>
+                                <ul>
+                                    <li><a href="#">사용자</a></li>
+                                    <li><a href="#">권한설정</a></li>
+                                    <li><a href="#">조직관리</a></li>
+                                    <li><a href="#">메뉴관리</a></li>
+                                    <li><a href="#">난이도/적합도 기준</a></li>
+                                    <li><a href="#">임율 관리</a></li>
+                                    <li>
+                                        <a href="#">알람 설정</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">이메일</a></li>
+                                            <li><a href="#">PUSH</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">공통코드관리</a></li>
+                                    <li>
+                                        <a href="#">RPA Solution DB접속정보</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">AA</a></li>
+                                            <li><a href="#">BP</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>커뮤니티</strong>
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">양식관리</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Q&amp;A</a></li>
+                                    <li><a href="#">지식관리</a></li>
+                                </ul>
+                            </div>
+                            <div class="menuWrap">
+                                <strong>헬프데스크</strong>
+                                <ul>
+                                    <li><a href="#">개발 가이드</a></li>
+                                    <li><a href="#">Best Practic</a></li>
+                                    <li><a href="#">공통 모듈</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //HEADER -->
+
+        <!-- CONTENT -->
+        <div class="container">
+
+            <div class="topBox">
+                <div class="innerArea">
+                    <h2>RPA 수행 현황</h2>
+                    <div class="navigation">
+                        <a href="#">홈</a>
+                        <a href="#">운영현황</a>
+                        <a href="#">RPA 수행 현황</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="innerArea">
+                <div class="roundBox">
+                    <div class="setBox">
+                        <div class="searchWrap line">
+                            <span class="tit">시간 카운터</span>
+                            <input type="text" class="inpTxt">
+                            <span class="tit">시간 갱신</span>
+                            <div class="inpWrap">
+                                <span class="inpD check">
+								<label><input type="checkbox">자동</label>
+							</span>
+                                <input type="text" class="inpTxt"> <span>분</span>
+                            </div>
+
+                            <div class="btnGroup">
+                                <button type="button" class="reset">즉시갱신</button>
+                                <button type="button" class="confirm">적용</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <div class="tableTop">
+                            <span class="totalNum">오늘날짜 : <em>2020-05-28</em></span>
+                        </div>
+
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 626px;" class="noPd"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //CONTENT -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
+        </footer>
+        <!-- //FOOTER -->
+    </div>
+
+</body>
+
+</html>

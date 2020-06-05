@@ -1,0 +1,226 @@
+@@include('head.html', {
+	"title": "과제별 수행이력"
+})
+
+<script type="text/javascript">
+$(function () {
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		showLineNumber: false,
+		showRowSelector: false,
+        multipleSelect: false,
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "col01",
+			label: "결과",
+			sortable: true,
+			align: "center",
+			width: 80,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "box1" :
+						returnValue = '<span class="rndMark ty1"></span>';
+						break;
+					case "box2" :
+						returnValue = '<span class="rndMark ty2"></span>';
+						break;
+					case "box3" :
+						returnValue = '<span class="rndMark ty3"></span>';
+						break;
+					case "box4" :
+						returnValue = '<span class="rndMark ty4"></span>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}, {
+			key: "col02",
+			label: "과제명",
+			sortable: true,
+			align: "left",
+			width: 317
+		}, {
+			key: "col03",
+			label: "프로세스명",
+			sortable: true,
+			align: "center",
+			width: 187
+		}, {
+			key: "col04",
+			label: "시작시간",
+			sortable: true,
+			align: "center",
+			width: 150
+		}, {
+			key: "col05",
+			label: "종료시간",
+			sortable: true,
+			align: "center",
+			width: 130
+		}, {
+			key: "col06",
+			label: "BOT",
+			sortable: true,
+			align: "left",
+			width: 120
+		}, {
+			key: "col07",
+			label: "비고",
+			sortable: true,
+			align: "center",
+			width: 120
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+
+	search(0);
+});
+
+function search(_pageNo) {
+	var list = [
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01", col07: "에러 로그"},
+		{col01: "box2", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01"},
+		{col01: "box3", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01", col07: "에러 로그"},
+		{col01: "box4", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01"},
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01", col07: "에러 로그"},
+		{col01: "box2", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01"},
+		{col01: "box3", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01", col07: "에러 로그"},
+		{col01: "box4", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01"},
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01", col07: "에러 로그"},
+		{col01: "box2", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00", col06: "RPA01"},
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+</script>
+</head>
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "active",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>과제별 수행이력</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">운영업무</a>
+					<a href="#">과제별 수행이력</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+
+				<div class="setBox">
+					<div class="line">
+						<div class="dateWrap">
+							<span class="tit">기간</span>
+							<span class="datePicker">
+								<span class="dateBox">
+									<input type="text" class="dateFrom inpTxt" name="from" readonly="">
+								</span>
+								<span class="dash">~</span>
+								<span class="dateBox">
+									<input type="text" class="dateTo inpTxt" name="to" readonly="">
+								</span>
+							</span>
+						</div>
+					</div>
+					<div class="line">
+						<div class="searchWrap">
+							<span class="tit">검색</span>
+							<select name="" id="" class="selectD" style="width:235px">
+								<option value="">결과</option>
+							</select>
+							<select name="" id="" class="selectD" style="width:235px">
+								<option value="">과제명</option>
+							</select>
+							<select name="" id="" class="selectD" style="width:235px">
+								<option value="">프로세스명</option>
+							</select>
+							<select name="" id="" class="selectD" style="width:235px">
+								<option value="">BOT</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="btnGroup">
+					<button type="button" class="btn reset">초기화</button>
+					<button type="button" class="btn confirm">검색</button>
+				</div>
+
+				<div class="tableWrap">
+					<div class="tableTop">
+						<span class="totalNum">총 <em>100</em>건</span>
+						<div class="rightArea">
+							<button type="button" class="btnTxt">Export</button>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>

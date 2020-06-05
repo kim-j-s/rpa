@@ -1,5 +1,5 @@
 @@include('head.html', {
-	"title": "BOT관리"
+	"title": "BOT별 수행이력관리"
 })
 
 <script type="text/javascript">
@@ -23,52 +23,41 @@ $(function () {
 		},
 		columns: [
 		{
-			key: "no",
-			label: "순서",
-			align: "center",
-			width: 100
-		}, {
 			key: "col01",
-			label: "RPA 구분",
+			label: "BOT",
 			sortable: true,
 			align: "center",
-			width: 100
+			width: 150
 		}, {
 			key: "col02",
-			label: "BOT 별명",
+			label: "채용시작일",
 			sortable: true,
-			align: "left",
-			width: 347
+			align: "center",
+			width: 150
 		}, {
 			key: "col03",
-			label: "예약가능시간",
+			label: "채용종료일",
 			sortable: true,
 			align: "center",
-			width: 157
+			width: 150
 		}, {
 			key: "col04",
-			label: "접속상태",
+			label: "누적업무시간(H)",
 			sortable: true,
 			align: "center",
-			width: 100
+			width: 150
 		}, {
 			key: "col05",
-			label: "상태",
-			sortable: true,
-			align: "center",
-			width: 100
-		}, {
-			key: "col06",
 			label: "할당과제수",
 			sortable: true,
 			align: "center",
-			width: 100
+			width: 150
 		}, {
-			key: "col07",
-			label: "역할",
+			key: "col06",
+			label: "역활",
 			sortable: true,
 			align: "center",
-			width: 100
+			width: 354
 		}
 		],
 		page: {
@@ -95,7 +84,7 @@ function search(_pageNo) {
 	// 리스트 안변하는거 같아서 pageNo 붙여서 변화되는거 확인
     for (var i = 0; i < 10; i++) {
 		list.push({
-			no: _pageNo*10+i+1, col01: "AA", col02: "성능좋은 BOT", col03: "02시~09시", col04: "온라인", col05: "실행중", col06: "7", col07: "OCR업무"
+			col01: "RPA01", col02: "2020-05-28", col03: "2020-05-28", col04: "123", col05: "2", col06: "OCR업무"
 		}); 
     }
 	firstGrid.setData(
@@ -119,11 +108,11 @@ function search(_pageNo) {
 	<!-- HEADER -->
 	@@include('header.html', {
 		"과제관리": "",
-		"운영업무": "",
+		"운영업무": "active",
 		"커뮤니티": "",
 		"헬프데스크": "",
 		"통계": "",
-		"자원관리": "active",
+		"자원관리": "",
 		"기준정보": ""
 	})
 	<!-- //HEADER -->
@@ -133,11 +122,11 @@ function search(_pageNo) {
 
 		<div class="topBox">
 			<div class="innerArea">
-				<h2>BOT 관리</h2>
+				<h2>BOT별 수행이력관리</h2>
 				<div class="navigation">
 					<a href="#">홈</a>
-					<a href="#">자원관리</a>
-					<a href="#">BOT 관리</a>
+					<a href="#">운영업무</a>
+					<a href="#">BOT별 수행이력관리</a>
 				</div>
 			</div>
 		</div>
@@ -154,22 +143,12 @@ function search(_pageNo) {
 						<button type="button" class="btn search">검색</button>
 						<button type="button" class="btn reset">초기화</button>
 					</div>
-					<div class="line">
-						<span class="inpD check">
-							<label><input type="checkbox">나의 과제만 보기</label>
-						</span>
-					</div>
 				</div>
 				<div class="tableWrap">
 					<div class="tableTop">
 						<span class="totalNum">총 <em>100</em>건</span>
 						<div class="rightArea">
-							<select name="" id="" class="selectD">
-								<option value="">정렬</option>
-								<option value="">정렬</option>
-								<option value="">정렬</option>
-							</select>
-							<a href="#" class="btnTxt">BOT 추가</a>
+							<a href="#" class="btnTxt">BOT 가져오기</a>
 						</div>
 					</div>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>BOT관리</title>
+    <title>과제별 수행이력</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ax5grid.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -35,87 +35,173 @@
                     columnHeight: 46
                 },
                 columns: [{
-                    key: "no",
-                    label: "순서",
-                    align: "center",
-                    width: 100
-                }, {
                     key: "col01",
-                    label: "RPA 구분",
+                    label: "결과",
                     sortable: true,
                     align: "center",
-                    width: 100
+                    width: 80,
+                    formatter: function() {
+                        var returnValue = "";
+                        switch (this.value) {
+                            case "box1":
+                                returnValue = '<span class="rndMark ty1"></span>';
+                                break;
+                            case "box2":
+                                returnValue = '<span class="rndMark ty2"></span>';
+                                break;
+                            case "box3":
+                                returnValue = '<span class="rndMark ty3"></span>';
+                                break;
+                            case "box4":
+                                returnValue = '<span class="rndMark ty4"></span>';
+                                break;
+                            default:
+                                returnValue = this.value;
+                                break;
+                        } // end switch
+                        return returnValue;
+                    }
                 }, {
                     key: "col02",
-                    label: "BOT 별명",
+                    label: "과제명",
                     sortable: true,
                     align: "left",
-                    width: 347
+                    width: 317
                 }, {
                     key: "col03",
-                    label: "예약가능시간",
+                    label: "프로세스명",
                     sortable: true,
                     align: "center",
-                    width: 157
+                    width: 187
                 }, {
                     key: "col04",
-                    label: "접속상태",
+                    label: "시작시간",
                     sortable: true,
                     align: "center",
-                    width: 100
+                    width: 150
                 }, {
                     key: "col05",
-                    label: "상태",
+                    label: "종료시간",
                     sortable: true,
                     align: "center",
-                    width: 100
+                    width: 130
                 }, {
                     key: "col06",
-                    label: "할당과제수",
+                    label: "BOT",
                     sortable: true,
-                    align: "center",
-                    width: 100
+                    align: "left",
+                    width: 120
                 }, {
                     key: "col07",
-                    label: "역할",
+                    label: "비고",
                     sortable: true,
                     align: "center",
-                    width: 100
+                    width: 120
                 }],
                 page: {
                     navigationItemCount: 9,
                     height: 40,
                     display: true,
-                    //firstIcon: '|<',
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
-                    //lastIcon: '>|',
                     onChange: function() {
                         // 페이지 번호 눌렀을때 호출
                         search(this.page.selectPage);
                     }
                 },
             });
+
             search(0);
         });
 
-
         function search(_pageNo) {
-            var list = [];
+            var list = [{
+                    col01: "box1",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01",
+                    col07: "에러 로그"
+                },
+                {
+                    col01: "box2",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01"
+                },
+                {
+                    col01: "box3",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01",
+                    col07: "에러 로그"
+                },
+                {
+                    col01: "box4",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01"
+                },
+                {
+                    col01: "box1",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01",
+                    col07: "에러 로그"
+                },
+                {
+                    col01: "box2",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01"
+                },
+                {
+                    col01: "box3",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01",
+                    col07: "에러 로그"
+                },
+                {
+                    col01: "box4",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01"
+                },
+                {
+                    col01: "box1",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01",
+                    col07: "에러 로그"
+                },
+                {
+                    col01: "box2",
+                    col02: "AA-401 유효분석 확인",
+                    col03: "유효효과 확인",
+                    col04: "2020-05-28 12:00",
+                    col05: "2020-05-28 12:00",
+                    col06: "RPA01"
+                },
+            ];
 
-            // 리스트 안변하는거 같아서 pageNo 붙여서 변화되는거 확인
-            for (var i = 0; i < 10; i++) {
-                list.push({
-                    no: _pageNo * 10 + i + 1,
-                    col01: "AA",
-                    col02: "성능좋은 BOT",
-                    col03: "02시~09시",
-                    col04: "온라인",
-                    col05: "실행중",
-                    col06: "7",
-                    col07: "OCR업무"
-                });
-            }
             firstGrid.setData({
                 list: list,
                 page: {
@@ -130,7 +216,6 @@
 </head>
 
 <body>
-
     <div class="wrap">
 
         <!-- HEADER -->
@@ -146,11 +231,11 @@
             <div class="gnbWrap">
                 <ul class="gnbTop">
                     <li class=""><span>과제관리</span></li>
-                    <li class=""><span>운영업무</span></li>
+                    <li class="active"><span>운영업무</span></li>
                     <li class=""><span>커뮤니티</span></li>
                     <li class=""><span>헬프데스크</span></li>
                     <li class=""><span>통계</span></li>
-                    <li class="active"><span>자원관리</span></li>
+                    <li class=""><span>자원관리</span></li>
                     <li class=""><span>기준정보</span></li>
                 </ul>
                 <div class="gnbAll" style="display: none;">
@@ -290,43 +375,61 @@
 
             <div class="topBox">
                 <div class="innerArea">
-                    <h2>BOT 관리</h2>
+                    <h2>과제별 수행이력</h2>
                     <div class="navigation">
                         <a href="#">홈</a>
-                        <a href="#">자원관리</a>
-                        <a href="#">BOT 관리</a>
+                        <a href="#">운영업무</a>
+                        <a href="#">과제별 수행이력</a>
                     </div>
                 </div>
             </div>
 
             <div class="innerArea">
                 <div class="roundBox">
+
                     <div class="setBox">
-                        <div class="searchWrap line">
-                            <select name="" id="" class="selectD">
-                                <option value="">BOT 별명</option>
-                                <option value="">제목</option>
-                            </select>
-                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-                            <button type="button" class="btn search">검색</button>
-                            <button type="button" class="btn reset">초기화</button>
+                        <div class="line">
+                            <div class="dateWrap">
+                                <span class="tit">기간</span>
+                                <span class="datePicker">
+								<span class="dateBox">
+									<input type="text" class="dateFrom inpTxt" name="from" readonly="">
+								</span>
+                                <span class="dash">~</span>
+                                <span class="dateBox">
+									<input type="text" class="dateTo inpTxt" name="to" readonly="">
+								</span>
+                                </span>
+                            </div>
                         </div>
                         <div class="line">
-                            <span class="inpD check">
-							<label><input type="checkbox">나의 과제만 보기</label>
-						</span>
+                            <div class="searchWrap">
+                                <span class="tit">검색</span>
+                                <select name="" id="" class="selectD" style="width:235px">
+                                    <option value="">결과</option>
+                                </select>
+                                <select name="" id="" class="selectD" style="width:235px">
+                                    <option value="">과제명</option>
+                                </select>
+                                <select name="" id="" class="selectD" style="width:235px">
+                                    <option value="">프로세스명</option>
+                                </select>
+                                <select name="" id="" class="selectD" style="width:235px">
+                                    <option value="">BOT</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                    <div class="btnGroup">
+                        <button type="button" class="btn reset">초기화</button>
+                        <button type="button" class="btn confirm">검색</button>
+                    </div>
+
                     <div class="tableWrap">
                         <div class="tableTop">
                             <span class="totalNum">총 <em>100</em>건</span>
                             <div class="rightArea">
-                                <select name="" id="" class="selectD">
-                                    <option value="">정렬</option>
-                                    <option value="">정렬</option>
-                                    <option value="">정렬</option>
-                                </select>
-                                <a href="#" class="btnTxt">BOT 추가</a>
+                                <button type="button" class="btnTxt">Export</button>
                             </div>
                         </div>
 
