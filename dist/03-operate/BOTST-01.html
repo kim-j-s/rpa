@@ -16,22 +16,20 @@
 
 
     <script type="text/javascript">
-        $(function() {
+        // 색상표
+        var colorBox1 = '<span class="colorBox"></span>';
+        var colorBox2 = '<span class="colorBox ty1"></span>';
+        var colorBox3 = '<span class="colorBox ty2"></span>';
+        var colorBox4 = '<span class="colorBox ty3"></span>';
+        var colorBox5 = '<span class="colorBox ty4"></span>';
 
-            var colorBox1 = '<span class="colorBox"></span>';
-            var colorBox2 = '<span class="colorBox ty1"></span>';
-            var colorBox3 = '<span class="colorBox ty2"></span>';
-            var colorBox4 = '<span class="colorBox ty3"></span>';
-            var colorBox5 = '<span class="colorBox ty4"></span>';
+        $(function() {
 
             /* 그리드 객체 생성 */
             firstGrid = new ax5.ui.grid();
 
             firstGrid.setConfig({
                 target: $('[data-ax5grid="first-grid"]'),
-                showLineNumber: false,
-                showRowSelector: false,
-                multipleSelect: false,
                 header: {
                     align: "center",
                     columnHeight: 46
@@ -58,26 +56,11 @@
                     columns: [{
                         key: "time1",
                         label: "1",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -87,26 +70,11 @@
                     }, {
                         key: "time2",
                         label: "2",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -116,26 +84,11 @@
                     }, {
                         key: "time3",
                         label: "3",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -145,26 +98,11 @@
                     }, {
                         key: "time4",
                         label: "4",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -174,26 +112,11 @@
                     }, {
                         key: "time5",
                         label: "5",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -203,26 +126,11 @@
                     }, {
                         key: "time6",
                         label: "6",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -232,26 +140,11 @@
                     }, {
                         key: "time7",
                         label: "7",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -261,26 +154,11 @@
                     }, {
                         key: "time8",
                         label: "8",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -290,26 +168,11 @@
                     }, {
                         key: "time9",
                         label: "9",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -319,26 +182,11 @@
                     }, {
                         key: "time10",
                         label: "10",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -348,26 +196,11 @@
                     }, {
                         key: "time11",
                         label: "11",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -377,26 +210,11 @@
                     }, {
                         key: "time12",
                         label: "12",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -406,26 +224,11 @@
                     }, {
                         key: "time13",
                         label: "13",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -435,26 +238,11 @@
                     }, {
                         key: "time14",
                         label: "14",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -464,26 +252,11 @@
                     }, {
                         key: "time15",
                         label: "15",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -493,26 +266,11 @@
                     }, {
                         key: "time16",
                         label: "16",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -522,26 +280,11 @@
                     }, {
                         key: "time17",
                         label: "17",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -551,26 +294,11 @@
                     }, {
                         key: "time18",
                         label: "18",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -580,26 +308,11 @@
                     }, {
                         key: "time19",
                         label: "19",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -609,26 +322,11 @@
                     }, {
                         key: "time20",
                         label: "20",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -638,26 +336,11 @@
                     }, {
                         key: "time21",
                         label: "21",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -667,26 +350,11 @@
                     }, {
                         key: "time22",
                         label: "22",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -696,26 +364,11 @@
                     }, {
                         key: "time23",
                         label: "23",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -725,26 +378,11 @@
                     }, {
                         key: "time24",
                         label: "24",
-                        align: "center",
+                        align: "left",
                         width: 36,
                         formatter: function() {
                             var returnValue = "";
                             switch (this.value) {
-                                case "box1":
-                                    returnValue = colorBox1 + colorBox1 + colorBox1;
-                                    break;
-                                case "box2":
-                                    returnValue = colorBox2 + colorBox2 + colorBox2;
-                                    break;
-                                case "box3":
-                                    returnValue = colorBox3 + colorBox3 + colorBox3;
-                                    break;
-                                case "box4":
-                                    returnValue = colorBox4 + colorBox4 + colorBox4;
-                                    break;
-                                case "box5":
-                                    returnValue = colorBox5 + colorBox5 + colorBox5;
-                                    break;
                                 default:
                                     returnValue = this.value;
                                     break;
@@ -759,82 +397,82 @@
             firstGrid.setData([{
                     col01: "BOT1",
                     col02: "온라인",
-                    time1: "box2",
-                    time2: "box2",
-                    time3: "box2",
-                    time4: "box2"
+                    time1: colorBox2 + colorBox2 + colorBox2,
+                    time2: colorBox2 + colorBox2 + colorBox2,
+                    time3: colorBox2 + colorBox2 + colorBox2,
+                    time4: colorBox2 + colorBox2 + colorBox2
                 },
                 {
                     col01: "BOT2",
                     col02: "온라인",
-                    time5: "box3",
-                    time6: "box3",
-                    time7: "box3",
-                    time8: "box3"
+                    time5: colorBox3 + colorBox3 + colorBox3,
+                    time6: colorBox3 + colorBox3 + colorBox3,
+                    time7: colorBox3 + colorBox3 + colorBox3,
+                    time8: colorBox3 + colorBox3 + colorBox3
                 },
                 {
                     col01: "BOT3",
                     col02: "온라인",
-                    time9: "box4",
-                    time10: "box4",
-                    time11: "box4",
-                    time12: "box4"
+                    time9: colorBox4 + colorBox4 + colorBox4,
+                    time10: colorBox4 + colorBox4 + colorBox4,
+                    time11: colorBox4 + colorBox4 + colorBox4,
+                    time12: colorBox4 + colorBox4 + colorBox4
                 },
                 {
                     col01: "BOT4",
                     col02: "온라인",
-                    time13: "box5",
-                    time14: "box5",
-                    time15: "box5",
-                    time16: "box5"
+                    time13: colorBox5 + colorBox5 + colorBox5,
+                    time14: colorBox5 + colorBox5 + colorBox5,
+                    time15: colorBox5 + colorBox5 + colorBox5,
+                    time16: colorBox5 + colorBox5 + colorBox5
                 },
                 {
                     col01: "BOT5",
                     col02: "온라인",
-                    time17: "box2",
-                    time18: "box2",
-                    time19: "box2",
-                    time20: "box2"
+                    time17: colorBox2 + colorBox2 + colorBox2,
+                    time18: colorBox2 + colorBox2 + colorBox2,
+                    time19: colorBox2 + colorBox2 + colorBox2,
+                    time20: colorBox2 + colorBox2 + colorBox2
                 },
                 {
                     col01: "BOT6",
                     col02: "온라인",
-                    time21: "box3",
-                    time22: "box3",
-                    time23: "box3",
-                    time24: "box3"
+                    time21: colorBox3 + colorBox3 + colorBox3,
+                    time22: colorBox3 + colorBox3 + colorBox3,
+                    time23: colorBox3 + colorBox3 + colorBox3,
+                    time24: colorBox3 + colorBox3 + colorBox3
                 },
                 {
                     col01: "BOT7",
                     col02: "온라인",
-                    time1: "box2",
-                    time2: "box2",
-                    time3: "box2",
-                    time4: "box2"
+                    time1: colorBox2 + colorBox2 + colorBox2,
+                    time2: colorBox2 + colorBox2 + colorBox2,
+                    time3: colorBox2 + colorBox2 + colorBox2,
+                    time4: colorBox2 + colorBox2 + colorBox2
                 },
                 {
                     col01: "BOT8",
                     col02: "온라인",
-                    time5: "box3",
-                    time6: "box3",
-                    time7: "box3",
-                    time8: "box3"
+                    time5: colorBox3 + colorBox3 + colorBox3,
+                    time6: colorBox3 + colorBox3 + colorBox3,
+                    time7: colorBox3 + colorBox3 + colorBox3,
+                    time8: colorBox3 + colorBox3 + colorBox3
                 },
                 {
                     col01: "BOT9",
                     col02: "온라인",
-                    time9: "box4",
-                    time10: "box4",
-                    time11: "box4",
-                    time12: "box4"
+                    time9: colorBox4 + colorBox4 + colorBox4,
+                    time10: colorBox4 + colorBox4 + colorBox4,
+                    time11: colorBox4 + colorBox4 + colorBox4,
+                    time12: colorBox4 + colorBox4 + colorBox4
                 },
                 {
                     col01: "BOT10",
                     col02: "온라인",
-                    time13: "box5",
-                    time14: "box5",
-                    time15: "box5",
-                    time16: "box5"
+                    time13: colorBox2 + colorBox3 + colorBox4,
+                    time14: colorBox5 + colorBox1 + colorBox2,
+                    time15: colorBox3 + colorBox4 + colorBox5,
+                    time16: colorBox5 + colorBox5 + colorBox5
                 },
             ]);
         });

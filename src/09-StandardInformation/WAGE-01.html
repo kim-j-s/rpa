@@ -1,0 +1,149 @@
+@@include('head.html', {
+	"title": "임율"
+})
+
+<script type="text/javascript">
+$(function () {
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "col01",
+			label: "년",
+			sortable: true,
+			align: "center",
+			width: 276
+		}, {
+			key: "col02",
+			label: "직접직(초)",
+			sortable: true,
+			align: "center",
+			width: 276
+		}, {
+			key: "col03",
+			label: "간접직(초)",
+			sortable: true,
+			align: "center",
+			width: 276
+		}, {
+			key: "col04",
+			label: "RPA(초)",
+			sortable: true,
+			align: "center",
+			width: 276
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+            //firstIcon: '|<',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            //lastIcon: '>|',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+	search(0);
+});
+
+
+function search(_pageNo) {
+
+    var list = [
+		{col01: "2020", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2019", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2018", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2017", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2016", col02: "4.5원", col03: "4.5원", col04: "4.5원"},
+		{col01: "2015", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2014", col02: "2.2원", col03: "2.2원", col04: "2.2원"},
+		{col01: "2013", col02: "2원", col03: "2원", col04: "2원"},
+		{col01: "2012", col02: "2원", col03: "2원", col04: "2원"},
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": "active"
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>임율</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">기준정보</a>
+					<a href="#">임율</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<div class="tableWrap single">
+					<div class="tableTop">
+						<div class="rightArea">
+							<a href="#" class="btnTxt white">수정</a>
+							<a href="#" class="btnTxt">등록</a>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+@@include('head.html', {
+	"title": "템플릿 - 추가/수정"
+})
+</head>
+<body>	
+
+<!-- 템플릿 - 추가/수정 pop-up -->
+<div class="popup botDetail windowPop">
+	<div class="popBox type1">
+		<div class="popTop"><h3>템플릿</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기본정보</strong>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>과제코드</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">선택</button>
+									</div>
+								</td>
+								<th>과제명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>템플릿코드</th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>템플릿명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>사용여부</th>
+								<td colspan="3">
+									<select name="" id="" class="selectD">
+										<option value="">사용</option>
+										<option value="">미사용</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td colspan="3">
+									@@include('download.html')
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="reset">취소</button>
+			<button type="button" class="confirm">저장</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //템플릿 - 추가/수정 pop-up -->
+</body>
+</html>

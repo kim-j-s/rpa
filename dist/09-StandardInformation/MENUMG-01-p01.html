@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>메뉴관리 - 등록</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 메뉴관리 - 등록 pop-up -->
+    <div class="popup botDetail windowPop">
+        <div class="popBox type1">
+            <div class="popTop">
+                <h3>메뉴관리 등록</h3>
+            </div>
+            <div class="popCont scrollArea">
+                <div class="tableWrap">
+                    <div class="tableTitleWrap">
+                        <strong class="tableTitle">기본정보</strong>
+                    </div>
+                    <div class="tblSlide">
+                        <table class="table form">
+                            <tbody>
+                                <tr>
+                                    <th>상위메뉴</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt" readonly>
+                                            <button type="button" class="btnSelect">메뉴선택</button>
+                                        </div>
+                                    </td>
+                                    <th>메뉴코드</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt">
+                                            <button type="button" class="btnSelect">중복확인</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>메뉴구분</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">메뉴구분</option>
+                                        </select>
+                                    </td>
+                                    <th>메뉴명</th>
+                                    <td><input type="text" class="inpTxt"></td>
+                                </tr>
+                                <tr>
+                                    <th>데이터구분</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">데이터구분</option>
+                                        </select>
+                                    </td>
+                                    <th>최소데이터표시</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">최소데이터표시</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>최소데이터<br> 수정 가능여부</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">최소데이터 수정 가능여부</option>
+                                        </select>
+                                    </td>
+                                    <th>메뉴표시여부</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">메뉴표시여부</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td colspan="3">
+                                        <input type="text" class="inpTxt">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="reset">취소</button>
+                <button type="button" class="confirm">저장</button>
+            </div>
+            <button type="button" class="btnPopClose">팝업닫기</button>
+        </div>
+    </div>
+    <!-- //메뉴관리 - 등록 pop-up -->
+</body>
+
+</html>

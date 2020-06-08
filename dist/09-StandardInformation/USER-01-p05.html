@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>팝업 - 부서선택</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 부서선택 pop-up -->
+    <div class="popup">
+        <div class="dimm"></div>
+        <div class="popBox type2">
+            <div class="popTop">
+                <h3>부서선택</h3>
+            </div>
+            <div class="popCont">
+                <div class="tableWrap">
+                    <table class="table text">
+                        <colgroup>
+                            <col style="width: 70px">
+                            <col style="width: auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>선택</th>
+                                <th>부서명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="radio01" name="radio"><label for="radio01"></label>
+								</span>
+                                </td>
+                                <td class="taL">사장실</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="radio02" name="radio"><label for="radio02"></label>
+								</span>
+                                </td>
+                                <td class="taL">비서실</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="radio03" name="radio"><label for="radio03"></label>
+								</span>
+                                </td>
+                                <td class="taL">총무팀</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="radio04" name="radio"><label for="radio04"></label>
+								</span>
+                                </td>
+                                <td class="taL"><span class="depthMark"></span> 총무1팀</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="radio05" name="radio"><label for="radio05"></label>
+								</span>
+                                </td>
+                                <td class="taL"><span class="depthMark ty2"></span> 총무2팀</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="reset">취소</button>
+                <button type="button" class="confirm">확인</button>
+            </div>
+            <button type="button" class="btnPopClose">팝업닫기</button>
+        </div>
+    </div>
+    <!-- //부서선택 pop-up -->
+
+</body>
+
+</html>

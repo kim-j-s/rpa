@@ -79,9 +79,12 @@
 .wd90 {width:90px !important;}
 .wd140 {width:140px !important;}
 .wd194 {width:194px !important;}
+.wd700 {width:700px !important;}
 
 .mt0 {margin-top:0 !important;}
+.ml30 {margin-left:30px !important;}
 
+.pr30 {padding-right:30px !important;}
 .pb6 {padding-bottom:6px !important;}
 
 .vm {vertical-align:middle;}
@@ -98,6 +101,30 @@
 .reMark > .text {display:inline-block; padding:1px 4px; font-size:10px; color:#0c79f8; border:1px solid #0c79f8; border-radius:3px;}
 .reMark + .reMark {padding-left:0; margin-left:1px; background:none;}
 .reMark + .reMark:before {content:none;}
+
+.depthMark {display:inline-block; width:8px; height:20px; margin-right:10px; vertical-align:middle; background:url(../images/icon/icon_remark.png) no-repeat right top;}
+.depthMark.ty2 {width:18px;}
+.depthMark.ty3 {width:28px;}
+.depthMark.ty4 {width:38px;}
+.depthMark.ty5 {width:48px;}
+.depthMark.ty6 {width:58px;}
+.depthMark.ty7 {width:68px;}
+.depthMark.ty8 {width:78px;}
+.depthMark.ty9 {width:88px;}
+.depthMark.ty10 {width:98px;}
+.depthMark.ty11 {width:108px;}
+.depthMark.ty12 {width:118px;}
+.depthMark.ty13 {width:128px;}
+.depthMark.ty14 {width:138px;}
+.depthMark.ty15 {width:148px;}
+.depthMark.ty16 {width:158px;}
+.depthMark.ty17 {width:168px;}
+.depthMark.ty18 {width:178px;}
+.depthMark.ty19 {width:188px;}
+.depthMark.ty20 {width:198px;}
+.depthMark.ty21 {width:208px;}
+.depthMark.ty22 {width:218px;}
+
 
 .colorBox {display:inline-block; width:12px; height:45px;}
 .colorBox.ty1 {background:#f2f2f2;}
@@ -147,6 +174,7 @@
 	.tableWrap {transition: .5s; margin-top:57px;}
 	.tableWrap.on {border-bottom:1px solid #e7eaef;}
 	.tableWrap + .tableWrap{margin-top: 34px;}
+	.tableWrap.single {margin-top:0;}
 	.popup .popCont .tableWrap {margin-top:0;}
 	.popup .popCont .tableWrap + .tableWrap {margin-top:34px;}
 
@@ -168,11 +196,11 @@
 	table.table th{background-color: #f6f9fd; /* transform: rotate(0.05deg); */}
 	table.table thead th{font-weight: 500}
 	table.table tbody th{text-align:left;}
-	table.table tbody td{height:46px; padding: 7px 8px; vertical-align:middle;}
+	table.table tbody td{height:46px; padding: 7px 8px; vertical-align:middle; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
 	table.table .taL{text-align: left;}
 	table.table td .link{display: inline-block;}
 	table.table td .link:hover{color: #0c79f8}
-	table.table td > span{display: inline-block; /* padding: 6px 0; */}
+	table.table td > span{display: inline-block;}
 
 	table.text thead th{padding: 13px 0;}
 	table.text tbody tr{border-top: 1px solid #e7eaef}
@@ -188,9 +216,14 @@
 	table.form .inpWrap .inpTxt{flex: auto; width: 100%;}
 	table.form .inpWrap .inpTxt + span {margin-left: 8px;}
 	table.form .inpWrap span + .inpTxt + span {margin-left: 16px;}
+	table.form .inpWrap span + .inpTxt + .middleMark {margin-left: 8px;}
 	table.form .inpWrap .inpTxt + .selectD{margin-left: 8px;}
+	table.form .inpWrap .selectD{flex: auto; width: 100%;}
+	table.form .selectD + .btnSelect{flex: none; margin-left: 8px;}
+	/*
 	table.form .btnSelect{height: 32px; padding: 0 10px; background: #e7eaef; line-height: 30px; border: 1px solid #b7babd; border-radius: 3px;}
 	table.form .btnSelect.full {width:100%;}
+	*/
 	table.form .inpTxt + .btnSelect{flex: none; margin-left: 8px;}
 	table.form .inpWrap .selectD + span{margin: 0 6px;}
 	.popCont table.form {width:100%;}
@@ -212,8 +245,8 @@
 	.btn.UploadListAdd {display:inline-block; width:32px; height:32px; background-image:url(../images/icon/icon_add02.png); vertical-align:middle; background-repeat:no-repeat; overflow:hidden; text-indent:-999px; border:1px solid #0c79f8; border-radius:3px;}
 
 	.btnTxt{display: inline-block; height: 32px; padding: 0 16px; background-color: #0c79f8; font-size: 14px; color: #fff; line-height: 32px; border-radius: 3px; transition: all .1s}
-	.btnTxt.white{background-color: #fff; color: #666; line-height: 30px; border: 1px solid #c9cdd1}
-	.btnTxt.white:hover{color: #0c79f8; border: 1px solid #0c79f8}
+	.btnTxt.white{background-color: #fff; color: #666; line-height: 30px; border: 1px solid #0c79f8}
+	.btnTxt.red{background-color: #fff; color: #fe0048; line-height: 30px; border: 1px solid #fe0048}
 
 	.btnGroup{margin-top: 24px; font-size: 0; text-align: center;}
 	.btnGroup.ar {text-align:right;}
@@ -227,6 +260,14 @@
 
 	.addRemoveWrap {display:inline-block; font-size:0;}
 	.addRemoveWrap > button + button {margin-left:5px;}
+
+	.btnSelect{height: 32px; padding: 0 10px; background: #e7eaef; line-height: 30px; border: 1px solid #b7babd; border-radius: 3px;}
+	.btnSelect.full {width:100%;}
+
+	.tblSortBtn {margin-top:10px; font-size:0; text-align:right;}
+	.tblSortBtn .btn + .btn {margin-left:10px;}
+	.btn.sortUp {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_up.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
+	.btn.sortDown {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_down.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
 
 /* INPUT */
 	input[type="checkbox"],	input[type="radio"]{border: 0; border-radius: 0; background: 0; opacity: 0; cursor: pointer;}

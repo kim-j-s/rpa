@@ -1,0 +1,197 @@
+@@include('head.html', {
+	"title": "공통코드"
+})
+
+<script type="text/javascript">
+$(function () {
+
+	var ChangeBtn = '<button type="button" class="btnSelect ml30">순서 변경</button>';
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "chk",
+			label: "선택",
+			align: "center",
+			width: 80,
+			editor: {
+				type: "checkbox", 
+				config: 
+				{
+					height: 18, 
+					trueValue: "Y", 
+					falseValue: "N"
+				}
+			}
+		}, {
+			key: "no",
+			label: "순서",
+			sortable: true,
+			align: "center",
+			width: 80
+		}, {
+			key: "col01",
+			label: "공통그룹코드",
+			sortable: true,
+			align: "left",
+			width: 322
+		}, {
+			key: "col02",
+			label: "공통그룹명",
+			sortable: true,
+			align: "left",
+			width: 322
+		}, {
+			key: "col03",
+			label: "정렬순서",
+			sortable: true,
+			align: "center",
+			width: 200,
+			formatter: function () {
+				return this.value + ChangeBtn;
+			}
+		}, {
+			key: "col04",
+			label: "활성여부",
+			sortable: true,
+			align: "center",
+			width: 100,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "active" :
+						returnValue = '<span class="bold color3">활성</span>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+            //firstIcon: '|<',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            //lastIcon: '>|',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+	search(0);
+});
+
+
+function search(_pageNo) {
+
+    var list = [
+		{no: (_pageNo*10)+1, col01: "AAAAAA", col02: "일반사용자", col03: "1", col04: "active"},
+		{no: (_pageNo*10)+2, col01: "BBBBBBB", col02: "중간관리자", col03: "1", col04: "active"},
+		{no: (_pageNo*10)+3, col01: "AAAAAA", col02: "일반사용자", col03: "2", col04: "비활성"},
+		{no: (_pageNo*10)+4, col01: "BBBBBBB", col02: "중간관리자", col03: "2", col04: "active"},
+		{no: (_pageNo*10)+5, col01: "AAAAAA", col02: "일반사용자", col03: "2", col04: "active"},
+		{no: (_pageNo*10)+6, col01: "BBBBBBB", col02: "중간관리자", col03: "3", col04: "비활성"},
+		{no: (_pageNo*10)+7, col01: "AAAAAA", col02: "일반사용자", col03: "3", col04: "active"},
+		{no: (_pageNo*10)+8, col01: "BBBBBBB", col02: "중간관리자", col03: "3", col04: "active"},
+		{no: (_pageNo*10)+9, col01: "AAAAAA", col02: "일반사용자", col03: "4", col04: "비활성"},
+		{no: (_pageNo*10)+10, col01: "BBBBBBB", col02: "중간관리자", col03: "4", col04: "active"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": "active"
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>공통코드</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">기준정보</a>
+					<a href="#">공통코드</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<div class="setBox">
+					<div class="searchWrap line">
+						<select name="" id="" class="selectD">
+							<option value="">사용자 ID</option>
+						</select>
+						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
+						<button type="button" class="btn search">검색</button>
+					</div>
+				</div>
+				<div class="tableWrap">
+					<div class="tableTop">
+						<div class="rightArea">
+							<a href="#" class="btnTxt red">삭제</a>
+							<a href="#" class="btnTxt white">수정</a>
+							<a href="#" class="btnTxt">등록</a>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>
