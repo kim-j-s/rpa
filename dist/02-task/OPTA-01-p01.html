@@ -60,29 +60,41 @@
                                             </select>
                                         </div>
                                     </td>
+                                    <th>RPA구분 <span class="essential">필수입력</span></th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">구분</option>
+                                        </select>
+                                    </td>
+                                    <th>프로세스명</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt" readonly>
+                                            <button type="button" class="btnSelect">검색</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>정기실행여부</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">정기실행여부</option>
+                                        </select>
+                                    </td>
                                     <th>일인당 처리 건수</th>
                                     <td>
                                         <div class="inpWrap">
                                             <input type="text" class="inpTxt"> <span>건</span>
                                         </div>
                                     </td>
-                                    <th>처리시간</th>
-                                    <td>
-                                        <div class="inpWrap">
-                                            <input type="text" class="inpTxt"> <span>분</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th>요청자 <span class="essential">필수입력</span></th>
                                     <td><input type="text" class="inpTxt"></td>
-                                    <th>요청자 사번 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt"></td>
-                                    <td colspan="2">&nbsp;</td>
                                 </tr>
                                 <tr>
+                                    <th>요청자 사번 <span class="essential">필수입력</span></th>
+                                    <td><input type="text" class="inpTxt"></td>
                                     <th>연관시스템</th>
-                                    <td colspan="5">
+                                    <td colspan="3">
                                         <span class="inpD check">
 										<label><input type="checkbox">SAP</label>
 									</span>
@@ -229,153 +241,6 @@
                 </div>
                 <!--// 기대 효과 -->
 
-                <!-- 속성 -->
-                <div class="tableWrap">
-                    <div class="tableTitleWrap">
-                        <strong class="tableTitle">속성</strong>
-                        <button type="button" class="slideBtn">접기/펼치기</button>
-                    </div>
-                    <div class="tblSlide">
-
-                        <div class="innerContWrap">
-                            <div class="innerCont">
-                                <div class="innerContHeader">
-                                    <strong class="innerContTit">수신자</strong>
-                                </div>
-                                <table class="table text">
-                                    <colgroup>
-                                        <col style="width: auto">
-                                        <col style="width: 25%">
-                                        <col style="width: 25%">
-                                        <col style="width: 25%">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>수신자그룹코드</th>
-                                            <th>수신자그룹명</th>
-                                            <th>속성코드</th>
-                                            <th>속성값</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>수신자그룹1</td>
-                                            <td>AAA-1-1</td>
-                                            <td>a@a.com;b@a.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>수신자그룹2</td>
-                                            <td>AAA-1-2</td>
-                                            <td>c@a.com;d@a.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="btnGroup ar">
-                                    <button type="button" class="modify">수정</button>
-                                </div>
-                            </div>
-
-                            <div class="innerCont">
-                                <div class="innerContHeader">
-                                    <strong class="innerContTit">템플릿</strong>
-                                </div>
-                                <table class="table text">
-                                    <colgroup>
-                                        <col style="width: auto">
-                                        <col style="width: auto">
-                                        <col style="width: auto">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>템플릿코드</th>
-                                            <th>템플릿명</th>
-                                            <th>사용여부</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>템플릿명1</td>
-                                            <td>사용</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>템플릿명2</td>
-                                            <td>미사용</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="btnGroup ar">
-                                    <button type="button" class="modify">수정</button>
-                                </div>
-                            </div>
-
-                            <div class="innerCont">
-                                <div class="innerContHeader">
-                                    <strong class="innerContTit">속성</strong>
-                                </div>
-                                <table class="table text">
-                                    <colgroup>
-                                        <col style="width: auto">
-                                        <col style="width: 25%">
-                                        <col style="width: 25%">
-                                        <col style="width: 25%">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>속성그룹코드</th>
-                                            <th>속성그룹명</th>
-                                            <th>속성코드</th>
-                                            <th>속성값</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>수신자그룹1</td>
-                                            <td>AAA-1-1</td>
-                                            <td>a@a.com;b@a.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td>AAA-1</td>
-                                            <td>수신자그룹2</td>
-                                            <td>AAA-1-2</td>
-                                            <td>c@a.com;d@a.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="btnGroup ar">
-                                    <button type="button" class="modify">수정</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--// 속성 -->
-
-                <!-- 상태 -->
-                <div class="tableWrap">
-                    <div class="tableTitleWrap">
-                        <strong class="tableTitle">상태</strong>
-                        <button type="button" class="slideBtn">접기/펼치기</button>
-                    </div>
-                    <div class="tblSlide">
-                        <table class="table form">
-                            <tbody>
-                                <tr>
-                                    <th>검토내용</th>
-                                    <td>
-                                        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!--// 상태 -->
-
                 <!-- 실행정보 -->
                 <div class="tableWrap">
                     <div class="tableTitleWrap">
@@ -425,8 +290,22 @@
                                             <input type="text" class="inpTxt"> <span>(M/D)</span>
                                         </div>
                                     </td>
+                                    <th>투입비</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt"> <span>원</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>개발담당자</th>
-                                    <td><input type="text" class="inpTxt"></td>
+                                    <td colspan="3">
+                                        <div class="searchWrap">
+                                            <input type="text" class="inpTxt" readonly>
+                                            <input type="text" placeholder="담당자명" class="inpTxt">
+                                            <button type="button" class="btn search">검색</button>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>관련파일</th>
@@ -459,7 +338,7 @@
             </div>
             <div class="btnGroup">
                 <button type="button" class="reset">취소</button>
-                <button type="button" class="confirm">요청</button>
+                <button type="button" class="confirm">저장</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>

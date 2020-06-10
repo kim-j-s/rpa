@@ -1,5 +1,5 @@
 @@include('head.html', {
-	"title": "과제요청 - 등록"
+	"title": "RPA 수행현황 - 등록"
 })
 
 <script type="text/javascript">
@@ -21,7 +21,7 @@ $(function () {
 		columns: [
 		{
 			key: "col01",
-			label: "결과",
+			label: '<span class="dpib vm">결과</span>',
 			sortable: true,
 			align: "center",
 			width: 100,
@@ -48,25 +48,25 @@ $(function () {
 			}
 		}, {
 			key: "col02",
-			label: "과제명",
+			label: '<span class="dpib vm">과제명</span>',
 			sortable: true,
 			align: "left",
 			width: 276
 		}, {
 			key: "col03",
-			label: "프로세스명",
+			label: '<span class="dpib vm">프로세스명</span>',
 			sortable: true,
 			align: "left",
 			width: 275
 		}, {
 			key: "col04",
-			label: "시작시간",
+			label: '<span class="dpib vm">시작시간</span>',
 			sortable: true,
 			align: "center",
 			width: 170
 		}, {
 			key: "col05",
-			label: "종료시간",
+			label: '<span class="dpib vm">종료시간</span>',
 			sortable: true,
 			align: "center",
 			width: 170
@@ -94,10 +94,10 @@ $(function () {
 </head>
 <body>	
 
-<!-- 공지사항 등록/수정 pop-up -->
+<!-- RPA 수행현황 등록 pop-up -->
 <div class="popup botDetail windowPop">
 	<div class="popBox type1">
-		<div class="popTop"><h3>과제요청</h3></div>
+		<div class="popTop"><h3>RPA 수행현황</h3></div>
 		<div class="popCont scrollArea">
 			<div class="tableWrap">
 				<div class="tableTitleWrap">
@@ -121,6 +121,6 @@ $(function () {
 		<button type="button" class="btnPopClose">팝업닫기</button>
 	</div>
 </div>
-<!-- //공지사항 등록/수정 pop-up -->
+<!-- //RPA 수행현황 등록 pop-up -->
 </body>
 </html>

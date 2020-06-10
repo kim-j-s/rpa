@@ -88,6 +88,14 @@
 .pb6 {padding-bottom:6px !important;}
 
 .vm {vertical-align:middle;}
+.vt {vertical-align:top;}
+
+.taL {text-align:left !important;}
+.taC {text-align:center !important;}
+.taR {text-align:right !important;}
+
+.dpb {display:block;}
+.dpib {display:inline-block;}
 
 .underline {text-decoration:underline;}
 .flexAuto {flex:auto;}
@@ -126,7 +134,7 @@
 .depthMark.ty22 {width:218px;}
 
 
-.colorBox {display:inline-block; width:12px; height:45px;}
+.colorBox {display:inline-block; width:18px; height:45px;}
 .colorBox.ty1 {background:#f2f2f2;}
 .colorBox.ty2 {background:#ffff00;}
 .colorBox.ty3 {background:#ff0000;}
@@ -196,8 +204,7 @@
 	table.table th{background-color: #f6f9fd; /* transform: rotate(0.05deg); */}
 	table.table thead th{font-weight: 500}
 	table.table tbody th{text-align:left;}
-	table.table tbody td{height:46px; padding: 7px 8px; vertical-align:middle; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
-	table.table .taL{text-align: left;}
+	table.table tbody td{height:46px; padding: 7px 8px; vertical-align:middle; /* text-overflow:ellipsis; white-space: nowrap; overflow: hidden; */}
 	table.table td .link{display: inline-block;}
 	table.table td .link:hover{color: #0c79f8}
 	table.table td > span{display: inline-block;}
@@ -451,6 +458,8 @@ table + .innerContHeader {margin-top:20px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort]:before {opacity:1; border:none; width:12px; height:7px; background:url(../images/icon/arrow_sort_up.png) no-repeat;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort]:after {opacity:1; border:none; width:12px; height:7px; background:url(../images/icon/arrow_sort_down.png) no-repeat;}
 */
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] {vertical-align:middle;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] + .dpib {margin-left:3px;}
 
 /* ax5ui Grid tr background */
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-0 {background:#fff;}

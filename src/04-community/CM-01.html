@@ -3,9 +3,10 @@
 })
 
 <script type="text/javascript">
-$(function () {
 
-	var re = '<span class="reMark"><span class="text">Re</span></span>';
+var re = '<span class="reMark"><span class="text">Re</span></span>';
+
+$(function () {
 
 	/* 그리드 객체 생성 */
 	firstGrid = new ax5.ui.grid();
@@ -23,27 +24,18 @@ $(function () {
 		columns: [
 		{
 			key: "no",
-			label: "순서",
+			label: '<span class="dpib vm">순서</span>',
 			align: "center",
 			width: 100
 		}, {
 			key: "col01",
-			label: "제목",
+			label: '<span class="dpib vm">제목</span>',
 			sortable: true,
 			align: "left",
 			width: 737,
 			formatter: function () {
 				var returnValue = "";
 				switch (this.value) {
-					case "reply01" :
-						returnValue = re + '제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
-						break;
-					case "reply02" :
-						returnValue = re + re + '제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
-						break;
-					case "reply03" :
-						returnValue = re + re + re +'제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인 제목 말줄임 처리 확인';
-						break;
 					default:
 						returnValue = this.value;
 						break;
@@ -52,13 +44,13 @@ $(function () {
 			}
 		}, {
 			key: "col02",
-			label: "작성자",
+			label: '<span class="dpib vm">작성자</span>',
 			sortable: true,
 			align: "center",
 			width: 110
 		}, {
 			key: "col03",
-			label: "작성일",
+			label: '<span class="dpib vm">작성일</span>',
 			sortable: true,
 			align: "center",
 			width: 157
@@ -85,11 +77,11 @@ $(function () {
 function search(_pageNo) {
 
 	var list = [
-		{no: (_pageNo*10)+1, col01: "reply01", col02: "김관리", col03: "2020-05-11"},
-		{no: (_pageNo*10)+2, col01: "reply02", col02: "김관리", col03: "2020-05-11"},
-		{no: (_pageNo*10)+3, col01: "reply03", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+1, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+2, col01: re + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+3, col01: re + re + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
 		{no: (_pageNo*10)+4, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
-		{no: (_pageNo*10)+5, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
+		{no: (_pageNo*10)+5, col01: re + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
 		{no: (_pageNo*10)+6, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
 		{no: (_pageNo*10)+7, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},
 		{no: (_pageNo*10)+8, col01: "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11"},

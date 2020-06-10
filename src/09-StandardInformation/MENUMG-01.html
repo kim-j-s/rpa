@@ -1,0 +1,248 @@
+@@include('head.html', {
+	"title": "메뉴 관리"
+})
+
+<script type="text/javascript">
+
+// 간격
+var Depth = '<span class="depthMark"></span>';
+var Depth2 = '<span class="depthMark ty2"></span>';
+var Depth3 = '<span class="depthMark ty3"></span>';
+var Depth4 = '<span class="depthMark ty4"></span>';
+var Depth5 = '<span class="depthMark ty5"></span>';
+var Depth6 = '<span class="depthMark ty6"></span>';
+var Depth7 = '<span class="depthMark ty7"></span>';
+var Depth8 = '<span class="depthMark ty8"></span>';
+var Depth9 = '<span class="depthMark ty9"></span>';
+var Depth10 = '<span class="depthMark ty10"></span>';
+var Depth11 = '<span class="depthMark ty11"></span>';
+var Depth12 = '<span class="depthMark ty12"></span>';
+var Depth13 = '<span class="depthMark ty13"></span>';
+var Depth14 = '<span class="depthMark ty14"></span>';
+var Depth15 = '<span class="depthMark ty15"></span>';
+var Depth16 = '<span class="depthMark ty16"></span>';
+var Depth17 = '<span class="depthMark ty17"></span>';
+var Depth18 = '<span class="depthMark ty18"></span>';
+var Depth19 = '<span class="depthMark ty19"></span>';
+var Depth20 = '<span class="depthMark ty20"></span>';
+var Depth21 = '<span class="depthMark ty21"></span>';
+var Depth22 = '<span class="depthMark ty22"></span>';
+
+$(function () {
+
+	var ChangeBtn = '<button type="button" class="btnSelect ml30">순서 변경</button>';
+
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "chk",
+			label: '<span class="dpib vm">선택</span>',
+			align: "center",
+			width: 80,
+			editor: {
+				type: "checkbox", 
+				config: 
+				{
+					height: 18, 
+					trueValue: "Y", 
+					falseValue: "N"
+				}
+			}
+		}, {
+			key: "no",
+			label: '<span class="dpib vm">순서</span>',
+			sortable: true,
+			align: "center",
+			width: 80
+		}, {
+			key: "col01",
+			label: '<span class="dpib vm">메뉴명</span>',
+			sortable: true,
+			align: "left",
+			width: 224,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}, {
+			key: "col02",
+			label: '<span class="dpib vm">메뉴구분</span>',
+			sortable: true,
+			align: "center",
+			width: 80
+		}, {
+			key: "col03",
+			label: '<span class="dpib vm">메뉴테이터<br> 구분</span>',
+			sortable: true,
+			align: "center",
+			width: 100
+		}, {
+			key: "col04",
+			label: '<span class="dpib vm">최소데이터<br> 표시</span>',
+			sortable: true,
+			align: "center",
+			width: 100
+		}, {
+			key: "col05",
+			label: '<span class="dpib vm">최소데이터<br> 수정가능여부</span>',
+			sortable: true,
+			align: "center",
+			width: 100
+		}, {
+			key: "col06",
+			label: '<span class="dpib vm">메뉴표시<br> 여부</span>',
+			sortable: true,
+			align: "center",
+			width: 100
+		}, {
+			key: "col07",
+			label: '<span class="dpib vm">정렬순서</span>',
+			sortable: true,
+			align: "center",
+			width: 160,
+			formatter: function () {
+				return this.value + ChangeBtn;
+			}
+		}, {
+			key: "col08",
+			label: '<span class="dpib vm">활성여부</span>',
+			sortable: true,
+			align: "center",
+			width: 80,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "active" :
+						returnValue = '<span class="bold color3">활성</span>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+            //firstIcon: '|<',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            //lastIcon: '>|',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+
+	search(0);
+});
+
+
+function search(_pageNo) {
+
+    var list = [
+		{no: (_pageNo*10)+1, col01: "사장실", col02: "폴더", col07: "1", col08: "active"},
+		{no: (_pageNo*10)+2, col01: Depth + "비서실", col02: "메뉴", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
+		{no: (_pageNo*10)+3, col01: Depth2 + "비서실", col07: "3", col08: "비활성"},
+		{no: (_pageNo*10)+4, col01: "사장실2", col02: "폴더", col07: "3", col08: "active"},
+		{no: (_pageNo*10)+5, col01: Depth + "비서실1", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "비활성"},
+		{no: (_pageNo*10)+6, col01: Depth2 + "비서실2", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
+		{no: (_pageNo*10)+7, col01: Depth3 + "비서실3", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
+		{no: (_pageNo*10)+8, col01: Depth4 + "비서실4", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "비활성"},
+		{no: (_pageNo*10)+9, col01: "사장실3", col07: "6", col08: "비활성"},
+		{no: (_pageNo*10)+10, col01: Depth + "비서실1", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": "active"
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>메뉴 관리</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">기준정보</a>
+					<a href="#">메뉴 관리</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<div class="tableWrap single">
+					<div class="tableTop">
+						<div class="rightArea">
+							<a href="#" class="btnTxt red">삭제</a>
+							<a href="#" class="btnTxt white">수정</a>
+							<a href="#" class="btnTxt">추가</a>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+@@include('head.html', {
+	"title": "Q&amp;A - 답변 작성/수정"
+})
+<script src="../js/ckeditor.js"></script>
+</head>
+<body>	
+
+<!-- Q&A 답변 작성/수정 pop-up -->
+<div class="popup botDetail windowPop">
+	<div class="popBox type1">
+		<div class="popTop"><h3>Q&amp;A</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">질문</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>벤더선택</th>
+								<td>AAAA</td>
+							</tr>
+							<tr>
+								<th>제목</th>
+								<td>
+									제목이 노출됩니다.
+								</td>
+							</tr>
+							<tr>
+								<th>작성자</th>
+								<td>윤예진</td>
+							</tr>
+							<tr>
+								<th>등록시간</th>
+								<td>YYYY-MM-DD hh:mm:ss</td>
+							</tr>
+							<tr>
+								<th>내용</th>
+								<td>
+									내용이 노출됩니다.<br> 내용에는 에디터에서 작성한 이미지, 동영상, 표 등이 노출됩니다.
+								</td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td>
+									@@include('downloadlist.html')
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">답변</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>벤더선택</th>
+								<td>
+									<select name="" id="" class="selectD full">
+										<option value="">벤더</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>제목</th>
+								<td>
+									<input type="text" class="inpTxt">
+								</td>
+							</tr>
+							<tr>
+								<th>내용</th>
+								<td>
+									@@include('ckeditor.html')
+								</td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td>
+									@@include('download.html')
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="reset">취소</button>
+			<button type="button" class="confirm">저장</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //Q&A 답변 작성/수정 pop-up -->
+</body>
+</html>
