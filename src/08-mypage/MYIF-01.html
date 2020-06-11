@@ -1,0 +1,110 @@
+@@include('head.html', {
+	"title": "나의정보"
+})
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>나의정보</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">나의정보</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<table class="table form">
+					<colgroup>
+						<col style="width: 180px">
+						<col style="width: auto">
+						<col style="width: 180px">
+						<col style="width: auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th class="taC">사원번호</th>
+							<td>aaa</td>
+							<th class="taC">역활</th>
+							<td>관리자</td>
+						</tr>
+						<tr>
+							<th class="taC">성명</th>
+							<td>이미자</td>
+							<th class="taC">부서</th>
+							<td>비서실</td>
+						</tr>
+						<tr>
+							<th class="taC">직통번호</th>
+							<td>
+								<div class="inpWrap ty2">
+									<input type="text" class="inpTxt">
+									<span class="middleMark">-</span>
+									<input type="text" class="inpTxt">
+									<span class="middleMark">-</span>
+									<input type="text" class="inpTxt">
+								</div>
+							</td>
+							<th class="taC">휴대폰</th>
+							<td>
+								<div class="inpWrap ty2">
+									<input type="text" class="inpTxt">
+									<span class="middleMark">-</span>
+									<input type="text" class="inpTxt">
+									<span class="middleMark">-</span>
+									<input type="text" class="inpTxt">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="taC">비밀번호</th>
+							<td colspan="3">
+								<button type="button" class="btnSelect">비밀번호 변경</button>
+							</td>
+						</tr>
+						<tr>
+							<th class="taC">이메일</th>
+							<td colspan="3">
+								<div class="inpWrap ty1">
+									<input type="text" class="inpTxt">
+									<span class="middleMark">@</span>
+									<input type="text" class="inpTxt">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btnGroup">
+					<button type="button" class="reset">취소</button>
+					<button type="button" class="confirm">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>

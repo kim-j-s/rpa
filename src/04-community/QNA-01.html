@@ -1,0 +1,186 @@
+@@include('head.html', {
+	"title": "Q&amp;A"
+})
+
+<script type="text/javascript">
+
+var answerMark1 = '<span class="answerMark ty1">답변대기</span>';
+var answerMark2 = '<span class="answerMark ty2">답변완료</span>';
+
+
+$(function () {
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		header: {
+			align: "center",
+			columnHeight: 46
+		},
+		body: {
+			align: "center",
+			columnHeight: 46
+		},
+		columns: [
+		{
+			key: "no",
+			label: '<span class="dpib vm">순서</span>',
+			align: "center",
+			width: 100
+		}, {
+			key: "col01",
+			label: '<span class="dpib vm">제목</span>',
+			sortable: true,
+			align: "left",
+			width: 554,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}, {
+			key: "col02",
+			label: '<span class="dpib vm">작성자</span>',
+			sortable: true,
+			align: "center",
+			width: 110
+		}, {
+			key: "col03",
+			label: '<span class="dpib vm">작성일</span>',
+			sortable: true,
+			align: "center",
+			width: 120
+		}, {
+			key: "col04",
+			label: '<span class="dpib vm">답변여부</span>',
+			sortable: true,
+			align: "center",
+			width: 100
+		}, {
+			key: "col05",
+			label: '<span class="dpib vm">답변일</span>',
+			sortable: true,
+			align: "center",
+			width: 120
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 40,
+            display: true,
+            //firstIcon: '|<',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            //lastIcon: '>|',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+	search(0);
+});
+
+
+function search(_pageNo) {
+
+	var list = [
+		{no: (_pageNo*10)+1, col01: answerMark1 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-12"},
+		{no: (_pageNo*10)+2, col01: answerMark1 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-13"},
+		{no: (_pageNo*10)+3, col01: answerMark1 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-14"},
+		{no: (_pageNo*10)+4, col01: answerMark1 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-15"},
+		{no: (_pageNo*10)+5, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-15"},
+		{no: (_pageNo*10)+6, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-15"},
+		{no: (_pageNo*10)+7, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-16"},
+		{no: (_pageNo*10)+8, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-17"},
+		{no: (_pageNo*10)+9, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-18"},
+		{no: (_pageNo*10)+10, col01: answerMark2 + "법인카드 매출전표 정산", col02: "김관리", col03: "2020-05-11", col05: "2020-05-19"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+
+}
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "active",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>Q&amp;A</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">커뮤니티</a>
+					<a href="#">Q&amp;A</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<div class="setBox">
+					<div class="searchWrap line">
+						<select name="" id="" class="selectD">
+							<option value="">제목</option>
+							<option value="">작성자</option>
+						</select>
+						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
+						<button type="button" class="btn search">검색</button>
+					</div>
+				</div>
+				<div class="tableWrap">
+					<div class="tableTop">
+						<span class="totalNum">총 <em>100</em>건</span>
+						<div class="rightArea">
+							<a href="#" class="btnTxt">등록</a>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>

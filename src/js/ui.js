@@ -119,15 +119,17 @@ function inpfile(){
 $(function(){
 	openPop();
 	closePop();
-	naviShow();
+	//naviShow();
 	inputDesign();
 	$('.inpD').find('input').on('change',function(){
 		inputDesign();
 	});
-	if($('.datePicker').length > 0){calendarSet()}
+	if($('.datePicker').length > 0)
+	{
+		calendarSet();
+	}
 	popTableSlide();
 	inpfile();
-
 });
 
 
@@ -176,12 +178,15 @@ function ckEditor(){
 					path: path,
 					fn_progress: function (e) {
 						e.lengthComputable && (loader.uploadTotal = e.total, loader.uploaded = e.loaded);
+						console.log('s1');
 					},
 					fn_success: function (e) {
 						resolve(fn_resolve && fn_resolve(e));
+						console.log('s2');
 					},
 					fn_error: function (e) {
-						reject("upload fail =>" + `${loader.file.name}.`);
+						reject("upload fail =>" + $(loader.file.name));
+						console.log('s3');
 					},
 					fn_abort: reject
 				});

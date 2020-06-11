@@ -22,8 +22,13 @@
 							<tr>
 								<th>과제명 <span class="essential">필수입력</span></th>
 								<td><input type="text" class="inpTxt"></td>
-								<th>과제코드</th>
-								<td><input type="text" class="inpTxt"></td>
+								<th>과제코드 <span class="essential">필수입력</span></th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="AA-101">
+										<button type="button" class="btnSelect load">이전 정보 가져오기</button>
+									</div>
+								</td>
 								<th>BPM일련번호</th>
 								<td><input type="text" class="inpTxt"></td>
 							</tr>
@@ -40,16 +45,16 @@
 										</select>
 									</div>
 								</td>
+								<th>정기실행여부</th>
+								<td>
+									<select name="" id="" class="selectD full">
+										<option value="">정기실행여부</option>
+									</select>
+								</td>
 								<th>일인당 처리 건수</th>
 								<td>
 									<div class="inpWrap">
 										<input type="text" class="inpTxt"> <span>건</span>
-									</div>
-								</td>
-								<th>처리시간</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt"> <span>분</span>
 									</div>
 								</td>
 							</tr>

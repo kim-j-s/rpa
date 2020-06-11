@@ -30,10 +30,39 @@ b{font-weight:700}
 .taC{text-align:center}
 .positionR{position:absolute;top:0;right:0}
 .floatR{float:right}
-/*placeholder*/
-::-webkit-input-placeholder{color:#ccc}
-::-moz-placeholder{color:#ccc}
-:-ms-input-placeholder{color:#ccc(184,184,184,1)}
-:-moz-placeholder{color:#ccc}
+
+/* placeholder */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+  text-align:left;
+  letter-spacing:-0.5px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+  text-align:left;
+  letter-spacing:-0.5px;
+}
+::-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+  text-align:left;
+  letter-spacing:-0.5px;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(184,184,184,1) !important;
+  text-align:left !important;
+  letter-spacing:-0.5px;
+}
+textarea:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(184,184,184,1) !important;
+  text-align:left !important;
+  letter-spacing:-0.5px;
+}
+::-ms-input-placeholder { /* IE 10+ */
+  color: rgba(184,184,184,1);
+  text-align:left !important;
+  letter-spacing:-0.5px;
+}
+
+
 /*CrossBrowsing*/
 input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f6f8f9 inset !important}
