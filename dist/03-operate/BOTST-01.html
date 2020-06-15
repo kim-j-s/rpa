@@ -33,6 +33,15 @@
         $(function() {
             update();
             setInterval(update, 1000);
+
+
+            openWindow()
+
+            function openWindow() {
+                $('.botEventState').click(function() {
+                    var win = window.open("BOTST-01-p01.html", "PopupWin", "width=1080,height=700");
+                });
+            }
         });
     </script>
 
