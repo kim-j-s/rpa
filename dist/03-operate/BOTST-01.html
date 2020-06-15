@@ -16,465 +16,8 @@
 
 
     <script type="text/javascript">
-        // 색상표
-        var colorBox1 = '<span class="colorBox"></span>';
-        var colorBox2 = '<span class="colorBox ty1"></span>';
-        var colorBox3 = '<span class="colorBox ty2"></span>';
-        var colorBox4 = '<span class="colorBox ty3"></span>';
-        var colorBox5 = '<span class="colorBox ty4"></span>';
-
         $(function() {
 
-            /* 그리드 객체 생성 */
-            firstGrid = new ax5.ui.grid();
-
-            firstGrid.setConfig({
-                target: $('[data-ax5grid="first-grid"]'),
-                header: {
-                    align: "center",
-                    columnHeight: 46
-                },
-                body: {
-                    align: "center",
-                    columnHeight: 46
-                },
-                columns: [{
-                    key: "col01",
-                    label: '<span class="dpib vm">BOT명</span>',
-                    sortable: true,
-                    align: "center",
-                    width: 120
-                }, {
-                    key: "col02",
-                    label: '<span class="dpib vm">연결상태</span>',
-                    sortable: true,
-                    align: "center",
-                    width: 120
-                }, {
-                    key: undefined,
-                    label: "시간",
-                    columns: [{
-                        key: "time1",
-                        label: "1",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time2",
-                        label: "2",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time3",
-                        label: "3",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time4",
-                        label: "4",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time5",
-                        label: "5",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time6",
-                        label: "6",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time7",
-                        label: "7",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time8",
-                        label: "8",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time9",
-                        label: "9",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time10",
-                        label: "10",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time11",
-                        label: "11",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time12",
-                        label: "12",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time13",
-                        label: "13",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time14",
-                        label: "14",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time15",
-                        label: "15",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time16",
-                        label: "16",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time17",
-                        label: "17",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time18",
-                        label: "18",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time19",
-                        label: "19",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time20",
-                        label: "20",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time21",
-                        label: "21",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time22",
-                        label: "22",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time23",
-                        label: "23",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }, {
-                        key: "time24",
-                        label: "24",
-                        align: "left",
-                        width: 36,
-                        formatter: function() {
-                            var returnValue = "";
-                            switch (this.value) {
-                                default:
-                                    returnValue = this.value;
-                                    break;
-                            } // end switch
-                            return returnValue;
-                        }
-                    }]
-                }, ],
-            });
-
-
-            firstGrid.setData([{
-                    col01: "BOT1",
-                    col02: "온라인",
-                    time1: colorBox2 + colorBox2,
-                    time2: colorBox2 + colorBox2,
-                    time3: colorBox2 + colorBox2,
-                    time4: colorBox2 + colorBox2
-                },
-                {
-                    col01: "BOT2",
-                    col02: "온라인",
-                    time5: colorBox3 + colorBox3,
-                    time6: colorBox3 + colorBox3,
-                    time7: colorBox3 + colorBox3,
-                    time8: colorBox3 + colorBox3
-                },
-                {
-                    col01: "BOT3",
-                    col02: "온라인",
-                    time9: colorBox4 + colorBox4,
-                    time10: colorBox4 + colorBox4,
-                    time11: colorBox4 + colorBox4,
-                    time12: colorBox4 + colorBox4
-                },
-                {
-                    col01: "BOT4",
-                    col02: "온라인",
-                    time13: colorBox5 + colorBox5,
-                    time14: colorBox5 + colorBox5,
-                    time15: colorBox5 + colorBox5,
-                    time16: colorBox5 + colorBox5
-                },
-                {
-                    col01: "BOT5",
-                    col02: "온라인",
-                    time17: colorBox2 + colorBox2,
-                    time18: colorBox2 + colorBox2,
-                    time19: colorBox2 + colorBox2,
-                    time20: colorBox2 + colorBox2
-                },
-                {
-                    col01: "BOT6",
-                    col02: "온라인",
-                    time21: colorBox3 + colorBox3,
-                    time22: colorBox3 + colorBox3,
-                    time23: colorBox3 + colorBox3,
-                    time24: colorBox3 + colorBox3
-                },
-                {
-                    col01: "BOT7",
-                    col02: "온라인",
-                    time1: colorBox2 + colorBox2,
-                    time2: colorBox2 + colorBox2,
-                    time3: colorBox2 + colorBox2,
-                    time4: colorBox2 + colorBox2
-                },
-                {
-                    col01: "BOT8",
-                    col02: "온라인",
-                    time5: colorBox3 + colorBox3,
-                    time6: colorBox3 + colorBox3,
-                    time7: colorBox3 + colorBox3,
-                    time8: colorBox3 + colorBox3
-                },
-                {
-                    col01: "BOT9",
-                    col02: "온라인",
-                    time9: colorBox4 + colorBox4,
-                    time10: colorBox4 + colorBox4,
-                    time11: colorBox4 + colorBox4,
-                    time12: colorBox4 + colorBox4
-                },
-                {
-                    col01: "BOT10",
-                    col02: "온라인",
-                    time13: colorBox2 + colorBox3,
-                    time14: colorBox4 + colorBox5,
-                    time15: colorBox2 + colorBox3,
-                    time16: colorBox4 + colorBox5
-                },
-            ]);
         });
     </script>
 </head>
@@ -670,14 +213,189 @@
 
                         </div>
                     </div>
-                    <div class="tableWrap">
-                        <div class="tableTop">
-                            <span class="totalNum">오늘날짜 : <em>2020-05-28</em></span>
+
+
+                    <style>
+                        /* common custom */
+                        .topBox {
+                            background: linear-gradient(90deg, rgba(37, 85, 140, 1) 0%, rgba(10, 144, 194, 1) 100%);
+                        }
+
+                        .setBox {
+                            border-bottom: 1px solid #d1dae9;
+                            border-radius: 8px 8px 0 0;
+                            background: #fff;
+                        }
+
+                        .roundBox {
+                            padding: 0;
+                            border-radius: 8px;
+                            background: #eaf1f9;
+                            box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.12);
+                        }
+
+                        .roundContent {
+                            position: relative;
+                            padding: 0 22px 54px 22px;
+                            border: 1px solid #fff;
+                            border-top: none;
+                            border-radius: 0 0 8px 8px;
+                        }
+
+                        /* common custom */
+
+
+                        .botStateWrap {}
+
+                        .botStateHeader {
+                            position: relative;
+                            height: 88px;
+                            padding-top: 25px;
+                            overflow: hidden;
+                        }
+
+                        .botStateHeader .date {
+                            position: absolute;
+                            top: 29px;
+                            left: 0;
+                            width: 100%;
+                            font-size: 26px;
+                            color: #555;
+                            text-align: center;
+                        }
+
+                        .botStateHeader .botLineState {
+                            float: left;
+                            padding: 7px 12px;
+                            border: 1px solid #fff;
+                            border-radius: 3px;
+                            font-size: 0;
+                            background: #f1f7fe;
+                        }
+
+                        .botStateHeader .botLineState>span {
+                            position: relative;
+                            display: inline-block;
+                            padding-left: 23px;
+                            line-height: 13px;
+                            font-size: 12px;
+                            vertical-align: middle;
+                        }
+
+                        .botStateHeader .botLineState>span+span {
+                            margin-left: 14px;
+                        }
+
+                        .botStateHeader .botLineState>span:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 17px;
+                            height: 12px;
+                            border: 1px solid #c0c8d2;
+                            border-radius: 3px;
+                        }
+
+                        .botStateHeader .botLineState>span.ty1:before {
+                            background: #fff;
+                        }
+
+                        .botStateHeader .botLineState>span.ty2:before {
+                            background: #dee6f1;
+                        }
+
+                        .botStateHeader .botRstWrap {
+                            float: right;
+                            padding: 7px 12px;
+                            border: 1px solid #fff;
+                            border-radius: 3px;
+                            font-size: 0;
+                            background: #f1f7fe;
+                        }
+
+                        .botStateHeader .botRstWrap>span {
+                            position: relative;
+                            display: inline-block;
+                            padding-left: 15px;
+                            line-height: 13px;
+                            font-size: 12px;
+                            vertical-align: middle;
+                        }
+
+                        .botStateHeader .botRstWrap>span+span {
+                            margin-left: 10px;
+                        }
+
+                        .botStateHeader .botRstWrap>span:before {
+                            content: '';
+                            position: absolute;
+                            top: 0px;
+                            left: 0;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                        }
+
+                        .botStateHeader .botRstWrap>span.ty1:before {
+                            background: #e3544e;
+                        }
+
+                        .botStateHeader .botRstWrap>span.ty2:before {
+                            border: 3px solid #f5bd02;
+                            animation: fadeIn 1s infinite alternate;
+                        }
+
+                        .botStateHeader .botRstWrap>span.ty3:before {
+                            background: #f8bf02;
+                        }
+
+                        .botStateHeader .botRstWrap>span.ty4:before {
+                            border: 3px solid #6abd4a;
+                            animation: fadeIn 1s infinite alternate;
+                        }
+
+                        .botStateHeader .botRstWrap>span.ty5:before {
+                            background: #acb3ba;
+                        }
+
+                        @keyframes fadeIn {
+                            from {
+                                opacity: 0;
+                            }
+                        }
+                    </style>
+
+                    <div class="roundContent">
+
+                        <div class="botStateWrap">
+                            <div class="botStateHeader">
+                                <div class="date">2020-06-15</div>
+                                <div class="botLineState">
+                                    <span class="ty1">온라인</span>
+                                    <span class="ty2">오프라인</span>
+                                </div>
+                                <div class="botRstWrap">
+                                    <span class="ty1">실패</span>
+                                    <span class="ty2">지연진행중</span>
+                                    <span class="ty3">성공</span>
+                                    <span class="ty4">진행중</span>
+                                    <span class="ty5">성공</span>
+                                </div>
+                            </div>
+
+                            <div class="botStateListWrap">
+                                <ul class="botStateList">
+                                    <li>리스트</li>
+                                </ul>
+                            </div>
+
                         </div>
-
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 626px;" class="noPd"></div>
-
+                        <!--// roundContent -->
                     </div>
+
+
+
                 </div>
             </div>
         </div>
