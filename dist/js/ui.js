@@ -155,16 +155,12 @@ $(function(){
 	}
 	if($('.botEventState').length > 0)
 	{
-		//botTimeLine();
+		botTimeLine();
 	}
 	if($('.botEventState').length > 0)
 	{
-		botActiveChkbox();
-	}
-
-	
-
-	
+		//botActiveChkbox();
+	}	
 	popTableSlide();
 	inpfile();
 });
