@@ -1,14 +1,8 @@
 @@include('head.html', {
 	"title": "BOT상태"
 })
-
-<script type="text/javascript">
-
-
-$(function () {
-
-});
-</script>
+<script src="../js/moment.js"></script>
+<script src="../js/moment-timezone-with-data.js"></script>
 </head>
 <body>
 
@@ -50,35 +44,44 @@ $(function () {
 					</div>
 
 					<div class="schGroup">
-						<div class="activeChkbox">
-							<input type="checkbox" name="" id="active">
+						<div class="activeChkbox" >
+							<input type="checkbox" name="" id="active" class="botActiveChkbox">
 							<label for="active">가동갱신</label>
 						</div>
+						<div class="inpWrap2 txtAdd wd85">
+							<input type="text" class="inpTxt wd56" disabled> <span class="txt">분</span>
+						</div>
+						<button type="button" class="btn rndBtn" disabled>적용</button>
 					</div>
+					<button type="button" class="btn rndBtn refresh"><span>즉시갱신</span></button>
 				</div>
-				
-
-<style>
-.activeChkbox {display:inline-block; padding:0 10px; border:1px solid #dde1e5; border-radius:3px;}
-.activeChkbox > label {font-size:14px; line-height:28px; color:#999;}
-.activeChkbox > label:before {content:''; display:inline-block; width:15px; height:11px; margin-right:7px; background:url(../images/icon/icon_check_01.png) no-repeat;}
-.activeChkbox input:checked + label {color:#0c79f8;}
-.activeChkbox input:checked + label:before {background:url(../images/icon/icon_check_02.png) no-repeat;}
-</style>
-
-
-
 
 <style>
 
 .schArea {padding:16px 23px 13px 25px; border-bottom:1px solid #d1dae9; font-size:0; border-radius:8px 8px 0 0; background:#fff;}
+.schArea .btn.refresh {float:right;}
+.schArea .inpTxt {height:30px;}
 .schGroup {display:inline-block; vertical-align:middle;}
 .schGroup > .tit {display:inline-block; line-height:30px; font-size:14px;}
 .schGroup > .tit + .inpTxt {margin-left:12px;}
 .schGroup > * {vertical-align:middle;}
 .schGroup + .schGroup {margin-left:50px;}
 
-.schArea .inpTxt {height:30px;}
+.activeChkbox {display:inline-block; padding:0 10px; border:1px solid #dde1e5; border-radius:3px;}
+.activeChkbox > label {font-size:14px; line-height:28px; color:#999;}
+.activeChkbox > label:before {content:''; display:inline-block; width:15px; height:11px; margin-right:7px; background:url(../images/icon/icon_check_01.png) no-repeat;}
+.activeChkbox input:checked + label {color:#0c79f8;}
+.activeChkbox input:checked + label:before {background:url(../images/icon/icon_check_02.png) no-repeat;}
+.activeChkbox + .inpWrap2 {margin-left:3px;}
+
+.inpWrap2 {display:inline-block; border-radius:3px;}
+.inpWrap2.txtAdd {position:relative;}
+.inpWrap2 .inpTxt {width:100%;}
+.inpWrap2.txtAdd .inpTxt {padding-right:36px;}
+.inpWrap2.txtAdd .txt {position:absolute; top:1px; right:0; width:26px; text-align:center; line-height:28px; font-size:14px; border-left:1px solid #dde1e5;}
+.inpWrap2.on .inpTxt {border:1px solid #0c79f8;}
+.inpWrap2.on .txt {border-left:1px solid #0c79f8;}
+.inpWrap2 + button {margin-left:3px;}
 
 /* common custom */
 .topBox {background: linear-gradient(90deg, rgba(37,85,140,1) 0%, rgba(10,144,194,1) 100%);}
@@ -107,7 +110,15 @@ $(function () {
 .botStateHeader .botRstWrap > span.ty4:before {background:#6fbf4c; animation: fadeIn 1s infinite alternate;}
 .botStateHeader .botRstWrap > span.ty5:before {background:#acb3ba;}
 
-.botStateListWrap {padding-top:22px; background:url(../images/bg_timeline.png) no-repeat right top;}
+.botStateListWrap {position:relative; padding-top:22px; padding-bottom:7px; background:url(../images/bg_timeline.png) no-repeat right top;}
+
+
+.botStateListWrap .rtMark {position:absolute; top:13px; width:7px; height:calc(100% - 13px);}
+.botStateListWrap .rtMark:before {content:''; position:absolute; top:6px; left:3px; height:calc(100% - 12px); border-left:1px solid #0c79f8;}
+.botStateListWrap .rtMark > .rtMarkTop {position:absolute; top:0; left:0; width:7px; height:5px; background:url(../images/icon/icon_rtmark_top.png) no-repeat;}
+.botStateListWrap .rtMark > .rtMarkBottom {position:absolute; bottom:0; left:0; width:7px; height:5px; background:url(../images/icon/icon_rtmark_bottom.png) no-repeat;}
+
+
 .botStateList {position:relative; border:1px solid #e0e8f0; border-radius:3px; font-size:0; transition:.5s; background:#fafbfd url(../images/bg_timeline2.png) no-repeat left 134px center;}
 .botStateList.offline {background:#d8e0ed url(../images/bg_timeline_offline.png) no-repeat left 134px center;}
 .botStateList:hover {z-index:1; border:1px solid #4497f8; box-shadow: 0px 0px 10px 0px rgba(12,121,248,0.2);}
@@ -209,6 +220,7 @@ $(function () {
 									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
 								</div>
 							</div>
+							<!-- d
 							<div class="botStateList">
 								<div class="botStateName">BOTNAME 6</div>
 								<div class="botFullName">BOTNAME 6 <span class="is online"></span></div>
@@ -297,6 +309,7 @@ $(function () {
 									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
 								</div>
 							</div>
+							 -->
 							<div class="botStateList">
 								<div class="botStateName">BOTNAME 14</div>
 								<div class="botFullName">BOTNAME 14 <span class="is online"></span></div>
@@ -319,6 +332,10 @@ $(function () {
 									<span class="botEventState ty2" data-active-start="800" data-active-time="90">지연진행중</span>
 								</div>
 							</div>
+							<span class="rtMark">
+								<span class="rtMarkTop"></span>
+								<span class="rtMarkBottom"></span>
+							</span>
 						</div>
 						
 					</div>
@@ -328,6 +345,38 @@ $(function () {
 		</div>
 	</div>
 	<!-- //CONTENT -->
+
+<script>
+
+function momentNewDate() {
+	var nowDate =  moment().tz("Asia/Seoul").format();
+
+	nowDate = new Date(nowDate);
+
+	return nowDate;
+}
+
+var update = function () {
+	moment.tz.setDefault("Asia/Seoul");
+
+	
+	var date = moment().format('HH:mm');
+	var date2 = new Date();
+
+	console.log('moment : ' + date);
+	console.log('local : ' + date2);
+	console.log('function : ' + momentNewDate());
+
+};
+
+$(function(){
+	update();
+	setInterval(update, 10000);
+});
+
+</script>
+
+
 
 	<!-- FOOTER -->
 	@@include('footer.html')

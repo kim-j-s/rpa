@@ -79,6 +79,7 @@
 .brdTy1 {border:1px solid #0c79f8 !important;}
 
 .wd80 {width:80px !important;}
+.wd85 {width:85px !important;}
 .wd90 {width:90px !important;}
 .wd140 {width:140px !important;}
 .wd194 {width:194px !important;}
@@ -249,6 +250,10 @@
 	.btn{background-position: center; background-repeat: no-repeat;}
 	.btn.search{background-image: url(../images/icon/search.png); background-color: #0c79f8; overflow:hidden; text-indent:-9999px;}
 	.btn.reset{background-image: url(../images/icon/reset.png); background-color: #5b6378;}
+	.btn.rndBtn {height:30px; padding:0 10px; background:#626262; color:#fff; border-radius:3px;}
+	.btn.rndBtn:disabled {background:#b0b0b0; cursor:default;}
+	.btn.rndBtn.refresh {padding:0 20px; font-weight:bold; background:#0c79f8;}
+	.btn.rndBtn.refresh > span {position:relative; padding-left:22px; background:url(../images/icon/reset_small.png) no-repeat left center;}
 
 	.btn.removeBtn {display:inline-block; width:19px; height:19px; background-image:url(../images/icon/icon_remove.png); vertical-align:middle; background-repeat:no-repeat; overflow:hidden; text-indent:-999px;}
 	.btn.btnAddIcon {display:inline-block; width:19px; height:19px; background-image:url(../images/icon/icon_add.png); vertical-align:middle; background-repeat:no-repeat; overflow:hidden; text-indent:-999px;}
@@ -258,7 +263,7 @@
 
 	.btnTxt{display: inline-block; height: 32px; padding: 0 16px; background-color: #0c79f8; font-size: 14px; color: #fff; line-height: 32px; border-radius: 3px; transition: all .1s}
 	.btnTxt.white{background-color: #fff; color: #666; line-height: 30px; border: 1px solid #0c79f8}
-	.btnTxt.red{background-color: #fff; color: #fe0048; line-height: 30px; border: 1px solid #fe0048}
+	.btnTxt.red{background-color: #fff; color: #fe0048; line-height: 30px; border: 1px solid #fe0048}	
 
 	.btnGroup{margin-top: 24px; font-size: 0; text-align: center;}
 	.btnGroup.ar {text-align:right;}
@@ -282,6 +287,8 @@
 	.btn.sortUp {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_up.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
 	.btn.sortDown {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_down.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
 
+	
+
 /* INPUT */
 	input[type="checkbox"],	input[type="radio"]{border: 0; border-radius: 0; background: 0; opacity: 0; cursor: pointer;}
 	input[type="submit"],	input[type="button"]{cursor: pointer;}
@@ -290,7 +297,7 @@
 	.inpTxt.full {width:100%;}
 	.inpTxt.flexNone {flex:none;}
 	.inpTxt.calendar[readonly] {background:#f6f9fd url(../images/icon/calendar.png) no-repeat center right 17px;}
-	.inpTxt[readonly] {background:#f6f9fd;}
+	.inpTxt[readonly], .inpTxt[disabled] {background:#f6f9fd;}
 
 	/* 기능추가 */
 	.inpTxtWrap{position: relative; display: flex; padding: 0 12px; border: 1px solid #ccc; background: #fff; font-size: 13px;}

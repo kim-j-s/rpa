@@ -91,6 +91,20 @@ function botTimeLine() {
 	});
 }
 
+function botActiveChkbox() {
+	$('.botActiveChkbox').on('change', function(){
+		if ($('.botActiveChkbox').prop('checked')) {
+			$(this).closest('.schGroup').find('.inpWrap2').addClass('on');
+			$(this).closest('.schGroup').find('.inpTxt').attr('disabled',false);
+			$(this).closest('.schGroup').find('.rndBtn').attr('disabled',false);
+		} else {
+			$(this).closest('.schGroup').find('.inpWrap2').removeClass('on');
+			$(this).closest('.schGroup').find('.inpTxt').attr('disabled',true).val('');
+			$(this).closest('.schGroup').find('.rndBtn').attr('disabled',true);
+		}
+	});
+}
+
 
 // fileUpload
 function fileUploadAdd(e) {
@@ -141,8 +155,14 @@ $(function(){
 	}
 	if($('.botEventState').length > 0)
 	{
-		botTimeLine();
+		//botTimeLine();
 	}
+	if($('.botEventState').length > 0)
+	{
+		botActiveChkbox();
+	}
+
+	
 
 	
 	popTableSlide();
