@@ -80,6 +80,17 @@ function popTableSlide(){
 	});
 }
 
+function botTimeLine() {
+	$('.botEventState').each(function(i){
+		var Start = $('.botEventState').eq(i).data('active-start');
+		var Time = $('.botEventState').eq(i).data('active-time');
+		calcS = Start / 1440 * 100;
+		calcT = Time / 1440 * 100;
+		$('.botEventState').eq(i).css('left',calcS + '%');
+		$('.botEventState').eq(i).css('width',calcT + '%');
+	});
+}
+
 
 // fileUpload
 function fileUploadAdd(e) {
@@ -128,6 +139,12 @@ $(function(){
 	{
 		calendarSet();
 	}
+	if($('.botEventState').length > 0)
+	{
+		botTimeLine();
+	}
+
+	
 	popTableSlide();
 	inpfile();
 });

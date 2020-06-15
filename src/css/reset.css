@@ -13,7 +13,7 @@ ul,ol,dl{list-style:none}
 em,address{font-style:normal}
 button{vertical-align:middle;cursor:pointer;border:none;background:none;border-radius:0;text-align:center}
 button::-moz-focus-inner{padding:0;border:none}
-label{cursor:pointer}
+body label{cursor:pointer; margin-bottom:0;}
 table{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed}
 button,input,textarea,select,option{font-family:'Nanum Barun Gothic',sans-serif;font-size:14px;-moz-appearance:none;-webkit-appearance:none;appearance:none;-webkit-border-radius:0;font-weight:300;color:inherit;}
 textarea{resize:none}
