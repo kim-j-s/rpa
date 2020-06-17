@@ -14,6 +14,37 @@
     <script src="../js/ax5grid.min.js"></script>
     <script src="../js/ui.js"></script>
 
+    <script src="../js/moment.js"></script>
+    <script src="../js/moment-timezone-with-data.js"></script>
+
+    <script>
+        var update = function() {
+            moment.tz.setDefault("Asia/Seoul");
+            var dateT = moment().format('HH');
+            var dateM = moment().format('mm');
+            var Now = Number(dateT * 60) + Number(dateM);
+            var Left = Now / 1440 * 100;
+            var Per = Left.toFixed(1);
+            var per2 = 960 * Per / 100;
+            var fix = per2 + 132;
+            $('.rtMark').css('left', fix + 'px');
+        };
+
+        $(function() {
+            update();
+            setInterval(update, 1000);
+
+
+            openWindow()
+
+            function openWindow() {
+                $('.botEventState').click(function() {
+                    var win = window.open("BOTST-01-p01.html", "PopupWin", "width=1080,height=700");
+                });
+            }
+        });
+    </script>
+
 </head>
 
 <body>
