@@ -144,7 +144,7 @@ function inpfile(){
 $(function(){
 	openPop();
 	closePop();
-	//naviShow();
+	naviShow();
 	inputDesign();
 	$('.inpD').find('input').on('change',function(){
 		inputDesign();
