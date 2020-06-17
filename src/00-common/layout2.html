@@ -1,0 +1,124 @@
+@@include('head.html', {
+	"title": "BOT상태"
+})
+<script src="../js/moment.js"></script>
+<script src="../js/moment-timezone-with-data.js"></script>
+
+<script>
+var update = function () {
+	moment.tz.setDefault("Asia/Seoul");
+	var dateT = moment().format('HH');
+	var dateM = moment().format('mm');
+	var Now = Number(dateT * 60) + Number(dateM);
+	var Left = Now / 1440 * 100;
+	var Per = Left.toFixed(1);
+	var per2 = 960 * Per / 100;
+	var fix = per2 + 132;
+	$('.rtMark').css('left', fix + 'px');
+};
+
+$(function(){
+	update();
+	setInterval(update, 1000);
+
+
+	openWindow()
+	function openWindow(){
+		$('.botEventState').click(function(){
+			var win = window.open("BOTST-01-p01.html", "PopupWin", "width=1080,height=700");
+		});
+	}
+});
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "active",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>RPA 수행 현황</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">운영현황</a>
+					<a href="#">RPA 수행 현황</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+
+				<div class="schArea">
+					<img src="../images/smp1.png" alt="">
+				</div>
+
+<style>
+.schArea {padding:16px 23px 13px 25px; border-bottom:1px solid #d1dae9; font-size:0; border-radius:8px 8px 0 0; background:#fff;}
+.schArea .btn.refresh {float:right;}
+.schArea .inpTxt {height:30px;}
+.schGroup {display:inline-block; vertical-align:middle;}
+.schGroup > .tit {display:inline-block; line-height:30px; font-size:14px;}
+.schGroup > .tit + .inpTxt {margin-left:12px;}
+.schGroup > * {vertical-align:middle;}
+.schGroup + .schGroup {margin-left:50px;}
+
+.activeChkbox {display:inline-block; padding:0 10px; border:1px solid #dde1e5; border-radius:3px;}
+.activeChkbox > label {font-size:14px; line-height:28px; color:#999;}
+.activeChkbox > label:before {content:''; display:inline-block; width:15px; height:11px; margin-right:7px; background:url(../images/icon/icon_check_01.png) no-repeat;}
+.activeChkbox input:checked + label {color:#0c79f8;}
+.activeChkbox input:checked + label:before {background:url(../images/icon/icon_check_02.png) no-repeat;}
+.activeChkbox + .inpWrap2 {margin-left:3px;}
+
+.inpWrap2 {display:inline-block; border-radius:3px;}
+.inpWrap2.txtAdd {position:relative;}
+.inpWrap2 .inpTxt {width:100%;}
+.inpWrap2.txtAdd .inpTxt {padding-right:36px;}
+.inpWrap2.txtAdd .txt {position:absolute; top:1px; right:0; width:26px; text-align:center; line-height:28px; font-size:14px; border-left:1px solid #dde1e5;}
+.inpWrap2.on .inpTxt {border:1px solid #0c79f8;}
+.inpWrap2.on .txt {border-left:1px solid #0c79f8;}
+.inpWrap2 + button {margin-left:3px;}
+
+/* common custom */
+.topBox {background: linear-gradient(90deg, rgba(37,85,140,1) 0%, rgba(10,144,194,1) 100%);}
+.setBox {border-bottom:1px solid #d1dae9; border-radius:8px 8px 0 0; background:#fff;}
+.roundBox {padding:0; border-radius:8px; background:#eaf1f9; box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.12);}
+.roundContent {position:relative; padding:0 23px 54px 23px; border:1px solid #fff; border-top:none; border-radius:0 0 8px 8px;}
+/* common custom */
+
+
+</style>
+
+				<div class="roundContent">
+					<img src="../images/smp2.png" alt="">
+
+					<!--// roundContent -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>
