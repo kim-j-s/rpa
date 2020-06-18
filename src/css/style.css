@@ -88,6 +88,7 @@
 
 .mt0 {margin-top:0 !important;}
 .ml30 {margin-left:30px !important;}
+.ml50 {margin-left:50px !important;}
 
 .pr30 {padding-right:30px !important;}
 .pb6 {padding-bottom:6px !important;}
@@ -165,14 +166,14 @@
 	.setBox .line{display:flex}
 	.setBox .line + .line{margin-top:10px;}
 	.setBox .line [class*="Wrap"] + [class*="Wrap"]{margin-left:16px;}
-	.setBox [class*="Wrap"]{min-width:360px; font-size:0;}
+	.setBox [class*="Wrap"]{/* min-width:360px; */ font-size:0;}
 	.setBox .tit {display:inline-block; padding-right:10px; font-size:14px; line-height:30px; color:#0c79f8; vertical-align:middle;}
 	.setBox * + .tit {padding-left:22px;}
 	.setBox .inpD {vertical-align:middle;}
 	.setBox .btns {box-shadow:none;}
 
 	.searchWrap {/* display:flex; flex:auto */}
-	.searchWrap .inpTxt{flex:auto; border-radius:3px 0 0 3px;}
+	.searchWrap .inpTxt{/* flex:auto; border-radius:3px 0 0 3px; */}
 	.searchWrap .selectD + .inpTxt{margin-left:8px;}
 	.searchWrap .inpTxt + .inpTxt{margin-left:8px;}
 	.searchWrap .btn{width:32px; height:32px; text-indent:-9999px;}
