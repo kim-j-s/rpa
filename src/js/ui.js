@@ -96,11 +96,11 @@ function botActiveChkbox() {
 		if ($('.botActiveChkbox').prop('checked')) {
 			$(this).closest('.schGroup').find('.inpWrap2').addClass('on');
 			$(this).closest('.schGroup').find('.inpTxt').attr('disabled',false);
-			$(this).closest('.schGroup').find('.rndBtn').attr('disabled',false);
+			$(this).closest('.schGroup').find('.btns').attr('disabled',false);
 		} else {
 			$(this).closest('.schGroup').find('.inpWrap2').removeClass('on');
 			$(this).closest('.schGroup').find('.inpTxt').attr('disabled',true).val('');
-			$(this).closest('.schGroup').find('.rndBtn').attr('disabled',true);
+			$(this).closest('.schGroup').find('.btns').attr('disabled',true);
 		}
 	});
 }
@@ -159,7 +159,7 @@ $(function(){
 	}
 	if($('.botEventState').length > 0)
 	{
-		//botActiveChkbox();
+		botActiveChkbox();
 	}	
 	popTableSlide();
 	inpfile();
