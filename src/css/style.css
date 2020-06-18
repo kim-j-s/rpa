@@ -3,7 +3,7 @@
 	.wrap{}
 	.innerArea{width: 1240px; margin: 0 auto; padding: 0 44px;}
 
-	header{position: relative; z-index:2; border-bottom: 1px solid #0d56aa; background-color: #fff; font-family:'Nanum Square'; color: #19233b; text-align: center;}
+	header{position: relative; z-index:2; border-bottom: 1px solid #315f94; background-color: #fff; font-family:'Nanum Square'; color: #19233b; text-align: center;}
 	header .innerArea{position: relative;}
 	header .logo{position: absolute; top: 18px; left: 44px;}
 	header .logo a{display: block; width: 94px; height: 20px; background: url(../images/icon/logo.png) no-repeat center; text-indent: -9999px;}
@@ -24,7 +24,7 @@
 	.gnbWrap{display: inline-block;}
 	.gnbTop{display: inline-block; text-align: center; font-size: 0;}
 	.gnbTop li{display: inline-block;}
-	.gnbTop li span{display: block; padding: 20px 18px; font-size: 16px; font-weight: 500; line-height: 20px; transform: rotate(0.05deg);}
+	.gnbTop li span{display: block; padding: 16px 18px; font-size: 16px; font-weight: 500; line-height: 20px; transform: rotate(0.05deg);}
 	.gnbTop li.active span{position: relative; background-color: #ecf2ff; color: #0c79f8;}
 	.gnbTop li.active span:after{display: block; content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #0c77f8;}
 	.gnbAll{position: absolute; top: 60px; left: 0; width: 100%; padding-top: 0; background-color: #fff; border-top: 1px solid #eceff5; box-shadow: 0px 7px 7px rgba(0,37,12,0.07); z-index: 1;}
@@ -54,20 +54,20 @@
 	.dashBoard ul.state li{flex: auto;}
 	.dashBoard ul.state li + li{margin-left: 10px;}
 
-	.topBox{background-color: #0c79f8; padding: 22px 0 160px; margin-bottom: -160px; font-family:'Nanum Square'; color: #fff}
+	.topBox {padding: 36px 0 160px; margin-bottom: -160px; font-family:'Nanum Square'; color: #fff; background: linear-gradient(90deg, rgba(37,85,140,1) 0%, rgba(10,144,194,1) 100%);}
 	.topBox .innerArea{position: relative;}
-	.topBox h2{margin-bottom: 28px; font-size: 24px; line-height: 1; font-weight:500;}
+	.topBox h2{margin-bottom: 17px; font-size: 22px; line-height: 1; font-weight:500;}
 	.topBox .navigation{position: absolute; top: 8px; right: 44px;}
 
 	.roundBox{padding: 32px 24px 40px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 4px 4px 7px rgba(0,0,0,0.06)}
 
 /* 페이지 경로 */
 	.navigation{font-size: 0;}
-	.navigation a{position: relative; display: inline-block; font-size: 14px; line-height: 16px; font-weight: 500; color: rgba(255,255,255,0.7);}
+	.navigation a{position: relative; display: inline-block; font-size: 12px; line-height: 16px; color: rgba(255,255,255,0.7);}
 	.navigation a + a{margin-left: 16px;}
 	.navigation a + a:before{position: absolute; top: 0; left: -11px; content: ''; display: block; width: 6px; height: 15px; background: url(../images/icon/arrow_nav.png) no-repeat center; vertical-align: top;}
 	.navigation a:first-child{width: 12px; background: url(../images/icon/home.png) no-repeat 0 1px; text-indent: -9999px;}
-	.navigation a:last-child{color: #fff;}
+	.navigation a:last-child{font-weight: 500; color: #fff;}
 
 
 /* common */
@@ -194,10 +194,10 @@
 	.popup .popCont .tableWrap {margin-top:0;}
 	.popup .popCont .tableWrap + .tableWrap {margin-top:34px;}
 
-	.tableTop{display: flex; align-items: flex-end; margin-bottom: 16px;}
+	.tableTop{display: flex; align-items: flex-end; margin-bottom: 13px;}
 	.tableTop .totalNum em{font-weight: 500; color: #0c79f8; letter-spacing: 0}
 	.tableTop .rightArea{margin-left: auto; font-size: 0;}
-	.tableTop .rightArea > * + *{margin-left: 8px;}
+	.tableTop .rightArea > * + *{margin-left: 3px;}
 
 	.tableTitleWrap {position:relative; padding-right:50px; overflow:hidden;}
 	.tableTitle{display:inline-block; padding: 12px 16px 14px; font-size: 16px; font-weight: 500; color: #222}
@@ -287,6 +287,12 @@
 	.btn.sortUp {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_up.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
 	.btn.sortDown {display:inline-block; width:20px; height:20px; background-image:url(../images/icon/icon_sort_down.png); vertical-align:middle; overflow:hidden; text-indent:-999px;}
 
+
+	.btns {display:inline-block; vertical-align:middle; height:30px; line-height:30px; padding:0 18px; text-align:center; color:#fff; font-size:14px; background:#0c79f8; border-radius:3px; box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);}
+	.btns:before {content:''; display:inline-block; vertical-align:middle;}
+	.btns.ty1:before {position:relative; top:-1px; width:13px; height:15px; margin-right:6px; background:url(../images/icon/icon_write.png) no-repeat;}
+	.btns.ty2:before {position:relative; top:-1px; width:15px; height:15px; margin-right:7px; background:url(../images/icon/icon_modify.png) no-repeat;}
+	.btns.ty3:before {position:relative; top:-1px; width:14px; height:14px; margin-right:8px; background:url(../images/icon/icon_delete.png) no-repeat;}
 	
 
 /* INPUT */
@@ -466,9 +472,9 @@ table + .innerContHeader {margin-top:20px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-resizer] {display:none;}
 
 /* ax5ui Grid Custom */
-[data-ax5grid] [data-ax5grid-container="root"] {border:none; border-top:1px solid #222;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td.hasBorder {border-right:1px solid #f6f9fd; /* border-right:1px solid blue; */ vertical-align:middle; background:#f6f9fd; /* background:red; */}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {font-size:14px; color:#666;}
+[data-ax5grid] [data-ax5grid-container="root"] {border:none; border-top:1px solid #d0dce9;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td.hasBorder {border-right:1px solid #e7f3ff; /* border-right:1px solid blue; */ vertical-align:middle; background:#e7f3ff;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {color:#222; font-size:12px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td {font-size: 14px; box-shadow:none; vertical-align:middle; background-color: #f6f9fd;}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td {vertical-align:middle; font-size:14px; color:#666;}
@@ -498,32 +504,39 @@ table + .innerContHeader {margin-top:20px;}
 
 /* ax5ui Grid Paging */
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] {background:#fff; border-top:none;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] {text-align:center;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] {display:block; padding-left:0; text-align:center; }
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move]:hover {text-decoration:none;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move][data-ax5grid-page-selected="true"],
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] {font-size:0; padding:0 15px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] {padding:0 10px; font-size:0;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button {background-color:#e7f3ff; transition: 0.5s;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button:hover {font-weight:500; color:#0c79f8; background-color: #fff;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button:first-child {border-radius:3px 0 0 3px; border-left:1px solid #d7e3f0;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button:last-child {border-radius:0 3px 3px 0; border-right:1px solid #d7e3f0;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button + button {border-left:1px solid #d7e3f0;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] {
-	min-width:40px; height:40px; border-radius: 0; font-size:14px; color:#666; border:1px solid #e7eaef; padding:0;
+	min-width:30px; height:26px; border-radius:0; font-size:12px; color:#666; border:1px solid #d7e3f0; border-left:0; border-right:0; padding:0;
 }
 
 
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] > button {border:none;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] {font-size:0; border:1px solid #c9d2de; border-radius:3px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] > button {border:none; height:24px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] > button + button {border-left:1px solid #c9d2de;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] > button:focus,
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell"] > button:active {margin:0; padding:0; border:none; background:#fff;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction {
-display:block; width:40px; height:40px; text-indent:-9999px; background-repeat:no-repeat; background-position:center;
+	display:block; width:40px; height:24px; text-indent:-9999px; background-color:#eaf1f9; background-repeat:no-repeat; background-position:center; transition: 0.5s;
 }
-
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.prev {background-image: url(../images/icon/arrow_paging_prev.png);}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.next {background-image: url(../images/icon/arrow_paging_next.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction:hover {background-color:#fff;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.first {background-image: url(../images/icon/icon_paging_first_off.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.first:hover {background-image: url(../images/icon/icon_paging_first_on.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.prev {background-image: url(../images/icon/icon_paging_prev_off.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.prev:hover {background-image: url(../images/icon/icon_paging_prev_on.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.next {background-image: url(../images/icon/icon_paging_next_off.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.next:hover {background-image: url(../images/icon/icon_paging_next_on.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.last {background-image: url(../images/icon/icon_paging_last_off.png);}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move] .direction.last:hover {background-image: url(../images/icon/icon_paging_last_on.png);}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move][data-ax5grid-page-selected="true"],
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move]:active {
-	color: #fff;
-	border:1px solid #0c79f8;
-	background-color: #0c79f8;
-	font-size:14px;
-}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button + button {margin-left:5px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-move]:active {font-weight:500; color:#0c79f8; background-color:#fff;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] [data-ax5grid-page-navigation="cell-paging"] button + button {/* margin-left:5px; */}
 
 
 

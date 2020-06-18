@@ -12,11 +12,11 @@ $(function () {
 		target: $('[data-ax5grid="first-grid"]'),
 		header: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 32
 		},
 		body: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 36
 		},
 		columns: [
 		{
@@ -59,10 +59,12 @@ $(function () {
 		],
 		page: {
             navigationItemCount: 9,
-            height: 40,
+            height: 26,
             display: true,
+			firstIcon: '<i class="direction first"></i>',
 			prevIcon: '<i class="direction prev"></i>',
 			nextIcon: '<i class="direction next"></i>',
+            lastIcon: '<i class="direction last"></i>',
             onChange: function () {
 				// 페이지 번호 눌렀을때 호출
             	search(this.page.selectPage);
@@ -153,11 +155,11 @@ function search(_pageNo) {
 					<div class="tableTop">
 						<span class="totalNum">총 <em>100</em>건</span>
 						<div class="rightArea">
-							<button type="button" class="btnTxt">등록</button>
+							<button type="button" class="btns ty1">등록</button>
 						</div>
 					</div>
 
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 439px;"></div>
 
 				</div>
 			</div>

@@ -44,11 +44,13 @@ var paths = {
   srcImg : ['./src/images/**/*.*'],
   srcFont : ['./src/font/**/*.*'],
   srcIncluder : './src/include',
+  srcGuide : ['./src/pub/**/*.*'],
   distHtml : './dist/',
   distCss : './dist/css/',
   distJs : './dist/js/',
   distImg : './dist/images/',
   distFont : './dist/font/',
+  distGuide : './dist/pub/',
   // min
   minScss : 'style.min.css',
   minJs : 'script.min.js',
@@ -107,12 +109,18 @@ function fontBuild(done){
     .pipe(gulp.dest(paths.distFont))
   done();
 }
+function GuideBuild(done){
+  gulp.src(paths.srcGuide)
+    .pipe(gulp.dest(paths.distGuide));
+  done();
+}
 function watchFile(done){
   gulp.watch(paths.watchIndex, gulp.series(reload));
   gulp.watch(paths.watchHtml, gulp.series(htmlBuild, gulp.parallel(reload)));
   gulp.watch(paths.watchCss, gulp.series(cssBuild, gulp.parallel(reload)));
   gulp.watch(paths.watchJs, gulp.series(jsBuild, gulp.parallel(reload)));
   gulp.watch(paths.watchImg, gulp.series(imageBuild, gulp.parallel(reload)));
+  gulp.watch(paths.watchImg, gulp.series(GuideBuild, gulp.parallel(reload)));
   done();
 }
 function reload(done){
@@ -131,4 +139,4 @@ function serve(done){
 	});
 	done();
 }
-gulp.task('default', gulp.series(cleanFile, gulp.parallel(htmlBuild, imageBuild, jsBuild, cssBuild, fontBuild), serve, watchFile));
+gulp.task('default', gulp.series(cleanFile, gulp.parallel(htmlBuild, imageBuild, jsBuild, cssBuild, fontBuild, GuideBuild), serve, watchFile));

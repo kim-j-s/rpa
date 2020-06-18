@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<title>공통 템플릿</title>
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/ax5grid.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-1.12.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/ax5core.min.js"></script>
+<script src="../js/ax5grid.min.js"></script>
+<script src="../js/ui.js"></script>
+<!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article");
+        document.createElement("aside"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+
+
+<!-- 2018.05.16 -->
+<script type="text/javascript" src="code/scripts/shCore.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+
+<link type="text/css" rel="stylesheet" href="code/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css"/>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
+<!-- //2018.05.16 -->
+<style>
+	body { padding:10px 20px; padding-bottom:200px; background:#fff;}
+	h1 { font-size:30px; padding:10px 20px;}
+	h2 { padding:20px 0; margin-top:20px; border-top:1px dashed #666666; font-size:20px;}
+	.box { margin-top:20px; border:1px solid #E3E3E3}
+</style>
+</head>
+<body>
+	<h1>공통 템플릿</h1>
+
+	<h2>Btns</h2>
+	<button type="button" class="btns ty1">등록</button>
+	<button type="button" class="btns ty2">수정</button>
+	<button type="button" class="btns ty3">삭제</button>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Select</h2>
+	<select name="" id="" class="selectD">
+		<option value="">옵션</option>
+	</select>
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<select name="" id="" class="selectD">
+				<option value=""></option>
+			</select>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Radio</h2>
+	<span class="radioBox">
+		<input type="radio" id="progress01" name="progress"><label for="progress01">대기</label>
+	</span>
+	<span class="radioBox">
+		<input type="radio" id="progress02" name="progress"><label for="progress02">활동</label>
+	</span>
+	<span class="radioBox">
+		<input type="radio" id="progress03" name="progress" disabled><label for="progress03">Disabled</label>
+	</span>
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<span class="radioBox">
+				<input type="radio" id="" name=""><label for=""></label>
+			</span>
+
+			<span class="radioBox">
+				<input type="radio" id="" name="" disabled><label for=""></label>
+			</span>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Radio - single</h2>
+	<span class="radioBox single">
+		<input type="radio" id="radioS" name="radioS"><label for="radioS"></label>
+	</span>
+	<span class="radioBox single">
+		<input type="radio" id="radioS2" name="radioS"><label for="radioS2"></label>
+	</span>
+
+	<h2>Checkbox</h2>
+	<span class="inpD check">
+		<label><input type="checkbox">Checkbox</label>
+	</span>
+	<span class="inpD check">
+		<label><input type="checkbox">Checkbox</label>
+	</span>
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<span class="inpD check">
+				<label><input type="checkbox"></label>
+			</span>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Checkbox - single</h2>
+	<span class="inpD check single">
+		<label><input type="checkbox"></label>
+	</span>
+	<span class="inpD check single">
+		<label><input type="checkbox"></label>
+	</span>
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<span class="inpD check single">
+				<label><input type="checkbox"></label>
+			</span>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+
+	<h2>Input - text</h2>
+	<input type="text" class="inpTxt">
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<input type="text" class="inpTxt">
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Textarea</h2>
+	<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+
+
+
+
+	
+	<h2>Source</h2>
+	<!-- origin -->
+	<!-- origin -->
+
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+	
+
+</body>
+</html>
