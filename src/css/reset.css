@@ -18,6 +18,9 @@ table{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed}
 button,input,textarea,select,option{font-family:'Nanum Barun Gothic',sans-serif;font-size:14px;-moz-appearance:none;-webkit-appearance:none;appearance:none;-webkit-border-radius:0;font-weight:300;color:inherit;}
 textarea{resize:none}
 img,video{max-width:100%}
+button,
+input,
+select {outline:none;}
 /*Option*/
 strong,h1,h2,h3,h4,th{font-weight:500}
 b{font-weight:700}
