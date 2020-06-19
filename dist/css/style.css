@@ -430,7 +430,8 @@
 	*/
 
 	.popBox.type1 {width:1056px; max-height:calc(100% - 100px); padding-bottom:20px; border-radius:8px; overflow:auto; box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.5);}
-	.type1 .popTop {background-color:#053062;}
+	.popBox.type1.windowPop {position:static; max-height:none; box-shadow:none; transform:none;}
+	.type1 .popTop {height:50px; background-color:#053062; overflow:hidden;}
 	.type1 .popTop h3 {padding:0 24px; font-size:20px; line-height:50px; color:#fff;}
 	.type1 .btnPopClose {top:0px; right:0px; width:55px; height:50px; background:#05264d url(../images/icon/icon_pop_close.png) no-repeat center;}
 	.type1 .searchWrap {margin-bottom:16px;}
