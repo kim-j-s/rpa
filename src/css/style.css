@@ -87,11 +87,14 @@
 .wd140 {width:140px !important;}
 .wd153 {width:153px !important;}
 .wd194 {width:194px !important;}
+.wd200 {width:200px !important;}
 .wd493 {width:493px !important;}
 .wd700 {width:700px !important;}
+.wd730 {width:730px !important;}
 .wd743 {width:743px !important;}
 
 .mt0 {margin-top:0 !important;}
+.mt30 {margin-top:30px !important;}
 .ml30 {margin-left:30px !important;}
 .ml50 {margin-left:50px !important;}
 
@@ -254,12 +257,12 @@
 
 	table.ty1 {width:100%; text-align:left; border-top:1px solid #e7eaef; border-bottom:none;}
 	table.ty1.single {border-top:none;}
-	table.ty1 th {height:40px; padding:5px 12px; vertical-align:middle; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
-	table.ty1 td {height:40px; padding:5px 12px; vertical-align:middle; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
-	table.ty1 td .btns {box-shadow:none;}
-	table.ty1 td .inpTxt + .btns {margin-left:1px;}
-	table.ty1 tr:first-child th,
-	table.ty1 tr:first-child td {border-top:none;}
+	table.ty1 tbody th {height:40px; padding:5px 12px; vertical-align:middle; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
+	table.ty1 tbody td {height:40px; padding:5px 12px; vertical-align:middle; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
+	table.ty1 tbody td .btns {box-shadow:none;}
+	table.ty1 tbody td .inpTxt + .btns {margin-left:1px;}
+	table.ty1 tbody tr:first-child th,
+	table.ty1 tbody tr:first-child td {border-top:none;}
 
 	.tblSlide {border-radius:0 0 8px 8px; border:1px solid #c7d1e0; overflow:hidden;}
 	.tblSlide.gridInner {padding-bottom:20px; background:#f6f9fd;}
@@ -277,8 +280,13 @@
 
 	.itemAdd {padding:4px 10px 2px 10px; background:#f6f9fd;}
 
-	.inpWrap.ty1 {max-width:240px;}
-	.inpWrap.ty2 {max-width:194px;}
+	.inpWrap.ty1 {font-size:0;}
+	.inpWrap.ty1 .inpTxt {width:200px;}
+	.inpWrap.ty1 .middleMark {margin:0; width:20px; text-align:center;}
+	.inpWrap.ty2 {font-size:0;}
+	.inpWrap.ty2 .inpTxt {width:55px;}
+	.inpWrap.ty2 .inpTxt:first-child {width:46px;}
+	.inpWrap.ty2 .inpTxt + .inpTxt {margin-left:3px;}
 	.inpWrap .inpTxt {vertical-align:middle;}
 	.inpWrap .inpTxt + span {display:inline-block; vertical-align:middle; margin-left:8px; font-size:14px;}
 	.inpWrap .inpD + .inpTxt {margin-left:8px;}
@@ -349,7 +357,7 @@
 	input[type="checkbox"],	input[type="radio"]{border:0; border-radius:0; background:0; opacity:0; cursor:pointer;}
 	input[type="submit"],	input[type="button"]{cursor:pointer;}
 	input[type="text"]::-ms-clear{display:none} /*ie에서 클리어버튼제거*/
-	.inpTxt {height:30px; padding:0 16px; border:1px solid #dde1e5; border-radius:3px; background:#fff; text-align:left; transition:0.5s;}
+	.inpTxt {height:30px; padding:0 10px; border:1px solid #dde1e5; border-radius:3px; background:#fff; text-align:left; transition:0.5s;}
 	.inpTxt:focus {border:1px solid #0c79f8;}
 	.inpTxt.ty1 {border:1px solid #0c79f8;}
 	.inpTxt.full {width:100%;}

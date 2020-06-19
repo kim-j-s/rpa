@@ -45,6 +45,14 @@ function openPop(){
 	closePop();
 }
 
+function openWindows(){
+	$('.openWindows').click(function(){
+		var data = $(this).data('winopen');
+		var win = window.open(data, "PopupWin", "width=1080,height=700");
+	});
+}
+
+
 function closePop(){
 	$('.btnPopClose').click(function(){
 		//$('body').removeClass('hidden');
@@ -146,6 +154,7 @@ function inpfile(){
 
 $(function(){
 	openPop();
+	openWindows();
 	closePop();
 	naviShow();
 	inputDesign();
