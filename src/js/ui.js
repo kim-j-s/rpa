@@ -36,8 +36,11 @@ function openPop(){
 	$('.openPop').click(function(){
 		//$('body').addClass('hidden');
 		var href = $(this).attr('href');
-		$(href).fadeIn(100);		
-		return false;	
+		var data = $(this).data('popopen');
+		console.log(data);
+		$(href).fadeIn(100);	
+		$('[data-pop="'+ data +'"]').fadeIn(100);
+		return false;
 	});
 	closePop();
 }

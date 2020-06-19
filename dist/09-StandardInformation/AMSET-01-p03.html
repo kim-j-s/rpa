@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>알람설정 - 운영과제 검색</title>
+    <title>알람설정 - 운영자 선택</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ax5grid.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -22,7 +22,6 @@
 
             firstGrid.setConfig({
                 target: $('[data-ax5grid="first-grid"]'),
-                showRowSelector: true,
                 header: {
                     align: "center",
                     columnHeight: 33
@@ -33,25 +32,36 @@
                 },
                 columns: [{
                     key: "col01",
-                    label: '<span class="dpib vm">RPA구분</span>',
-                    sortable: true,
+                    label: '<span class="dpib vm"></span>',
                     align: "center",
-                    width: 197
+                    width: 80,
+                    formatter: function() {
+                        var returnValue = "";
+                        switch (this.value) {
+                            case "radio":
+                                returnValue = '<div class="radioBox single"><input type="radio" id="radio' + this.dindex + '" name="ccc"><label for="radio' + this.dindex + '">선택</label></div>';
+                                break;
+                            default:
+                                returnValue = this.value;
+                                break;
+                        } // end switch
+                        return returnValue;
+                    }
                 }, {
                     key: "col02",
-                    label: '<span class="dpib vm">과제코드</span>',
+                    label: '<span class="dpib vm">운영자명</span>',
                     sortable: true,
                     align: "center",
-                    width: 219
+                    width: 296
                 }, {
                     key: "col03",
-                    label: '<span class="dpib vm">과제명</span>',
+                    label: '<span class="dpib vm">사번</span>',
                     sortable: true,
                     align: "center",
-                    width: 226
+                    width: 346
                 }, {
                     key: "col04",
-                    label: '<span class="dpib vm">BPM 일련번호</span>',
+                    label: '<span class="dpib vm">부서명</span>',
                     sortable: true,
                     align: "center",
                     width: 284
@@ -76,64 +86,64 @@
 
         function search(_pageNo) {
             var list = [{
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A1"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A2"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A3"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A4"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A5"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A6"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A7"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A8"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A9"
                 },
                 {
-                    col01: "AA",
-                    col02: "AA-101",
-                    col03: "FCST 마감 자동화",
-                    col04: "2020202020202020"
+                    col01: "radio",
+                    col02: "홍길동",
+                    col03: "30111445",
+                    col04: "부서명A10"
                 },
             ];
 
@@ -152,29 +162,19 @@
 
 <body>
 
-    <!-- 알람설정 - 운영과제 검색 pop-up -->
+    <!-- 알람설정 - 운영자 선택 pop-up -->
     <div class="popup windowPop">
         <div class="popBox type1">
             <div class="popTop">
-                <h3>운영과제 검색</h3>
+                <h3>운영자 선택</h3>
             </div>
 
             <div class="setBox">
                 <div class="searchWrap mb0">
-                    <span class="tit">RPA구분</span>
-                    <select name="" id="" class="selectD ty1">
-                        <option value="">AA</option>
-                    </select>
-                    <span class="tit">과제코드</span>
-                    <select name="" id="" class="selectD ty1">
-                        <option value="">AA-101</option>
-                    </select>
-                    <span class="tit">BPM 일련번호</span>
+                    <span class="tit">부서명</span>
+                    <input type="text" class="inpTxt ty1 wd153">
+                    <span class="tit">운영자명</span>
                     <input type="text" class="inpTxt ty1 wd100">
-                </div>
-                <div class="searchWrap mb0">
-                    <span class="tit">과제명</span>
-                    <input type="text" class="inpTxt wd743 ty1">
                     <div class="setBoxBtns">
                         <button type="button" class="btns ty4">검색</button>
                         <button type="button" class="btns ty7">초기화</button>
@@ -195,12 +195,12 @@
             </div>
             <div class="btnGroup">
                 <button type="button" class="btns ty11">취소</button>
-                <button type="button" class="btns ty1">등록</button>
+                <button type="button" class="btns">선택</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>
     </div>
-    <!-- //알람설정 - 운영과제 검색 pop-up -->
+    <!-- //알람설정 - 운영자 선택 pop-up -->
 
 </body>
 
