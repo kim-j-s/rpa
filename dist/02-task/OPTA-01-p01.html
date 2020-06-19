@@ -19,7 +19,8 @@
 <body>
 
     <!-- 운영과제 등록 pop-up -->
-    <div class="popup botDetail windowPop">
+    <div class="popup">
+        <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
                 <h3>운영과제 등록</h3>
@@ -88,25 +89,32 @@
                                         </div>
                                     </td>
                                     <th>요청자 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt"></td>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt">
+                                            <button type="button" class="btnSelect load">요청자 검색</button>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>요청자 사번 <span class="essential">필수입력</span></th>
                                     <td><input type="text" class="inpTxt"></td>
                                     <th>연관시스템</th>
-                                    <td colspan="3">
-                                        <span class="inpD check">
-										<label><input type="checkbox">SAP</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">사내메일</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">Microsoft Explorer</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">Microsoft Excel 2013</label>
-									</span>
+                                    <td colspan="3" class="pd0">
+                                        <div class="checkGroup">
+                                            <span class="inpD check">
+											<label><input type="checkbox">SAP</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">사내메일</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">Microsoft Explorer</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">Microsoft Excel 2013</label>
+										</span>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -300,10 +308,10 @@
                                 <tr>
                                     <th>개발담당자</th>
                                     <td colspan="3">
-                                        <div class="searchWrap">
+                                        <div class="searchWrap mb0">
                                             <input type="text" class="inpTxt" readonly>
                                             <input type="text" placeholder="담당자명" class="inpTxt">
-                                            <button type="button" class="btn search">검색</button>
+                                            <button type="button" class="btns ty4">검색</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -337,8 +345,8 @@
                 <!--// 개발정보 -->
             </div>
             <div class="btnGroup">
-                <button type="button" class="reset">취소</button>
-                <button type="button" class="confirm">저장</button>
+                <button type="button" class="btns ty11">취소</button>
+                <button type="button" class="btns">저장</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>

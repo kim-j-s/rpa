@@ -25,11 +25,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "col01",
@@ -91,7 +91,7 @@
                 }],
                 page: {
                     navigationItemCount: 9,
-                    height: 40,
+                    height: 26,
                     display: true,
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
@@ -372,48 +372,46 @@
 
             <div class="innerArea">
                 <div class="roundBox">
-
                     <div class="setBox">
-                        <div class="line">
-                            <div class="optionWrap">
-                                <span class="tit">상태</span>
-                                <span class="inpD check">
-								<label><input type="checkbox">대기</label>
-							</span>
-                                <span class="inpD check">
-								<label><input type="checkbox">진행</label>
-							</span>
-                                <span class="inpD check">
-								<label><input type="checkbox">완료</label>
-							</span>
-                                <span class="inpD check">
-								<label><input type="checkbox">불가</label>
-							</span>
-                            </div>
+                        <div class="searchWrap">
+                            <span class="tit">상태</span>
+                            <span class="inpD check">
+							<label><input type="checkbox">대기</label>
+						</span>
+                            <span class="inpD check">
+							<label><input type="checkbox">진행</label>
+						</span>
+                            <span class="inpD check">
+							<label><input type="checkbox">완료</label>
+						</span>
+                            <span class="inpD check">
+							<label><input type="checkbox">불가</label>
+						</span>
                         </div>
-                        <div class="line">
+                        <div class="searchWrap">
+                            <span class="tit">기간</span>
                             <div class="dateWrap">
-                                <span class="tit">기간</span>
                                 <span class="datePicker">
 								<span class="dateBox">
-									<input type="text" class="dateFrom inpTxt" name="from" readonly="">
+									<input type="text" class="dateFrom inpTxt ty1" name="from" readonly="">
 								</span>
                                 <span class="dash">~</span>
                                 <span class="dateBox">
-									<input type="text" class="dateTo inpTxt" name="to" readonly="">
+									<input type="text" class="dateTo inpTxt ty1" name="to" readonly="">
 								</span>
                                 </span>
                             </div>
-                            <div class="searchWrap">
-                                <select name="" id="" class="selectD">
-                                    <option value="">과제명</option>
-                                    <option value="">과제코드</option>
-                                    <option value="">부서명</option>
-                                    <option value="">담당자명</option>
-                                </select>
-                                <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-                                <button type="button" class="btn search">검색</button>
-                                <button type="button" class="btn reset">초기화</button>
+
+                            <select name="" id="" class="selectD ty1 ml10">
+                                <option value="">과제명</option>
+                                <option value="">과제코드</option>
+                                <option value="">부서명</option>
+                                <option value="">담당자명</option>
+                            </select>
+                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd493">
+                            <div class="setBoxBtns">
+                                <button type="button" class="btns ty4">검색</button>
+                                <button type="button" class="btns ty7">초기화</button>
                             </div>
                         </div>
                     </div>
@@ -422,11 +420,11 @@
                         <div class="tableTop">
                             <span class="totalNum">총 <em>100</em>건</span>
                             <div class="rightArea">
-                                <button type="button" class="btnTxt">등록</button>
+                                <button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
                     </div>
                 </div>
@@ -439,6 +437,284 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+        <!-- 과제요청 등록 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>과제요청</h3>
+                </div>
+                <div class="popCont scrollArea">
+
+                    <!-- 기본정보 -->
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기본정보</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>과제명 <span class="essential">필수입력</span></th>
+                                        <td><input type="text" class="inpTxt" readonly></td>
+                                        <th>과제코드 <span class="essential">필수입력</span></th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="AA-101">
+                                                <button type="button" class="btnSelect load">이전 정보 가져오기</button>
+                                            </div>
+                                        </td>
+                                        <th>BPM일련번호</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>과제빈도</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt">
+                                                <select name="" id="" class="selectD">
+                                                    <option value="">년</option>
+                                                    <option value="">월</option>
+                                                    <option value="">주</option>
+                                                    <option value="">일</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <th>정기실행여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">정기실행여부</option>
+                                            </select>
+                                        </td>
+                                        <th>일인당 처리 건수</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>건</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>요청자 <span class="essential">필수입력</span></th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt">
+                                                <button type="button" class="btnSelect load">요청자 검색</button>
+                                            </div>
+                                        </td>
+                                        <th>요청자 사번 <span class="essential">필수입력</span></th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                        <th>요청일자 <span class="essential">필수입력</span></th>
+                                        <td>
+                                            <div class="dateWrap full">
+                                                <span class="datePicker">
+											<span class="dateBox">
+												<input type="text" class="dateFrom inpTxt" name="from" readonly="">
+											</span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>연관시스템</th>
+                                        <td colspan="5" class="pd0">
+                                            <div class="checkGroup">
+                                                <span class="inpD check">
+											<label><input type="checkbox">SAP</label>
+										</span>
+                                                <span class="inpD check">
+											<label><input type="checkbox">사내메일</label>
+										</span>
+                                                <span class="inpD check">
+											<label><input type="checkbox">Microsoft Explorer</label>
+										</span>
+                                                <span class="inpD check">
+											<label><input type="checkbox">Microsoft Excel 2013</label>
+										</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--// 기본정보 -->
+
+                    <!-- 기초 데이터 -->
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기초 데이터</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>직접직 처리 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>직접직 절감 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>직접직 처리 인원</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>명</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>간접직 처리 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>간접직 절감 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>간접직 처리 인원</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>명</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>연관 인원</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>명</span>
+                                            </div>
+                                        </td>
+                                        <th>간접 효과 비용</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt"> <span>원</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th>간접 효과<br> 비용 설명</th>
+                                        <td colspan="5">
+                                            <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--// 기초 데이터 -->
+
+                    <!-- 기대 효과 -->
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기대 효과</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>직접직 효과 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="40"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>직접직 효과 비용</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th>간접직 효과 시간</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="40"> <span>분</span>
+                                            </div>
+                                        </td>
+                                        <th>간접직 효과 비용</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+                                            </div>
+                                        </td>
+                                        <th>총 효과 비용</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--// 기대 효과 -->
+
+                    <!-- 상태 -->
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">상태</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>검토내용</th>
+                                        <td>
+                                            <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>관련파일</th>
+                                        <td>
+                                            <div class="inpFileWrap">
+                                                <div class="inpFileList">
+                                                    <div class="inpFileBtnEle">
+                                                        <button type="button" class="btnSelect" onclick="fileUploadAdd(this)">찾기</button>
+                                                    </div>
+                                                    <input type="file" class="inpfile">
+                                                    <input type="text" class="inpTxt" placeholder="파일을 첨부하세요" readonly>
+                                                    <button type="button" class="btn UploadListDelete" onclick="fileUploadListDelete(this)">삭제</button>
+                                                    <button type="button" class="btn UploadListAdd" onclick="fileUploadListAdd(this)">추가</button>
+                                                </div>
+                                            </div>
+                                            <p class="downloadInfoText">- 파일 1개당 크기 50MB, 전체 파일 크기 300M까지 지원</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--// 상태 -->
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns">저장</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //과제요청 등록 pop-up -->
+
     </div>
 
 </body>

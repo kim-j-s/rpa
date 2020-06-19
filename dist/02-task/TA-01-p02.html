@@ -19,7 +19,8 @@
 <body>
 
     <!-- 과제요청 상세 pop-up -->
-    <div class="popup botDetail windowPop">
+    <div class="popup">
+        <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
                 <h3>과제요청</h3>
@@ -71,7 +72,12 @@
                                 </tr>
                                 <tr>
                                     <th>요청자 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt" readonly value="윤예진"></td>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt" readonly value="윤예진">
+                                            <button type="button" class="btnSelect load">요청자 검색</button>
+                                        </div>
+                                    </td>
                                     <th>요청자 사번 <span class="essential">필수입력</span></th>
                                     <td><input type="text" class="inpTxt" readonly value="12345678"></td>
                                     <th>요청일자 <span class="essential">필수입력</span></th>
@@ -81,19 +87,21 @@
                                 </tr>
                                 <tr>
                                     <th>연관시스템</th>
-                                    <td colspan="5">
-                                        <span class="inpD check">
-										<label><input type="checkbox">SAP</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">사내메일</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">Microsoft Explorer</label>
-									</span>
-                                        <span class="inpD check">
-										<label><input type="checkbox">Microsoft Excel 2013</label>
-									</span>
+                                    <td colspan="5" class="pd0">
+                                        <div class="checkGroup">
+                                            <span class="inpD check">
+											<label><input type="checkbox">SAP</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">사내메일</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">Microsoft Explorer</label>
+										</span>
+                                            <span class="inpD check">
+											<label><input type="checkbox">Microsoft Excel 2013</label>
+										</span>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -232,7 +240,7 @@
                         <strong class="tableTitle">속성</strong>
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
-                    <div class="tblSlide">
+                    <div class="tblSlide etc">
 
                         <div class="innerContWrap">
                             <div class="innerCont">
@@ -358,8 +366,8 @@
                         <strong class="tableTitle">상태</strong>
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
-                    <div class="tblSlide">
-                        <table class="table form">
+                    <div class="tblSlide etc">
+                        <table class="table form brdTy2">
                             <tbody>
                                 <tr>
                                     <th>검토내용</th>
@@ -401,83 +409,85 @@
                             </tbody>
                         </table>
 
-                        <div class="innerContHeader">
-                            <strong class="innerContTit">변경내역</strong>
-                        </div>
-                        <table class="table text">
-                            <colgroup>
-                                <col style="width: auto">
-                                <col style="width: 15%">
-                                <col style="width: 15%">
-                                <col style="width: 15%">
-                                <col style="width: 15%">
-                                <col style="width: 10%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>변경사유</th>
-                                    <th>요청자</th>
-                                    <th>부서명</th>
-                                    <th>담당자명</th>
-                                    <th>접수일</th>
-                                    <th>진행상태</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="" class="underline">사유………1</a></td>
-                                    <td>요청자1</td>
-                                    <td>회계팀</td>
-                                    <td>담당자A</td>
-                                    <td>2020-05-02</td>
-                                    <td>
-                                        <span class="color1">대기</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="" class="underline">사유………2</a></td>
-                                    <td>요청자2</td>
-                                    <td>회계팀</td>
-                                    <td>담당자A</td>
-                                    <td>2020-05-02</td>
-                                    <td>
-                                        <span class="color2">진행</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="" class="underline">사유………3</a></td>
-                                    <td>요청자3</td>
-                                    <td>회계팀</td>
-                                    <td>담당자A</td>
-                                    <td>2020-05-02</td>
-                                    <td>
-                                        <span class="color3">완료</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="" class="underline">사유………4</a></td>
-                                    <td>요청자4</td>
-                                    <td>회계팀</td>
-                                    <td>담당자A</td>
-                                    <td>2020-05-02</td>
-                                    <td>
-                                        <span class="color4">불가</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="" class="underline">사유………5</a></td>
-                                    <td>요청자5</td>
-                                    <td>회계팀</td>
-                                    <td>담당자A</td>
-                                    <td>2020-05-02</td>
-                                    <td>
-                                        <span class="color3">완료</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="btnGroup ar">
-                            <button type="button" class="modify">변경등록</button>
+                        <div class="innerContWrap etc">
+                            <div class="innerContHeader">
+                                <strong class="innerContTit">변경내역</strong>
+                            </div>
+                            <table class="table text">
+                                <colgroup>
+                                    <col style="width: auto">
+                                    <col style="width: 15%">
+                                    <col style="width: 15%">
+                                    <col style="width: 15%">
+                                    <col style="width: 15%">
+                                    <col style="width: 10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>변경사유</th>
+                                        <th>요청자</th>
+                                        <th>부서명</th>
+                                        <th>담당자명</th>
+                                        <th>접수일</th>
+                                        <th>진행상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="" class="underline">사유………1</a></td>
+                                        <td>요청자1</td>
+                                        <td>회계팀</td>
+                                        <td>담당자A</td>
+                                        <td>2020-05-02</td>
+                                        <td>
+                                            <span class="color1">대기</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="" class="underline">사유………2</a></td>
+                                        <td>요청자2</td>
+                                        <td>회계팀</td>
+                                        <td>담당자A</td>
+                                        <td>2020-05-02</td>
+                                        <td>
+                                            <span class="color2">진행</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="" class="underline">사유………3</a></td>
+                                        <td>요청자3</td>
+                                        <td>회계팀</td>
+                                        <td>담당자A</td>
+                                        <td>2020-05-02</td>
+                                        <td>
+                                            <span class="color3">완료</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="" class="underline">사유………4</a></td>
+                                        <td>요청자4</td>
+                                        <td>회계팀</td>
+                                        <td>담당자A</td>
+                                        <td>2020-05-02</td>
+                                        <td>
+                                            <span class="color4">불가</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="" class="underline">사유………5</a></td>
+                                        <td>요청자5</td>
+                                        <td>회계팀</td>
+                                        <td>담당자A</td>
+                                        <td>2020-05-02</td>
+                                        <td>
+                                            <span class="color3">완료</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btnGroup ar">
+                                <button type="button" class="modify">변경등록</button>
+                            </div>
                         </div>
 
                     </div>
@@ -485,8 +495,8 @@
                 <!--// 상태 -->
             </div>
             <div class="btnGroup">
-                <button type="button" class="reset">취소</button>
-                <button type="button" class="confirm">수정</button>
+                <button type="button" class="btns ty11">취소</button>
+                <button type="button" class="btns ty2">수정</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>
