@@ -87,12 +87,14 @@
 .wd120 {width:120px !important;}
 .wd140 {width:140px !important;}
 .wd153 {width:153px !important;}
+.wd173 {width:173px !important;}
 .wd194 {width:194px !important;}
 .wd200 {width:200px !important;}
 .wd493 {width:493px !important;}
 .wd537 {width:537px !important;}
 .wd700 {width:700px !important;}
 .wd730 {width:730px !important;}
+.wd734 {width:734px !important;}
 .wd743 {width:743px !important;}
 
 .mwd60 {min-width:60px;}
@@ -100,6 +102,7 @@
 .mt0 {margin-top:0 !important;}
 .mt30 {margin-top:30px !important;}
 
+.ml8 {margin-left:8px !important;}
 .ml10 {margin-left:10px !important;}
 .ml30 {margin-left:30px !important;}
 .ml50 {margin-left:50px !important;}
@@ -307,8 +310,8 @@
 
 /* Btn/Icon */
 	.btn{background-position:center; background-repeat:no-repeat;}
-	.btn.search{background-image:url(../images/icon/search.png); background-color:#0c79f8; overflow:hidden; text-indent:-9999px;}
-	.btn.reset{background-image:url(../images/icon/reset.png); background-color:#5b6378;}
+	.btn.search {width:30px; height:30px; background-image:url(../images/icon/search.png); background-color:#0c79f8; overflow:hidden; text-indent:-9999px;}
+	.btn.reset {width:30px; height:30px;background-image:url(../images/icon/reset.png); background-color:#5b6378; text-indent:-9999px;}
 	.btn.rndBtn {height:30px; padding:0 10px; background:#626262; color:#fff; border-radius:3px;}
 	.btn.rndBtn:disabled {background:#b0b0b0; cursor:default;}
 	.btn.rndBtn.refresh {padding:0 20px; font-weight:bold; background:#0c79f8;}
@@ -349,8 +352,11 @@
 
 	.btns {display:inline-block; vertical-align:middle; min-width:80px; height:30px; line-height:30px; padding:0 18px; text-align:center; color:#fff; font-size:14px; background:#0c79f8; border-radius:3px; box-shadow:0px 2px 4px 0px rgba(0, 0, 0, 0.2); transition: 0.5s; overflow:hidden;}
 	.btns:hover {background:#053062;}
+	.btns[disabled] {color:#e0e3e7; background:#8896a7;}
+	.btns[disabled]:before {opacity:0.7;}
 	.btns.full {width:100%;}
 	.btns:before {content:''; display:inline-block; vertical-align:middle;}
+	.btns.ty1[diabled] {opacity:0.7; background:#8896a7;}
 	.btns.ty1:before {position:relative; top:-1px; width:13px; height:15px; margin-right:6px; background:url(../images/icon/icon_write.png) no-repeat;}
 	.btns.ty2:before {position:relative; top:-1px; width:15px; height:15px; margin-right:7px; background:url(../images/icon/icon_modify.png) no-repeat;}
 	.btns.ty3:before {position:relative; top:-1px; width:14px; height:14px; margin-right:8px; background:url(../images/icon/icon_delete.png) no-repeat;}
@@ -361,11 +367,17 @@
 	.btns.ty7 {width:52px; min-width:0px; background:#053062 url(../images/icon/icon_reset.png) no-repeat center center; text-indent:-9999px;}
 	.btns.ty8 {color:#464646; border:1px solid #b9c5d4; background: linear-gradient(180deg, rgba(254,254,254,1) 0%, rgba(245,245,245,1) 100%);}
 	.btns.ty8:before {position:relative; top:-1px; width:16px; height:15px; margin-right:6px; background:url(../images/icon/icon_etc01.png) no-repeat;}
+	.btns.ty8:hover {color:#fff; background:#707c8b;}
+	.btns.ty8:hover:before {background:url(../images/icon/icon_etc01_on.png) no-repeat;}
+	.btns.ty8[disabled], .btns.ty8[disabled]:hover {color:#999; background:#f4f4f4;}
+	.btns.ty8[disabled]:before {background:url(../images/icon/icon_etc01.png) no-repeat; opacity:0.7;}
 	.btns.ty9 {width:46px; min-width:0px; height:24px; line-height:24px; border:1px solid #b9c5d4; background:#f9f9f9 url(../images/icon/btn_x_black_small.png) no-repeat center center; text-indent:-9999px; box-shadow:none;}
 	.btns.ty10 {height:28px; line-height:28px; color:#464646; font-size:16px; border:1px solid #daeafb; border-radius:25px; box-shadow:none; background:#f6f9fd;}
 	.btns.ty10:before {position:relative; top:0px; width:17px; height:17px; margin-right:10px; background:url(../images/icon/icon_plus.png) no-repeat;}
 	.btns.ty11 {color:#0c79f8; border:1px solid #0c79f8; background:#fff;}
-	.btns.ty11:hover {color:#fff; border:1px solid #707c8b; background:#707c8b;}	
+	.btns.ty11:hover {color:#fff; border:1px solid #707c8b; background:#707c8b;}
+	.btns.ty12 {color:#fe0048; border:1px solid #fe0048; background:#fff;}
+	
 	
 
 /* INPUT */
@@ -658,32 +670,24 @@ table + .innerContHeader {margin-top:20px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td.hasBorder {border-right:1px solid #e7f3ff; vertical-align:middle; background:#e7f3ff;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {color:#222; font-size:12px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td {font-size:14px; box-shadow:none; vertical-align:middle; background-color:#f6f9fd;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] {vertical-align:middle;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] + .dpib {margin-left:3px;}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] {background:#eaf1f9;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td {vertical-align:middle; font-size:14px; color:#666;}
-
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td.hasBorder {border-right:none; border-bottom:1px solid #e3eaf3;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {padding:5px 20px; font-size:14px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td .reMark:last-child {margin-right:9px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel="aside-body"] table tr td [data-ax5grid-cellHolder] {padding:3px 5px;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-0 {background:#fff;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-2 {background:#fff;}
+
 .noPd [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {padding:0 !important;}
+.white [data-ax5grid-container="root"] [data-ax5grid-container="body"] {background:#fff;}
+[data-ax5grid].white [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] {background:#fff;}
 
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="status"] {display:none;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="page"] [data-ax5grid-page="holder"] [data-ax5grid-page="navigation"] [data-ax5grid-page-navigation="holder"] {display:inline-block;}
-
-
-/* ax5ui Grid sort arrow */
-/*
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] {width:12px; height:20px; vertical-align:middle;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort]:before {opacity:1; border:none; width:12px; height:7px; background:url(../images/icon/arrow_sort_up.png) no-repeat;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort]:after {opacity:1; border:none; width:12px; height:7px; background:url(../images/icon/arrow_sort_down.png) no-repeat;}
-*/
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] {vertical-align:middle;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] + .dpib {margin-left:3px;}
-
-/* ax5ui Grid tr background */
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-0 {background:#fff;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-2 {background:#fff;}
 
 
 /* ax5ui Grid Paging */

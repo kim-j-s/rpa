@@ -19,7 +19,8 @@
 <body>
 
     <!-- 요청과제 상세 pop-up -->
-    <div class="popup botDetail windowPop">
+    <div class="popup">
+        <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
                 <h3>요청과제</h3>
@@ -37,49 +38,31 @@
                             <tbody>
                                 <tr>
                                     <th>과제명 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt" readonly value="매출"></td>
+                                    <td>매출</td>
                                     <th>과제코드</th>
-                                    <td><input type="text" class="inpTxt" readonly value="AA-101"></td>
+                                    <td>AA-101</td>
                                     <th>BPM일련번호</th>
-                                    <td><input type="text" class="inpTxt" readonly value="2020202020202020"></td>
+                                    <td>2020202020202020</td>
                                 </tr>
                                 <tr>
                                     <th>과제빈도</th>
-                                    <td>
-                                        <div class="inpWrap">
-                                            <input type="text" class="inpTxt" readonly value="1">
-                                            <select name="" id="" class="selectD" disabled>
-                                                <option value="">년</option>
-                                                <option value="">월</option>
-                                                <option value="">주</option>
-                                                <option value="">일</option>
-                                            </select>
-                                        </div>
-                                    </td>
+                                    <td>1 주</td>
                                     <th>RPA구분 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt" readonly value="AA"></td>
+                                    <td>AA</td>
                                     <th>프로세스명</th>
-                                    <td><input type="text" class="inpTxt" readonly value="AA1010_XJDD"></td>
+                                    <td>AA1010_XJDD</td>
                                 </tr>
                                 <tr>
                                     <th>정기실행여부</th>
-                                    <td>
-                                        <select name="" id="" class="selectD full" disabled>
-                                            <option value="">비정기</option>
-                                        </select>
-                                    </td>
+                                    <td>비정기</td>
                                     <th>일인당 처리 건수</th>
-                                    <td>
-                                        <div class="inpWrap">
-                                            <input type="text" class="inpTxt" readonly value="1"> <span>건</span>
-                                        </div>
-                                    </td>
+                                    <td>1 건</td>
                                     <th>요청자 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt" readonly value="홍길동"></td>
+                                    <td>홍길동</td>
                                 </tr>
                                 <tr>
                                     <th>요청자 사번 <span class="essential">필수입력</span></th>
-                                    <td><input type="text" class="inpTxt" readonly value="20202022020202202"></td>
+                                    <td>20202022020202202</td>
                                     <th>연관시스템</th>
                                     <td colspan="3">
                                         <span class="inpD check">
@@ -234,7 +217,7 @@
                         <strong class="tableTitle">속성</strong>
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
-                    <div class="tblSlide">
+                    <div class="tblSlide etc">
 
                         <div class="innerContWrap">
                             <div class="innerCont">
@@ -465,8 +448,8 @@
                 <!--// 개발정보 -->
             </div>
             <div class="btnGroup">
-                <button type="button" class="reset">닫기</button>
-                <button type="button" class="confirm">수정</button>
+                <button type="button" class="btns ty11">닫기</button>
+                <button type="button" class="btns ty2">수정</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>
