@@ -314,6 +314,11 @@
 	table.form .inpWrap.ty1 .middleMark {position:static; display:inline-block; margin:0; width:20px; min-width:0; text-align:center; border-left:none; background:none; padding:0; vertical-align:middle;}
 	table.form .inpWrap.ty1 .middleMark + .inpTxt {margin-left:0;}
 
+	table.form .inpWrap.ty1.full {display:flex;}
+	table.form .inpWrap.ty1.full .inpTxt {flex:auto;}
+	table.form .inpWrap.ty1.full .middleMark {position:static; display:inline-block; flex:none; margin:0; width:20px; min-width:0; text-align:center; border-left:none; background:none; padding:0; vertical-align:middle;}
+	table.form .inpWrap.ty1 .middleMark + .inpTxt {margin-left:0;}
+
 	table.form .inpWrap.ty2 {font-size:0;}
 	table.form .inpWrap.ty2 .inpTxt {flex:none; width:55px;}
 	table.form .inpWrap.ty2 .inpTxt:first-child {width:46px;}

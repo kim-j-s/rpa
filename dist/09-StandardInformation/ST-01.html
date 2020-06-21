@@ -392,13 +392,13 @@
                     <div class="tableWrap single">
                         <div class="tableTop">
                             <div class="rightArea">
-                                <a href="#" class="btnTxt red">삭제</a>
-                                <a href="#" class="btnTxt white">수정</a>
-                                <a href="#" class="btnTxt">추가</a>
+                                <button type="button" class="btns ty12">삭제</button>
+                                <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+                                <button type="button" class="btns openPop" data-popopen="pop1">추가</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 490px;"></div>
 
                     </div>
                 </div>
@@ -411,6 +411,117 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+
+        <!-- 조직관리 - 조직관리 추가 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>조직관리 추가</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기본정보</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>상위부서</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly>
+                                                <button type="button" class="btnSelect">부서선택</button>
+                                            </div>
+                                        </td>
+                                        <th>부서코드</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt">
+                                                <button type="button" class="btnSelect">중복확인</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>부서명</th>
+                                        <td colspan="3">
+                                            <input type="text" class="inpTxt">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns">추가</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //조직관리 - 조직관리 추가 pop-up -->
+
+        <!-- 조직관리 - 조직관리 수정 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop2">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>조직관리 수정</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기본정보</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>상위부서</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt" readonly>
+                                                <button type="button" class="btnSelect">부서선택</button>
+                                            </div>
+                                        </td>
+                                        <th>부서코드</th>
+                                        <td>
+                                            <div class="inpWrap">
+                                                <input type="text" class="inpTxt">
+                                                <button type="button" class="btnSelect">중복확인</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>부서명</th>
+                                        <td>
+                                            <input type="text" class="inpTxt">
+                                        </td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                                <option value="">비활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty2">수정</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //조직관리 - 조직관리 수정 pop-up -->
     </div>
 
 </body>
