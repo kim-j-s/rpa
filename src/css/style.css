@@ -86,6 +86,7 @@
 .wd100 {width:100px !important;}
 .wd120 {width:120px !important;}
 .wd140 {width:140px !important;}
+.wd143 {width:143px !important;}
 .wd153 {width:153px !important;}
 .wd173 {width:173px !important;}
 .wd194 {width:194px !important;}
@@ -93,6 +94,7 @@
 .wd493 {width:493px !important;}
 .wd520 {width:520px !important;}
 .wd537 {width:537px !important;}
+.wd630 {width:630px !important;}
 .wd700 {width:700px !important;}
 .wd730 {width:730px !important;}
 .wd734 {width:734px !important;}
@@ -262,25 +264,24 @@
 	table.form .inpWrap span + .inpTxt + .middleMark {margin-left:8px;}
 	table.form .inpWrap .inpTxt + .selectD{margin-left:8px;}
 	table.form .inpWrap .selectD{flex:auto; width:100%;}
-
 	table.form .inpWrap.etc span.text {position:static; flex:none; display:inline-block; min-width:0; padding:0; line-height:30px; background:none; border-left:none;}
-
-
-
 	table.form .selectD + .btnSelect{flex:none; margin-left:8px;}
 	table.form .inpTxt + .btnSelect{flex:none; margin-left:8px;}
 	table.form .inpWrap .selectD + span{margin:0 6px;}
-	.popCont table.form {width:100%;}
 
+	.popCont table.form {width:100%;}
+	.tableWrap.etc {border-top:1px solid #222;}
 	.tableWrap table.form {border-top:none; border-bottom:none;}
 	.tableWrap table.form tr {border-bottom:none;}
 	.tableWrap table.form th {height:40px; padding:5px 12px; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
+	.tableWrap table.form.etc th {}
 	.tableWrap table.form td {height:40px; padding:5px 12px; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
 	.tableWrap table.form td .btns {box-shadow:none;}
 	.tableWrap table.form td .inpTxt + .btns {margin-left:1px;}
 	.tableWrap table.form tbody tr:first-child th,
 	.tableWrap table.form tbody tr:first-child td {border-top:none;}
 	.tableWrap table.form tbody tr td:last-child {border-right:none;}
+	.tableWrap.etc table.form {border-bottom:1px solid #edf1f7;}
 
 	.tblSlide {border-radius:0 0 8px 8px; border:1px solid #c7d1e0; overflow:hidden;}
 	.tblSlide.etc {padding-bottom:25px;}

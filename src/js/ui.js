@@ -156,7 +156,7 @@ $(function(){
 	openPop();
 	openWindows();
 	closePop();
-	naviShow();
+	//naviShow();
 	inputDesign();
 	$('.inpD').find('input').on('change',function(){
 		inputDesign();

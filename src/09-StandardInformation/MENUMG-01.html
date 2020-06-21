@@ -143,12 +143,12 @@ $(function () {
 		],
 		page: {
             navigationItemCount: 9,
-            height: 40,
+            height: 26,
             display: true,
-            //firstIcon: '|<',
+            firstIcon: '<i class="direction first"></i>',
 			prevIcon: '<i class="direction prev"></i>',
 			nextIcon: '<i class="direction next"></i>',
-            //lastIcon: '>|',
+			lastIcon: '<i class="direction last"></i>',
             onChange: function () {
 				// 페이지 번호 눌렀을때 호출
             	search(this.page.selectPage);

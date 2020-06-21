@@ -72,8 +72,10 @@ $(function () {
             navigationItemCount: 9,
             height: 26,
             display: true,
+			firstIcon: '<i class="direction first"></i>',
 			prevIcon: '<i class="direction prev"></i>',
 			nextIcon: '<i class="direction next"></i>',
+			lastIcon: '<i class="direction last"></i>',
             onChange: function () {
 				// 페이지 번호 눌렀을때 호출
             	search(this.page.selectPage);
