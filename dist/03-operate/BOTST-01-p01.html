@@ -25,11 +25,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "col01",
@@ -120,7 +120,7 @@
             setTimeout(function() {
                 var tblHeaderHeight = $('[data-ax5grid-panel-scroll="' + 'header' + '"]').outerHeight();
                 var tblBodyHeight = $('[data-ax5grid-panel-scroll="' + 'body' + '"]').outerHeight();
-                firstGrid.setHeight(tblHeaderHeight + tblBodyHeight + 30);
+                firstGrid.setHeight(tblHeaderHeight + tblBodyHeight + 60);
             }, 300);
 
         });
@@ -142,7 +142,7 @@
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
                     <div class="tblSlide">
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%;" height="450px"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height:450px;" class="white"></div>
                     </div>
                 </div>
                 <div class="tableWrap">

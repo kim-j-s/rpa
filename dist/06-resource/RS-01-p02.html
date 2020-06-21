@@ -19,7 +19,8 @@
 <body>
 
     <!-- BOT 관리 상세 pop-up -->
-    <div class="popup botDetail windowPop">
+    <div class="popup">
+        <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
                 <h3>BOT 상세</h3>
@@ -40,7 +41,7 @@
                                     <td><input type="text" class="inpTxt"></td>
                                     <th>예약가능시간</th>
                                     <td>
-                                        <div class="inpWrap">
+                                        <div class="inpWrap etc">
                                             <select name="" id="" class="selectD">
                                                 <option value="">00</option>
                                                 <option value="">01</option>
@@ -67,7 +68,7 @@
                                                 <option value="">22</option>
                                                 <option value="">23</option>
                                             </select>
-                                            <span>시 ~ </span>
+                                            <span class="text">시 ~ </span>
                                             <select name="" id="" class="selectD">
                                                 <option value="">00</option>
                                                 <option value="">01</option>
@@ -94,7 +95,7 @@
                                                 <option value="">22</option>
                                                 <option value="">23</option>
                                             </select>
-                                            <span>시</span>
+                                            <span class="text">시</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -147,10 +148,10 @@
                                 <tr>
                                     <th>로그인 정보</th>
                                     <td colspan="3">
-                                        <div class="inpWrap">
-                                            <span>아이디</span>
+                                        <div class="inpWrap etc">
+                                            <span class="text">아이디</span>
                                             <input type="text" class="inpTxt">
-                                            <span>비밀번호</span>
+                                            <span class="text">비밀번호</span>
                                             <input type="password" class="inpTxt">
                                         </div>
                                     </td>
@@ -160,14 +161,14 @@
                                 <tr>
                                     <th>BOT 사양</th>
                                     <td colspan="5">
-                                        <div class="inpWrap">
-                                            <span>운영체제</span>
+                                        <div class="inpWrap etc">
+                                            <span class="text">운영체제</span>
                                             <input type="text" class="inpTxt">
-                                            <span>CPU</span>
+                                            <span class="text">CPU</span>
                                             <input type="text" class="inpTxt">
-                                            <span>RAM</span>
+                                            <span class="text">RAM</span>
                                             <input type="text" class="inpTxt">
-                                            <span>그래픽카드</span>
+                                            <span class="text">그래픽카드</span>
                                             <input type="text" class="inpTxt">
                                         </div>
                                     </td>
@@ -234,8 +235,8 @@
                 </div>
             </div>
             <div class="btnGroup">
-                <button type="button" class="reset">취소</button>
-                <button type="button" class="confirm">저장</button>
+                <button type="button" class="btns ty11">취소</button>
+                <button type="button" class="btns ty13">저장</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>
