@@ -99,6 +99,8 @@
 .wd730 {width:730px !important;}
 .wd734 {width:734px !important;}
 .wd743 {width:743px !important;}
+.wd776 {width:776px !important;}
+
 
 .mwd60 {min-width:60px;}
 
@@ -253,7 +255,6 @@
 	table.table th{background-color:#f6f9fd; /* transform:rotate(0.05deg); */}
 	table.table thead th{font-weight:500}
 	table.table tbody th{text-align:left;}
-	/* table.table tbody td {height:46px; padding:7px 8px; vertical-align:middle;} */
 	table.table td .link{display:inline-block;}
 	table.table td .link:hover{color:#0c79f8}
 	table.table td > span{display:inline-block;}
@@ -395,8 +396,8 @@
 	.btns.ty10:before {top:0px; width:17px; height:17px; margin-right:10px; background:url(../images/icon/icon_plus.png) no-repeat;}
 	.btns.ty11 {color:#0c79f8; border:1px solid #0c79f8; background:#fff;}
 	.btns.ty11:hover {color:#fff; border:1px solid #707c8b; background:#707c8b;}
-	.btns.ty13:before {top:-1px; width:17px; height:14px; margin-right:6px; background:url(../images/icon/icon_save.png) no-repeat;}
-	.btns.ty14:before {top:-1px; width:15px; height:15px; margin-right:6px; background:url(../images/icon/icon_select.png) no-repeat;}
+	.btns.ty12:before {top:-1px; width:17px; height:14px; margin-right:6px; background:url(../images/icon/icon_save.png) no-repeat;}
+	.btns.ty13:before {top:-1px; width:15px; height:15px; margin-right:6px; background:url(../images/icon/icon_select.png) no-repeat;}
 	
 	
 
