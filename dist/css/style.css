@@ -103,6 +103,7 @@
 .mwd60 {min-width:60px;}
 
 .mt0 {margin-top:0 !important;}
+.mt10 {margin-top:10px !important;}
 .mt30 {margin-top:30px !important;}
 
 .ml8 {margin-left:8px !important;}
@@ -252,7 +253,7 @@
 	table.table th{background-color:#f6f9fd; /* transform:rotate(0.05deg); */}
 	table.table thead th{font-weight:500}
 	table.table tbody th{text-align:left;}
-	table.table tbody td{height:46px; padding:7px 8px; vertical-align:middle;}
+	/* table.table tbody td {height:46px; padding:7px 8px; vertical-align:middle;} */
 	table.table td .link{display:inline-block;}
 	table.table td .link:hover{color:#0c79f8}
 	table.table td > span{display:inline-block;}
@@ -260,9 +261,12 @@
 	table.text thead th {height:33px; padding:5px 20px; border-bottom:1px solid #7c848d; background:#e7f3ff;}
 	table.text tbody td {height:37px; padding:5px 20px; border-bottom:1px solid #e3eaf3;}
 
-	table.form {width:100%; text-align:left; border-bottom:1px solid #e7eaef;}
-	table.form tr {border-bottom:1px solid #e7eaef}
-	table.form th {width:120px; padding:13px 13px; vertical-align:middle;}
+	table.form {width:100%; text-align:left; border-top:none; border-bottom:none;}
+	table.form tr {}
+	table.form th {width:120px; height:40px; padding:5px 12px; vertical-align:middle; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
+	table.form td {height:40px; padding:5px 12px; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
+	table.form td .btns {box-shadow:none;}
+	table.form td .inpTxt + .btns {margin-left:1px;}
 	table.form .inpTxt:only-child{width:100%}
 	table.form .inpWrap {position:relative; display:flex;}
 	table.form .inpWrap span {position:absolute; top:1px; right:1px; z-index:1; min-width:26px; padding:0 6px; border-radius:0 3px 3px 0; font-size:14px; line-height:28px; border-left:1px solid #dde1e5; text-align:center; background:#f7f7f7;}
@@ -277,20 +281,15 @@
 	table.form .selectD + .btnSelect{flex:none; margin-left:8px;}
 	table.form .inpTxt + .btnSelect{flex:none; margin-left:8px;}
 	table.form .inpWrap .selectD + span{margin:0 6px;}
+	table.form tbody tr:first-child th,
+	table.form tbody tr:first-child td {border-top:none;}
+	table.form tbody tr td:last-child {border-right:none;}
 
-	.popCont table.form {width:100%;}
 	.tableWrap.etc {border-top:1px solid #222;}
-	.tableWrap table.form {border-top:none; border-bottom:none;}
-	.tableWrap table.form tr {border-bottom:none;}
-	.tableWrap table.form th {height:40px; padding:5px 12px; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
-	.tableWrap table.form.etc th {}
-	.tableWrap table.form td {height:40px; padding:5px 12px; border-top:1px solid #edf1f7; border-right:1px solid #edf1f7; background:#fff;}
-	.tableWrap table.form td .btns {box-shadow:none;}
-	.tableWrap table.form td .inpTxt + .btns {margin-left:1px;}
-	.tableWrap table.form tbody tr:first-child th,
-	.tableWrap table.form tbody tr:first-child td {border-top:none;}
-	.tableWrap table.form tbody tr td:last-child {border-right:none;}
 	.tableWrap.etc table.form {border-bottom:1px solid #edf1f7;}
+
+	table.form table.text th,
+	table.form table.text td {border-right:none;}
 
 	.tblSlide {border-radius:0 0 8px 8px; border:1px solid #c7d1e0; overflow:hidden;}
 	.tblSlide.etc {padding-bottom:25px;}
@@ -300,7 +299,7 @@
 	
 	.tblSlide > .rndInner {padding:10px; background:#f6f9fd;}
 	.tblSlide > .rndInner > .rndInnerCont {border-radius:8px; border:1px solid #c7d1e0; overflow:hidden;}
-	.tblSlide table.text {border-top:none;}
+	.tblSlide > table.text {border-top:none;}
 
 	.tblScroll {overflow:auto; border-bottom:1px solid #e3eaf3;}
 	.tblScroll.ty1 {max-height:218px;}
@@ -396,7 +395,6 @@
 	.btns.ty10:before {top:0px; width:17px; height:17px; margin-right:10px; background:url(../images/icon/icon_plus.png) no-repeat;}
 	.btns.ty11 {color:#0c79f8; border:1px solid #0c79f8; background:#fff;}
 	.btns.ty11:hover {color:#fff; border:1px solid #707c8b; background:#707c8b;}
-	.btns.ty12:before {top:-1px; width:14px; height:14px; margin-right:7px; background:url(../images/icon/icon_delete.png) no-repeat;}
 	.btns.ty13:before {top:-1px; width:17px; height:14px; margin-right:6px; background:url(../images/icon/icon_save.png) no-repeat;}
 	.btns.ty14:before {top:-1px; width:15px; height:15px; margin-right:6px; background:url(../images/icon/icon_select.png) no-repeat;}
 	
@@ -686,10 +684,11 @@ table + .innerContHeader {margin-top:20px;}
 /* ax5ui Grid Custom */
 [data-ax5grid] [data-ax5grid-container="root"] {border:none; border-top:1px solid #d0dce9;}
 
+
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] {border-bottom:1px solid #7c848d;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td.hasBorder {border-right:1px solid #e7f3ff; vertical-align:middle; background:#e7f3ff;}
-[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {color:#222; font-size:12px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td {font-size:14px; box-shadow:none; vertical-align:middle; background-color:#f6f9fd;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td.hasBorder {border-right:none; vertical-align:middle; background:#e7f3ff; border-bottom:1px solid #7c848d;}
+[data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {color:#222; font-size:12px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] {vertical-align:middle;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-column-sort] + .dpib {margin-left:3px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="header"] [data-ax5grid-panel] table tr td[data-ax5grid-column-row="null"] {background:#eaf1f9;}
@@ -703,6 +702,9 @@ table + .innerContHeader {margin-top:20px;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-0 {background:#fff;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr.tr-2 {background:#fff;}
 [data-ax5grid] [data-ax5grid-container="root"] [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td[data-ax5grid-column-row="null"] {border-bottom:1px solid #e3eaf3;}
+
+
+
 
 
 .noPd [data-ax5grid-container="body"] [data-ax5grid-panel] table tr td [data-ax5grid-cellHolder] {padding:0 !important;}
