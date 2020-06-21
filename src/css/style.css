@@ -186,6 +186,14 @@
 .rndMark.ty4 {background:#009a44;}
 
 
+/* flex */
+	.flex {display:flex;}
+	.flexAuto {flex:auto;}
+	.flexAuto > .inpTxt {width:100%;}
+	.flexAuto + .btns {margin-left:10px;}
+
+	.selectD + .flexAuto {padding-left:3px;}
+
 
 /* 검색 조건 설정 */
 	.setBox {position:relative; width:calc(100% + 48px); margin-left:-24px; padding:14px 24px 16px 24px; background-color:#fff; border-bottom:1px solid #d1dae9;}
@@ -196,7 +204,6 @@
 	.setBox .tit {display:inline-block; padding-right:10px; font-size:14px; line-height:30px; color:#0c79f8; vertical-align:middle; white-space:nowrap;}
 	.setBox * + .tit {padding-left:30px;}
 	.setBox .inpD {vertical-align:middle;}
-	.setBox .btns {box-shadow:none;}
 	.setBox	.setBoxBtns {float:right;}
 	.setBoxBtns .btns + .btns {margin-left:6px;}
 
@@ -207,7 +214,9 @@
 	.searchWrap .inpTxt + .inpTxt{margin-left:3px;}
 	.searchWrap .btn{width:30px; height:30px; text-indent:-9999px;}
 	.searchWrap .btn.search{margin:0 1px 0 -1px}
-	.searchWrap .inpTxt + .btnTxt{margin-left:8px;}
+	.searchWrap .inpTxt + .btnTxt {margin-left:8px;}
+	.searchWrap .inpTxt + .btns {margin-left:8px;}
+	.searchWrap .btns {box-shadow:none;}
 
 	.searchWrap .btnGroup {display:inline-block; margin-top:0;}
 	.dateWrap {display:inline-block;}
@@ -329,7 +338,7 @@
 	.btn.UploadListDelete {display:inline-block; width:30px; height:30px; background-image:url(../images/icon/icon_remove02.png); vertical-align:middle; background-repeat:no-repeat; overflow:hidden; text-indent:-999px; border:1px solid #d5dadf; border-radius:3px;}
 	.btn.UploadListAdd {display:inline-block; width:30px; height:30px; background-image:url(../images/icon/icon_add02.png); vertical-align:middle; background-repeat:no-repeat; overflow:hidden; text-indent:-999px; border:1px solid #0c79f8; border-radius:3px;}
 
-	.btnTxt{display:inline-block; height:32px; padding:0 16px; background-color:#0c79f8; font-size:14px; color:#fff; line-height:32px; border-radius:3px; transition:all 0.5s}
+	.btnTxt{display:inline-block; height:30px; padding:0 16px; background-color:#0c79f8; font-size:14px; color:#fff; line-height:32px; border-radius:3px; transition:all 0.5s}
 	.btnTxt.white{background-color:#fff; color:#666; line-height:30px; border:1px solid #0c79f8}
 	.btnTxt.red{background-color:#fff; color:#fe0048; line-height:30px; border:1px solid #fe0048}	
 
@@ -490,7 +499,7 @@
 	.popup .setBox {width:auto; margin-left:0; background:#f6f9fd;}
 	.popup .setBox .searchWrap + .searchWrap {margin-top:6px;}
 
-	.popBox.type1 {width:1056px; max-height:calc(100% - 100px); padding-bottom:20px; border-radius:8px; overflow:auto; box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.5);}
+	.popBox.type1 {width:1056px; max-height:calc(100% - 100px); padding-bottom:25px; border-radius:8px; overflow:auto; box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.5);}
 	.type1 .popTop {height:50px; background-color:#053062; overflow:hidden;}
 	.type1 .popTop h3 {padding:0 24px; font-size:20px; line-height:50px; color:#fff;}
 	.type1 .btnPopClose {top:0px; right:0px; width:55px; height:50px; background:#05264d url(../images/icon/icon_pop_close.png) no-repeat center;}
