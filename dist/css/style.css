@@ -648,6 +648,10 @@ table + .innerContHeader {margin-top:20px;}
 }
 
 
+/* tree */
+.treeField {padding:10px; border:1px solid #e3eaf3;}
+
+
 /* DatePicker */
 .ui-datepicker {z-index:102 !important; width:300px; margin-top:5px; background-color:#fff; border:1px solid #eee; text-align:center;}
 .ui-datepicker table {line-height:1.6;}
