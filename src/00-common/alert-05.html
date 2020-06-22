@@ -1,0 +1,30 @@
+@@include('head.html', {
+	"title": "Error2"
+})
+
+
+<script>
+$(function(){
+	$('.openClick').click(function(){
+		var data = $(this).data('winopen');
+		var win = window.open(data, "PopupWin", "width=360,height=200");
+	});
+});
+</script>
+
+
+
+
+</head>
+<body class="white pd0">	
+
+<div style="padding:100px 0; text-align:center;">
+	<button type="button" class="btns openClick" data-winopen="alert-01.html">Confirm</button>
+	<button type="button" class="btns openClick" data-winopen="alert-02.html">Confirm2</button>
+	<button type="button" class="btns openClick" data-winopen="alert-03.html">Error</button>
+	<button type="button" class="btns openClick" data-winopen="alert-04.html">Error2</button>
+</div>
+
+</body>
+</html>
+

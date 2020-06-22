@@ -261,7 +261,7 @@
                         <strong class="tableTitle">속성</strong>
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
-                    <div class="tblSlide etc">
+                    <div class="tblSlide">
 
                         <div class="innerContWrap">
                             <div class="innerCont">
@@ -402,29 +402,32 @@
                                         <div class="inpFileWrap">
                                             <div class="inpFileList">
                                                 <div class="inpFileBtnEle">
-                                                    <button type="button" class="btnSelect" onclick="fileUploadAdd(this)">찾기</button>
+                                                    <button type="button" class="btns ty8 etc" onclick="fileUploadAdd(this)">파일찾기</button>
                                                 </div>
                                                 <input type="file" class="inpfile">
                                                 <input type="text" class="inpTxt" placeholder="파일을 첨부하세요" readonly>
-                                                <button type="button" class="btn UploadListDelete" onclick="fileUploadListDelete(this)">삭제</button>
-                                                <button type="button" class="btn UploadListAdd" onclick="fileUploadListAdd(this)">추가</button>
+                                                <div class="inpFileBtns">
+                                                    <button type="button" class="btns ty15" onclick="fileUploadListDelete(this)">삭제</button>
+                                                    <button type="button" class="btns ty14" onclick="fileUploadListAdd(this)">추가</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <p class="downloadInfoText">- 파일 1개당 크기 50MB, 전체 파일 크기 300M까지 지원</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
                 </div>
-                <!--// 상태 -->
             </div>
-            <div class="btnGroup">
-                <button type="button" class="btns ty11">취소</button>
-                <button type="button" class="btns">요청</button>
-            </div>
-            <button type="button" class="btnPopClose">팝업닫기</button>
+            <!--// 상태 -->
         </div>
+        <div class="btnGroup">
+            <button type="button" class="btns ty11">취소</button>
+            <button type="button" class="btns">요청</button>
+        </div>
+        <button type="button" class="btnPopClose">팝업닫기</button>
+    </div>
     </div>
     <!-- //과제변경 등록 pop-up -->
 
