@@ -77,6 +77,7 @@ footer .copyright strong{color:#0c79f8}
 .color3 {color:#0c79f8;}
 .color4 {color:#fe0048;}
 .color5 {color:#ff5012;}
+.color6 {color:#888;}
 
 .brdTy1 {border:1px solid #0c79f8 !important;}
 .brdTy2 {border-bottom:1px solid #edf1f7 !important;}
@@ -101,7 +102,6 @@ footer .copyright strong{color:#0c79f8}
 .wd734 {width:734px !important;}
 .wd743 {width:743px !important;}
 .wd776 {width:776px !important;}
-
 
 .mwd60 {min-width:60px;}
 
@@ -406,6 +406,7 @@ table.form .inpWrap.ty2 .inpTxt:first-child {width:46px;}
 .btns.ty14:hover {border:1px solid #667689; background:#707c8b url(../images/icon/icon_plus02_on.png) no-repeat center center;}
 .btns.ty15 {width:38px; min-width:0px; border:1px solid #b9c5d4; background:#fff url(../images/icon/btn_x_black_small.png) no-repeat center center; text-indent:-9999px;}
 .btns.ty15:hover {border:1px solid #667689; background:#707c8b url(../images/icon/btn_x_black_small_on.png) no-repeat center center;}
+.btns.ty16:before {top:-1px; width:14px; height:13px; margin-right:6px; background:url(../images/icon/icon_change.png) no-repeat;}
 
 
 /* INPUT */
@@ -659,17 +660,24 @@ body.hidden {overflow-y:hidden;}
 .botEventState.ty4 {background:linear-gradient(180deg, rgba(136,201,87,1) 0%, rgba(69,173,56,1) 100%); -webkit-animation:fadeIn 1s infinite alternate; animation:fadeIn 1s infinite alternate;}
 .botEventState.ty5 {background:linear-gradient(180deg, rgba(191,198,205,1) 0%, rgba(164,170,178,1) 100%);}
 
-@-webkit-keyframes fadeIn { 
-  from { opacity:0; } 
+@-webkit-keyframes fadeIn {
+  from { opacity:0; }
 }
 
-@keyframes fadeIn { 
-  from { opacity:0; } 
+@keyframes fadeIn {
+  from { opacity:0; }
 }
 
 
-/* tree */
-.treeField {padding:10px; border:1px solid #e3eaf3;}
+/* ztree */
+.treeField {border:1px solid #dbe4ef; border-radius:8px; background:#fff;}
+.treeField > .inner	{max-height:724px; padding:10px; border:15px solid #f9fcff; border-radius:8px; overflow:auto;}
+
+.ztree * {color:#464646; font-family:'Nanum Barun Gothic',dotum,sans-serif;}
+.ztree .color6 {color:#888;}
+
+.ztree li span.button.ico_docu + .node_name {cursor:default;}
+
 
 
 /* DatePicker */
