@@ -671,8 +671,9 @@ body.hidden {overflow-y:hidden;}
 
 /* ztree */
 .treeField {border:1px solid #dbe4ef; border-radius:8px; background:#fff;}
-.treeField > .inner	{max-height:724px; padding:10px; border:15px solid #f9fcff; border-radius:8px; overflow:auto;}
+.treeField > .inner	{max-height:724px; border:15px solid #f9fcff; border-radius:8px; overflow:auto;}
 
+.ztree {padding:15px;}
 .ztree * {color:#464646; font-family:'Nanum Barun Gothic',dotum,sans-serif;}
 .ztree .color6 {color:#888;}
 
