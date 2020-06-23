@@ -93,6 +93,7 @@ footer .copyright strong{color:#0c79f8}
 .wd173 {width:173px !important;}
 .wd194 {width:194px !important;}
 .wd200 {width:200px !important;}
+.wd310 {width:310px !important;}
 .wd493 {width:493px !important;}
 .wd520 {width:520px !important;}
 .wd537 {width:537px !important;}
@@ -115,6 +116,7 @@ footer .copyright strong{color:#0c79f8}
 .ml50 {margin-left:50px !important;}
 
 .mb0 {margin-bottom:0 !important;}
+.mb13 {margin-bottom:13px !important;}
 
 .pd0 {padding:0 !important;}
 
@@ -286,8 +288,12 @@ table.form .inpWrap span + .inpTxt + .middleMark {margin-left:8px;}
 table.form .inpWrap .inpTxt + .selectD{margin-left:8px;}
 table.form .inpWrap .selectD{flex:auto; width:100%;}
 table.form .inpWrap.etc span.text {position:static; flex:none; display:inline-block; min-width:0; padding:0; line-height:30px; background:none; border-left:none;}
-table.form .selectD + .btnSelect{flex:none; margin-left:8px;}
-table.form .inpTxt + .btnSelect{flex:none; margin-left:8px;}
+table.form .selectD + .btnSelect {flex:none; margin-left:3px;}
+table.form .selectD + .btns {flex:none; margin-left:3px;}
+table.form .inpWrap .selectD + .btns {flex:none; margin-left:3px;}
+table.form .inpTxt + .btnSelect {flex:none; margin-left:3px;}
+table.form .inpTxt + .btns {flex:none; margin-left:3px;}
+table.form .inpWrap .inpTxt + .btns {flex:none; margin-left:3px;}
 table.form .inpWrap .selectD + span{margin:0 6px;}
 table.form tbody tr:first-child th,
 table.form tbody tr:first-child td {border-top:none;}
@@ -352,7 +358,7 @@ table.form .inpWrap.ty2 .inpTxt:first-child {width:46px;}
 .btnTxt.white{background-color:#fff; color:#666; line-height:30px; border:1px solid #0c79f8}
 .btnTxt.red{background-color:#fff; color:#fe0048; line-height:30px; border:1px solid #fe0048}	
 
-.btnGroup {margin-top:24px; font-size:0; text-align:center;}
+.btnGroup {margin-top:20px; font-size:0; text-align:center;}
 .btnGroup.ar {text-align:right;}
 .btnGroup > *{display:inline-block; height:32px; padding:0 16px; border-radius:3px; font-size:14px;}
 .btnGroup > * + *{margin-left:8px;}

@@ -1,192 +1,127 @@
-@@include('head.html', {
+@@include('head_ztree.html', {
 	"title": "메뉴 관리"
 })
-
-<script type="text/javascript">
-
-// 간격
-var Depth = '<span class="depthMark"></span>';
-var Depth2 = '<span class="depthMark ty2"></span>';
-var Depth3 = '<span class="depthMark ty3"></span>';
-var Depth4 = '<span class="depthMark ty4"></span>';
-var Depth5 = '<span class="depthMark ty5"></span>';
-var Depth6 = '<span class="depthMark ty6"></span>';
-var Depth7 = '<span class="depthMark ty7"></span>';
-var Depth8 = '<span class="depthMark ty8"></span>';
-var Depth9 = '<span class="depthMark ty9"></span>';
-var Depth10 = '<span class="depthMark ty10"></span>';
-var Depth11 = '<span class="depthMark ty11"></span>';
-var Depth12 = '<span class="depthMark ty12"></span>';
-var Depth13 = '<span class="depthMark ty13"></span>';
-var Depth14 = '<span class="depthMark ty14"></span>';
-var Depth15 = '<span class="depthMark ty15"></span>';
-var Depth16 = '<span class="depthMark ty16"></span>';
-var Depth17 = '<span class="depthMark ty17"></span>';
-var Depth18 = '<span class="depthMark ty18"></span>';
-var Depth19 = '<span class="depthMark ty19"></span>';
-var Depth20 = '<span class="depthMark ty20"></span>';
-var Depth21 = '<span class="depthMark ty21"></span>';
-var Depth22 = '<span class="depthMark ty22"></span>';
-
-$(function () {
-
-	var ChangeBtn = '<button type="button" class="btnSelect ml30">순서 변경</button>';
-
-
-	/* 그리드 객체 생성 */
-	firstGrid = new ax5.ui.grid();
-
-	firstGrid.setConfig({
-		target: $('[data-ax5grid="first-grid"]'),
-		header: {
-			align: "center",
-			columnHeight: 43
+<script>
+	var setting = {
+		edit: {
+			drag: {
+				autoExpandTrigger: true,
+				prev: dropPrev,
+				inner: dropInner,
+				next: dropNext
+			},
+			enable: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
 		},
-		body: {
-			align: "center",
-			columnHeight: 37
+		data: {
+			simpleData: {
+				enable: true
+			}
 		},
-		columns: [
-		{
-			key: "chk",
-			label: '<span class="dpib vm">선택</span>',
-			align: "center",
-			width: 80,
-			editor: {
-				type: "checkbox", 
-				config: 
-				{
-					height: 18, 
-					trueValue: "Y", 
-					falseValue: "N"
-				}
-			}
-		}, {
-			key: "no",
-			label: '<span class="dpib vm">순서</span>',
-			sortable: true,
-			align: "center",
-			width: 80
-		}, {
-			key: "col01",
-			label: '<span class="dpib vm">메뉴명</span>',
-			sortable: true,
-			align: "left",
-			width: 224,
-			formatter: function () {
-				var returnValue = "";
-				switch (this.value) {
-					default:
-						returnValue = this.value;
-						break;
-				}// end switch
-				return returnValue;
-			}
-		}, {
-			key: "col02",
-			label: '<span class="dpib vm">메뉴구분</span>',
-			sortable: true,
-			align: "center",
-			width: 80
-		}, {
-			key: "col03",
-			label: '<span class="dpib vm">메뉴테이터<br> 구분</span>',
-			sortable: true,
-			align: "center",
-			width: 100
-		}, {
-			key: "col04",
-			label: '<span class="dpib vm">최소데이터<br> 표시</span>',
-			sortable: true,
-			align: "center",
-			width: 100
-		}, {
-			key: "col05",
-			label: '<span class="dpib vm">최소데이터<br> 수정가능여부</span>',
-			sortable: true,
-			align: "center",
-			width: 100
-		}, {
-			key: "col06",
-			label: '<span class="dpib vm">메뉴표시<br> 여부</span>',
-			sortable: true,
-			align: "center",
-			width: 100
-		}, {
-			key: "col07",
-			label: '<span class="dpib vm">정렬순서</span>',
-			sortable: true,
-			align: "center",
-			width: 160,
-			formatter: function () {
-				return this.value + ChangeBtn;
-			}
-		}, {
-			key: "col08",
-			label: '<span class="dpib vm">활성여부</span>',
-			sortable: true,
-			align: "center",
-			width: 80,
-			formatter: function () {
-				var returnValue = "";
-				switch (this.value) {
-					case "active" :
-						returnValue = '<span class="bold color3">활성</span>';
-						break;
-					default:
-						returnValue = this.value;
-						break;
-				}// end switch
-				return returnValue;
-			}
+		view: {
+			fontCss: getFont,
+			nameIsHTML: true,
+			showTitle: false
+		},
+		callback: {
+			beforeDrag: beforeDrag
 		}
-		],
-		page: {
-            navigationItemCount: 9,
-            height: 26,
-            display: true,
-            firstIcon: '<i class="direction first"></i>',
-			prevIcon: '<i class="direction prev"></i>',
-			nextIcon: '<i class="direction next"></i>',
-			lastIcon: '<i class="direction last"></i>',
-            onChange: function () {
-				// 페이지 번호 눌렀을때 호출
-            	search(this.page.selectPage);
-            }
-        },
-	});
+	};
 
-	search(0);
-});
-
-
-function search(_pageNo) {
-
-    var list = [
-		{no: (_pageNo*10)+1, col01: "사장실", col02: "폴더", col07: "1", col08: "active"},
-		{no: (_pageNo*10)+2, col01: Depth + "비서실", col02: "메뉴", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
-		{no: (_pageNo*10)+3, col01: Depth2 + "비서실", col07: "3", col08: "비활성"},
-		{no: (_pageNo*10)+4, col01: "사장실2", col02: "폴더", col07: "3", col08: "active"},
-		{no: (_pageNo*10)+5, col01: Depth + "비서실1", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "비활성"},
-		{no: (_pageNo*10)+6, col01: Depth2 + "비서실2", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
-		{no: (_pageNo*10)+7, col01: Depth3 + "비서실3", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"},
-		{no: (_pageNo*10)+8, col01: Depth4 + "비서실4", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "비활성"},
-		{no: (_pageNo*10)+9, col01: "사장실3", col07: "6", col08: "비활성"},
-		{no: (_pageNo*10)+10, col01: Depth + "비서실1", col02: "부서", col03: "일반", col04: "전체", col05: "가능", col06: "표시", col07: "2", col08: "active"}
+	var zNodes =[
+		{ id:1, pId:0, name:"전체", open:true},
+		{ id:11, pId:1, name:"홈", open:true, childOuter:false},
+		{ id:112, pId:11, name:"대시보드"},
+		{ id:113, pId:11, name:"<span class='color6 cursorNone'>대시보드 비활성</span>"},
+		{ id:22, pId:1, name:"운영현황", open:true, childOuter:false},
+		{ id:221, pId:22, name:"BOT상태"},
+		{ id:222, pId:22, name:"<span class='color6 cursorNone'>BOT상태 비활성</span>"},
+		{ id:223, pId:22, name:"과제수행이력"},
+		{ id:224, pId:22, name:"대시보드2", open:true},
+		{ id:2231, pId:224, name:"대시보드2 BOT상태"},
+		{ id:2232, pId:224, name:"대시보드2 과제수행이력"},
+		{ id:33, pId:1, name:"BOT관리", open:true, childOuter:false},
+		{ id:331, pId:33, name:"BOT관리"},
+		{ id:44, pId:1, name:"통계", open:true, childOuter:false},
+		{ id:441, pId:44, name:"과제별"},
+		{ id:442, pId:44, name:"BOT별"},
+		{ id:55, pId:1, name:"과제관리", open:true, childOuter:false},
+		{ id:551, pId:55, name:"과제요청"},
+		{ id:552, pId:55, name:"운영과제"},
+		{ id:553, pId:55, name:"속성정보"},
+		{ id:66, pId:1, name:"커뮤니티", open:true, childOuter:false},
+		{ id:661, pId:66, name:"공지사항"},
+		{ id:661, pId:66, name:"자료실"}
 	];
 
-	firstGrid.setData(
-		{
-	        list: list,
-	        page: {
-	            currentPage: _pageNo,
-	            pageSize: 10,
-	            totalElements: 500,
-	            totalPages: 500
-	        }
-	    }
-	);
-}
+	function dropPrev(treeId, nodes, targetNode) {
+		var pNode = targetNode.getParentNode();
+		if (pNode && pNode.dropInner === false) {
+			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				var curPNode = curDragNodes[i].getParentNode();
+				if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function dropInner(treeId, nodes, targetNode) {
+		if (targetNode && targetNode.dropInner === false) {
+			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				if (!targetNode && curDragNodes[i].dropRoot === false) {
+					return false;
+				} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function dropNext(treeId, nodes, targetNode) {
+		var pNode = targetNode.getParentNode();
+		if (pNode && pNode.dropInner === false) {
+			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				var curPNode = curDragNodes[i].getParentNode();
+				if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function beforeDrag(treeId, treeNodes) {
+		for (var i=0,l=treeNodes.length; i<l; i++) {
+			if (treeNodes[i].drag === false) {
+				curDragNodes = null;
+				return false;
+			} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+				curDragNodes = null;
+				return false;
+			}
+		}
+		curDragNodes = treeNodes;
+		return true;
+	}
+
+
+	function getFont(treeId, node) {
+		return node.font ? node.font : {};
+	}
+
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	});
 </script>
 
 </head>
@@ -222,16 +157,20 @@ function search(_pageNo) {
 
 		<div class="innerArea">
 			<div class="roundBox">
-				<div class="tableWrap single">
+				<div class="tableWrap">
 					<div class="tableTop">
 						<div class="rightArea">
-							<button type="button" class="btns ty3">삭제</button>
+							<button type="button" class="btns ty16">순서변경</button>
 							<button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
-							<button type="button" class="btns openPop" data-popopen="pop1">추가</button>
+							<button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
 						</div>
 					</div>
 
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 500px;"></div>
+					<div class="treeField">
+						<div class="inner">
+							<ul id="treeDemo" class="ztree"></ul>
+						</div>
+					</div>
 
 				</div>
 			</div>
@@ -245,174 +184,6 @@ function search(_pageNo) {
 
 
 
-<!-- 메뉴관리 - 추가 pop-up -->
-<div class="popup" style="display:none" data-pop="pop1">
-	<div class="dimm"></div>
-	<div class="popBox type1">
-		<div class="popTop"><h3>메뉴관리 추가</h3></div>
-		<div class="popCont scrollArea">
-			<div class="tableWrap">
-				<div class="tableTitleWrap">
-					<strong class="tableTitle">기본정보</strong>
-				</div>
-				<div class="tblSlide">
-					<table class="table form">
-						<tbody>
-							<tr>
-								<th>상위메뉴</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt" readonly>
-										<button type="button" class="btnSelect">메뉴선택</button>
-									</div>
-								</td>
-								<th>메뉴코드</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt">
-										<button type="button" class="btnSelect">중복확인</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th>메뉴구분</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">메뉴구분</option>
-									</select>
-								</td>
-								<th>메뉴명</th>
-								<td><input type="text" class="inpTxt"></td>
-							</tr>
-							<tr>
-								<th>데이터구분</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">데이터구분</option>
-									</select>
-								</td>
-								<th>최소데이터표시</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">최소데이터표시</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<th>최소데이터<br> 수정 가능여부</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">최소데이터 수정 가능여부</option>
-									</select>
-								</td>
-								<th>메뉴표시여부</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">메뉴표시여부</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<th>URL</th>
-								<td colspan="3">
-									<input type="text" class="inpTxt">
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="btnGroup">
-			<button type="button" class="btns ty11">취소</button>
-			<button type="button" class="btns ty12">저장</button>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //메뉴관리 - 추가 pop-up -->
-
-<!-- 메뉴관리 - 수정 pop-up -->
-<div class="popup" style="display:none" data-pop="pop2">
-	<div class="dimm"></div>
-	<div class="popBox type1">
-		<div class="popTop"><h3>메뉴관리 수정</h3></div>
-		<div class="popCont scrollArea">
-			<div class="tableWrap">
-				<div class="tableTitleWrap">
-					<strong class="tableTitle">기본정보</strong>
-				</div>
-				<div class="tblSlide">
-					<table class="table form">
-						<tbody>
-							<tr>
-								<th>상위메뉴</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt" readonly>
-										<button type="button" class="btnSelect">메뉴선택</button>
-									</div>
-								</td>
-								<th>메뉴코드</th>
-								<td>b00000</td>
-							</tr>
-							<tr>
-								<th>메뉴구분</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">메뉴구분</option>
-									</select>
-								</td>
-								<th>메뉴명</th>
-								<td><input type="text" class="inpTxt"></td>
-							</tr>
-							<tr>
-								<th>데이터구분</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">데이터구분</option>
-									</select>
-								</td>
-								<th>최소데이터표시</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">최소데이터표시</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<th>최소데이터<br> 수정 가능여부</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">최소데이터 수정 가능여부</option>
-									</select>
-								</td>
-								<th>메뉴표시여부</th>
-								<td>
-									<select name="" id="" class="selectD full">
-										<option value="">메뉴표시여부</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<th>URL</th>
-								<td colspan="3">
-									<input type="text" class="inpTxt">
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="btnGroup">
-			<button type="button" class="btns ty11">취소</button>
-			<button type="button" class="btns ty2">수정</button>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //메뉴관리 - 수정 pop-up -->
 </div>
 
 </body>

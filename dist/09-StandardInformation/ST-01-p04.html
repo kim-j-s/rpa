@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>조직관리 - 정렬순서</title>
+    <title>팝업 - 부서선택</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ax5grid.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -18,78 +18,94 @@
 
 <body>
 
-    <!-- 조직관리 - 정렬순서 pop-up -->
+    <!-- 부서선택 pop-up -->
     <div class="popup windowPop">
-        <div class="popBox type1">
+        <div class="popBox type1 wd700">
             <div class="popTop">
-                <h3>정렬순서 선택</h3>
+                <h3>부서선택</h3>
             </div>
-            <div class="popCont scrollArea">
+            <div class="popCont">
                 <div class="tableWrap">
-                    <div class="tblSlide">
-                        <table class="table text">
-                            <colgroup>
-                                <col style="width: 100px">
-                                <col style="width: auto">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>순서</th>
-                                    <th>부서명</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="taL">전체</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="taL">
-                                        <span class="depthMark"></span> 사장실
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="taL">
-                                        <span class="depthMark ty2"></span> 비서실
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="taL">
-                                        <span class="depthMark ty3"></span> 비서실
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td class="taL">
-                                        <span class="depthMark"></span> 사장실2
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td class="taL">
-                                        <span class="depthMark ty2"></span> 비서실
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="tblSortBtn">
-                            <button class="btn sortUp" type="button">위로</button>
-                            <button class="btn sortDown" type="button">아래로</button>
-                        </div>
-                    </div>
+                    <table class="table text">
+                        <colgroup>
+                            <col style="width: 70px">
+                            <col style="width: 70px">
+                            <col style="width: auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>선택</th>
+                                <th>순서</th>
+                                <th>부서명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="partSelect01" name="partSelect"><label for="partSelect01"></label>
+								</span>
+                                </td>
+                                <td>1</td>
+                                <td class="taL">전체</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="partSelect02" name="partSelect"><label for="partSelect02"></label>
+								</span>
+                                </td>
+                                <td>2</td>
+                                <td class="taL">
+                                    <span class="depthMark"></span> 사장실
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="partSelect03" name="partSelect"><label for="partSelect03"></label>
+								</span>
+                                </td>
+                                <td>3</td>
+                                <td class="taL">
+                                    <span class="depthMark ty2"></span> 비서실
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="partSelect04" name="partSelect"><label for="partSelect04"></label>
+								</span>
+                                </td>
+                                <td>4</td>
+                                <td class="taL">
+                                    <span class="depthMark ty3"></span> 비서실
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="radioBox single">
+									<input type="radio" id="partSelect05" name="partSelect"><label for="partSelect05"></label>
+								</span>
+                                </td>
+                                <td>5</td>
+                                <td class="taL">
+                                    <span class="depthMark"></span> 사장실2
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="btnGroup">
                 <button type="button" class="btns ty11">취소</button>
-                <button type="button" class="btns ty2">수정</button>
+                <button type="button" class="btns">확인</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>
     </div>
-    <!-- //조직관리 - 정렬순서 pop-up -->
+    <!-- //부서선택 pop-up -->
+
 </body>
 
 </html>

@@ -2,129 +2,126 @@
 	"title": "조직 관리"
 })
 <script>
-var x = '??'
-var setting = {
-	edit: {
-		drag: {
-			autoExpandTrigger: true,
-			prev: dropPrev,
-			inner: dropInner,
-			next: dropNext
+	var setting = {
+		edit: {
+			drag: {
+				autoExpandTrigger: true,
+				prev: dropPrev,
+				inner: dropInner,
+				next: dropNext
+			},
+			enable: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
 		},
-		enable: true,
-		showRemoveBtn: false,
-		showRenameBtn: false
-	},
-	data: {
-		simpleData: {
-			enable: true
-		}
-	},
-	view: {
-		fontCss: getFont,
-		nameIsHTML: true,
-		showTitle: false
-	},
-	callback: {
-		beforeDrag: beforeDrag
-	}
-};
-
-
-
-var zNodes =[
-	{ id:1, pId:0, name:"전체 v3", open:true},
-	{ id:11, pId:1, name:"홈", open:true, childOuter:false},
-	{ id:112, pId:11, name:"대시보드"},
-	{ id:113, pId:11, name:"<span class='color6 cursorNone'>대시보드 비활성</span>"},
-	{ id:22, pId:1, name:"운영현황", open:true, childOuter:false},
-	{ id:221, pId:22, name:"BOT상태"},
-	{ id:222, pId:22, name:"<span class='color6 cursorNone'>BOT상태 비활성</span>"},
-	{ id:223, pId:22, name:"과제수행이력"},
-	{ id:224, pId:22, name:"대시보드2", open:true},
-	{ id:2231, pId:224, name:"대시보드2 BOT상태"},
-	{ id:2232, pId:224, name:"대시보드2 과제수행이력"},
-	{ id:33, pId:1, name:"BOT관리", open:true, childOuter:false},
-	{ id:331, pId:33, name:"BOT관리"},
-	{ id:44, pId:1, name:"통계", open:true, childOuter:false},
-	{ id:441, pId:44, name:"과제별"},
-	{ id:442, pId:44, name:"BOT별"},
-	{ id:55, pId:1, name:"과제관리", open:true, childOuter:false},
-	{ id:551, pId:55, name:"과제요청"},
-	{ id:552, pId:55, name:"운영과제"},
-	{ id:553, pId:55, name:"속성정보"},
-	{ id:66, pId:1, name:"커뮤니티", open:true, childOuter:false},
-	{ id:661, pId:66, name:"공지사항"},
-	{ id:661, pId:66, name:"자료실"}
-];
-
-function dropPrev(treeId, nodes, targetNode) {
-	var pNode = targetNode.getParentNode();
-	if (pNode && pNode.dropInner === false) {
-		return false;
-	} else {
-		for (var i=0,l=curDragNodes.length; i<l; i++) {
-			var curPNode = curDragNodes[i].getParentNode();
-			if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
-				return false;
+		data: {
+			simpleData: {
+				enable: true
 			}
+		},
+		view: {
+			fontCss: getFont,
+			nameIsHTML: true,
+			showTitle: false
+		},
+		callback: {
+			beforeDrag: beforeDrag
 		}
-	}
-	return true;
-}
+	};
 
-function dropInner(treeId, nodes, targetNode) {
-	if (targetNode && targetNode.dropInner === false) {
-		return false;
-	} else {
-		for (var i=0,l=curDragNodes.length; i<l; i++) {
-			if (!targetNode && curDragNodes[i].dropRoot === false) {
-				return false;
-			} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
+	var zNodes =[
+		{ id:1, pId:0, name:"전체", open:true},
+		{ id:11, pId:1, name:"홈", open:true, childOuter:false},
+		{ id:112, pId:11, name:"대시보드"},
+		{ id:113, pId:11, name:"<span class='color6 cursorNone'>대시보드 비활성</span>"},
+		{ id:22, pId:1, name:"운영현황", open:true, childOuter:false},
+		{ id:221, pId:22, name:"BOT상태"},
+		{ id:222, pId:22, name:"<span class='color6 cursorNone'>BOT상태 비활성</span>"},
+		{ id:223, pId:22, name:"과제수행이력"},
+		{ id:224, pId:22, name:"대시보드2", open:true},
+		{ id:2231, pId:224, name:"대시보드2 BOT상태"},
+		{ id:2232, pId:224, name:"대시보드2 과제수행이력"},
+		{ id:33, pId:1, name:"BOT관리", open:true, childOuter:false},
+		{ id:331, pId:33, name:"BOT관리"},
+		{ id:44, pId:1, name:"통계", open:true, childOuter:false},
+		{ id:441, pId:44, name:"과제별"},
+		{ id:442, pId:44, name:"BOT별"},
+		{ id:55, pId:1, name:"과제관리", open:true, childOuter:false},
+		{ id:551, pId:55, name:"과제요청"},
+		{ id:552, pId:55, name:"운영과제"},
+		{ id:553, pId:55, name:"속성정보"},
+		{ id:66, pId:1, name:"커뮤니티", open:true, childOuter:false},
+		{ id:661, pId:66, name:"공지사항"},
+		{ id:661, pId:66, name:"자료실"}
+	];
 
-function dropNext(treeId, nodes, targetNode) {
-	var pNode = targetNode.getParentNode();
-	if (pNode && pNode.dropInner === false) {
-		return false;
-	} else {
-		for (var i=0,l=curDragNodes.length; i<l; i++) {
-			var curPNode = curDragNodes[i].getParentNode();
-			if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
-
-function beforeDrag(treeId, treeNodes) {
-	for (var i=0,l=treeNodes.length; i<l; i++) {
-		if (treeNodes[i].drag === false) {
-			curDragNodes = null;
+	function dropPrev(treeId, nodes, targetNode) {
+		var pNode = targetNode.getParentNode();
+		if (pNode && pNode.dropInner === false) {
 			return false;
-		} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
-			curDragNodes = null;
-			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				var curPNode = curDragNodes[i].getParentNode();
+				if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+					return false;
+				}
+			}
 		}
+		return true;
 	}
-	curDragNodes = treeNodes;
-	return true;
-}
+
+	function dropInner(treeId, nodes, targetNode) {
+		if (targetNode && targetNode.dropInner === false) {
+			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				if (!targetNode && curDragNodes[i].dropRoot === false) {
+					return false;
+				} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function dropNext(treeId, nodes, targetNode) {
+		var pNode = targetNode.getParentNode();
+		if (pNode && pNode.dropInner === false) {
+			return false;
+		} else {
+			for (var i=0,l=curDragNodes.length; i<l; i++) {
+				var curPNode = curDragNodes[i].getParentNode();
+				if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function beforeDrag(treeId, treeNodes) {
+		for (var i=0,l=treeNodes.length; i<l; i++) {
+			if (treeNodes[i].drag === false) {
+				curDragNodes = null;
+				return false;
+			} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+				curDragNodes = null;
+				return false;
+			}
+		}
+		curDragNodes = treeNodes;
+		return true;
+	}
 
 
-function getFont(treeId, node) {
-	return node.font ? node.font : {};
-}
+	function getFont(treeId, node) {
+		return node.font ? node.font : {};
+	}
 
-$(document).ready(function(){
-	$.fn.zTree.init($("#treeDemo"), setting, zNodes);
-});
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	});
 </script>
 
 </head>
@@ -160,12 +157,12 @@ $(document).ready(function(){
 
 		<div class="innerArea">
 			<div class="roundBox">
-				<div class="tableWrap single">
+				<div class="tableWrap">
 					<div class="tableTop">
 						<div class="rightArea">
+							<button type="button" class="btns ty16" data-popopen="pop3">순서변경</button>
 							<button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
 							<button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
-							<button type="button" class="btns openPop" data-popopen="pop3">순서변경</button>
 						</div>
 					</div>
 
@@ -187,15 +184,15 @@ $(document).ready(function(){
 
 
 
-<!-- 조직관리 - 조직관리 추가 pop-up -->
+<!-- 조직관리 - 조직관리 등록 pop-up -->
 <div class="popup" style="display:none" data-pop="pop1">
 	<div class="dimm"></div>
 	<div class="popBox type1">
-		<div class="popTop"><h3>조직관리 추가</h3></div>
+		<div class="popTop"><h3>조직관리</h3></div>
 		<div class="popCont scrollArea">
 			<div class="tableWrap">
 				<div class="tableTitleWrap">
-					<strong class="tableTitle">기본정보</strong>
+					<strong class="tableTitle">조직관리 등록</strong>
 				</div>
 				<div class="tblSlide">
 					<table class="table form">
@@ -203,66 +200,15 @@ $(document).ready(function(){
 							<tr>
 								<th>상위부서</th>
 								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt" readonly>
-										<button type="button" class="btnSelect">부서선택</button>
-									</div>
-								</td>
-								<th>부서코드</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt">
-										<button type="button" class="btnSelect">중복확인</button>
-									</div>
+									<input type="text" class="inpTxt wd310" readonly>
+									<button type="button" class="btns ty8">부서선택</button>
 								</td>
 							</tr>
 							<tr>
-								<th>부서명</th>
-								<td colspan="3">
-									<input type="text" class="inpTxt">
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="btnGroup">
-			<button type="button" class="btns ty11">취소</button>
-			<button type="button" class="btns">추가</button>
-		</div>
-		<button type="button" class="btnPopClose">팝업닫기</button>
-	</div>
-</div>
-<!-- //조직관리 - 조직관리 추가 pop-up -->
-
-<!-- 조직관리 - 조직관리 수정 pop-up -->
-<div class="popup" style="display:none" data-pop="pop2">
-	<div class="dimm"></div>
-	<div class="popBox type1">
-		<div class="popTop"><h3>조직관리 수정</h3></div>
-		<div class="popCont scrollArea">
-			<div class="tableWrap">
-				<div class="tableTitleWrap">
-					<strong class="tableTitle">기본정보</strong>
-				</div>
-				<div class="tblSlide">
-					<table class="table form">
-						<tbody>
-							<tr>
-								<th>상위부서</th>
-								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt" readonly>
-										<button type="button" class="btnSelect">부서선택</button>
-									</div>
-								</td>
 								<th>부서코드</th>
 								<td>
-									<div class="inpWrap">
-										<input type="text" class="inpTxt">
-										<button type="button" class="btnSelect">중복확인</button>
-									</div>
+									<input type="text" class="inpTxt wd310">
+									<button type="button" class="btns ty8 etc">중복확인</button>
 								</td>
 							</tr>
 							<tr>
@@ -270,6 +216,8 @@ $(document).ready(function(){
 								<td>
 									<input type="text" class="inpTxt">
 								</td>
+							</tr>
+							<tr>
 								<th>활성여부</th>
 								<td>
 									<select name="" id="" class="selectD">
@@ -285,7 +233,63 @@ $(document).ready(function(){
 		</div>
 		<div class="btnGroup">
 			<button type="button" class="btns ty11">취소</button>
-			<button type="button" class="btns ty2">수정</button>
+			<button type="button" class="btns ty1">등록</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //조직관리 - 조직관리 등록 pop-up -->
+
+<!-- 조직관리 - 조직관리 수정 pop-up -->
+<div class="popup" style="display:none" data-pop="pop2">
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>조직관리</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">조직관리 수정</strong>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>상위부서</th>
+								<td>
+									<input type="text" class="inpTxt wd310" readonly>
+									<button type="button" class="btns ty8">부서선택</button>
+								</td>
+							</tr>
+							<tr>
+								<th>부서코드</th>
+								<td>
+									<input type="text" class="inpTxt wd310">
+									<button type="button" class="btns ty8 etc">중복확인</button>
+								</td>
+							</tr>
+							<tr>
+								<th>부서명</th>
+								<td>
+									<input type="text" class="inpTxt">
+								</td>
+							</tr>
+							<tr>
+								<th>활성여부</th>
+								<td>
+									<select name="" id="" class="selectD">
+										<option value="">활성</option>
+										<option value="">비활성</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty12">저장</button>
 		</div>
 		<button type="button" class="btnPopClose">팝업닫기</button>
 	</div>

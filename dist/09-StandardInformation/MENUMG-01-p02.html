@@ -23,12 +23,12 @@
         <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
-                <h3>메뉴관리 수정</h3>
+                <h3>메뉴관리</h3>
             </div>
             <div class="popCont scrollArea">
                 <div class="tableWrap">
                     <div class="tableTitleWrap">
-                        <strong class="tableTitle">기본정보</strong>
+                        <strong class="tableTitle">메뉴관리 수정</strong>
                     </div>
                     <div class="tblSlide">
                         <table class="table form">
@@ -38,11 +38,11 @@
                                     <td>
                                         <div class="inpWrap">
                                             <input type="text" class="inpTxt" readonly>
-                                            <button type="button" class="btnSelect">메뉴선택</button>
+                                            <button type="button" class="btns ty8">메뉴선택</button>
                                         </div>
                                     </td>
                                     <th>메뉴코드</th>
-                                    <td>b00000</td>
+                                    <td><input type="text" class="inpTxt" readonly value="b00000"></td>
                                 </tr>
                                 <tr>
                                     <th>메뉴구분</th>
@@ -61,7 +61,7 @@
                                             <option value="">데이터구분</option>
                                         </select>
                                     </td>
-                                    <th>최소데이터표시</th>
+                                    <th>최소 데이터표시</th>
                                     <td>
                                         <select name="" id="" class="selectD full">
                                             <option value="">최소데이터표시</option>
@@ -69,7 +69,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>최소데이터<br> 수정 가능여부</th>
+                                    <th>최소 데이터<br> 수정 가능여부</th>
                                     <td>
                                         <select name="" id="" class="selectD full">
                                             <option value="">최소데이터 수정 가능여부</option>
@@ -84,8 +84,15 @@
                                 </tr>
                                 <tr>
                                     <th>URL</th>
-                                    <td colspan="3">
+                                    <td>
                                         <input type="text" class="inpTxt">
+                                    </td>
+                                    <th>활성여부</th>
+                                    <td>
+                                        <select name="" id="" class="selectD">
+                                            <option value="">활성</option>
+                                            <option value="">비활성</option>
+                                        </select>
                                     </td>
                                 </tr>
                             </tbody>
@@ -95,7 +102,7 @@
             </div>
             <div class="btnGroup">
                 <button type="button" class="btns ty11">취소</button>
-                <button type="button" class="btns ty2">수정</button>
+                <button type="button" class="btns ty12">저장</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>

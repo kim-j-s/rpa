@@ -1,41 +1,40 @@
 @@include('head.html', {
-	"title": "공통코드 - 등록"
+	"title": "임율 - 상세"
 })
 </head>
 <body>	
 
-<!-- 공통코드 - 등록 pop-up -->
+<!-- 임율 - 상세 pop-up -->
 <div class="popup">
 	<div class="dimm"></div>
 	<div class="popBox type1">
-		<div class="popTop"><h3>공통코드</h3></div>
+		<div class="popTop"><h3>임율</h3></div>
 		<div class="popCont scrollArea">
+			<div class="taR mb13">
+				<button type="button" class="btns ty2">수정</button>
+			</div>
 			<div class="tableWrap">
 				<div class="tableTitleWrap">
-					<strong class="tableTitle">공통코드 등록</strong>
+					<strong class="tableTitle">임율 상세</strong>
 				</div>
 				<div class="tblSlide">
 					<table class="table form">
 						<tbody>
 							<tr>
-								<th>공통그룹명</th>
+								<th>년도 <span class="essential">필수입력</span></th>
 								<td>
 									<select name="" id="" class="selectD full">
-										<option value="">공통그룹명</option>
+										<option value="">2020</option>
 									</select>
 								</td>
-								<th>공통코드</th>
+								<th>직접직 <span class="essential">필수입력</span></th>
 								<td><input type="text" class="inpTxt"></td>
 							</tr>
 							<tr>
-								<th>공통코드명</th>
+								<th>간접직 <span class="essential">필수입력</span></th>
 								<td><input type="text" class="inpTxt"></td>
-								<th>활성여부</th>
-								<td>
-									<select name="" id="" class="selectD">
-										<option value="">활성</option>
-									</select>
-								</td>
+								<th>RPA <span class="essential">필수입력</span></th>
+								<td><input type="text" class="inpTxt"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -44,11 +43,11 @@
 		</div>
 		<div class="btnGroup">
 			<button type="button" class="btns ty11">취소</button>
-			<button type="button" class="btns ty1">등록</button>
+			<button type="button" class="btns ty1" disabled>등록</button>
 		</div>
 		<button type="button" class="btnPopClose">팝업닫기</button>
 	</div>
 </div>
-<!-- //공통코드 - 등록 pop-up -->
+<!-- //임율 - 상세 pop-up -->
 </body>
 </html>
