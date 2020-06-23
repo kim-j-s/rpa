@@ -184,70 +184,74 @@
 
             <div class="innerArea">
                 <div class="roundBox">
-                    <table class="table form">
-                        <colgroup>
-                            <col style="width: 180px">
-                            <col style="width: auto">
-                            <col style="width: 180px">
-                            <col style="width: auto">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th class="taC">사원번호</th>
-                                <td>aaa</td>
-                                <th class="taC">역활</th>
-                                <td>관리자</td>
-                            </tr>
-                            <tr>
-                                <th class="taC">성명</th>
-                                <td>이미자</td>
-                                <th class="taC">부서</th>
-                                <td>비서실</td>
-                            </tr>
-                            <tr>
-                                <th class="taC">직통번호</th>
-                                <td>
-                                    <div class="inpWrap ty2">
-                                        <input type="text" class="inpTxt">
-                                        <span class="middleMark">-</span>
-                                        <input type="text" class="inpTxt">
-                                        <span class="middleMark">-</span>
-                                        <input type="text" class="inpTxt">
-                                    </div>
-                                </td>
-                                <th class="taC">휴대폰</th>
-                                <td>
-                                    <div class="inpWrap ty2">
-                                        <input type="text" class="inpTxt">
-                                        <span class="middleMark">-</span>
-                                        <input type="text" class="inpTxt">
-                                        <span class="middleMark">-</span>
-                                        <input type="text" class="inpTxt">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="taC">비밀번호</th>
-                                <td colspan="3">
-                                    <button type="button" class="btnSelect">비밀번호 변경</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="taC">이메일</th>
-                                <td colspan="3">
-                                    <div class="inpWrap ty1">
-                                        <input type="text" class="inpTxt">
-                                        <span class="middleMark">@</span>
-                                        <input type="text" class="inpTxt">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">나의 정보입력 및 수정</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col style="width: auto">
+                                    <col style="width: 100px">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>사원번호</th>
+                                        <td>aaaaaaa</td>
+                                        <th>역활</th>
+                                        <td>관리자</td>
+                                    </tr>
+                                    <tr>
+                                        <th>성명</th>
+                                        <td>이미자</td>
+                                        <th>부서</th>
+                                        <td>비서실</td>
+                                    </tr>
+                                    <tr>
+                                        <th>직통번호</th>
+                                        <td>
+                                            <div class="inpWrap ty2">
+                                                <input type="text" class="inpTxt">
+                                                <input type="text" class="inpTxt">
+                                                <input type="text" class="inpTxt">
+                                            </div>
+                                        </td>
+                                        <th>휴대폰</th>
+                                        <td>
+                                            <div class="inpWrap ty2">
+                                                <input type="text" class="inpTxt">
+                                                <input type="text" class="inpTxt">
+                                                <input type="text" class="inpTxt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>비밀번호</th>
+                                        <td colspan="3">
+                                            <button type="button" class="btns ty8 openPop" data-popopen="pop1">비밀번호 변경</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>이메일</th>
+                                        <td colspan="3">
+                                            <div class="inpWrap ty1">
+                                                <input type="text" class="inpTxt">
+                                                <span class="middleMark">@</span>
+                                                <input type="text" class="inpTxt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                     <div class="btnGroup">
-                        <button type="button" class="reset">취소</button>
-                        <button type="button" class="confirm">확인</button>
+                        <button type="button" class="btns ty11">취소</button>
+                        <button type="button" class="btns">확인</button>
                     </div>
                 </div>
             </div>
@@ -259,6 +263,54 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+        <!-- 비밀번호 변경 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1 wd730">
+                <div class="popTop">
+                    <h3>비밀번호 변경</h3>
+                </div>
+                <div class="popCont">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">비밀번호 변경</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <colgroup>
+                                    <col style="width: 130px">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>기존 비밀번호 <span class="essential">필수입력</span></th>
+                                        <td><input type="password" class="inpTxt wd200"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>비밀번호 <span class="essential">필수입력</span></th>
+                                        <td><input type="password" class="inpTxt wd200"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>비밀번호 확인 <span class="essential">필수입력</span></th>
+                                        <td><input type="password" class="inpTxt wd200"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty1">등록</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //비밀번호 변경 pop-up -->
+
     </div>
 
 </body>

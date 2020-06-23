@@ -27,11 +27,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "chk",
@@ -94,12 +94,12 @@
                 }],
                 page: {
                     navigationItemCount: 9,
-                    height: 40,
+                    height: 26,
                     display: true,
-                    //firstIcon: '|<',
+                    firstIcon: '<i class="direction first"></i>',
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
-                    //lastIcon: '>|',
+                    lastIcon: '<i class="direction last"></i>',
                     onChange: function() {
                         // 페이지 번호 눌렀을때 호출
                         search(this.page.selectPage);
@@ -371,24 +371,26 @@
             <div class="innerArea">
                 <div class="roundBox">
                     <div class="setBox">
-                        <div class="searchWrap line">
-                            <select name="" id="" class="selectD">
+                        <div class="searchWrap">
+                            <select name="" id="" class="selectD ty1 wd143">
                                 <option value="">사용자 ID</option>
                             </select>
-                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-                            <button type="button" class="btn search">검색</button>
+                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd630">
+                            <div class="setBoxBtns">
+                                <button type="button" class="btns ty4">검색</button>
+                            </div>
                         </div>
                     </div>
                     <div class="tableWrap">
                         <div class="tableTop">
                             <div class="rightArea">
-                                <a href="#" class="btnTxt red">삭제</a>
-                                <a href="#" class="btnTxt white">수정</a>
-                                <a href="#" class="btnTxt">추가</a>
+                                <button type="button" class="btns ty3">삭제</button>
+                                <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+                                <button type="button" class="btns openPop" data-popopen="pop1">추가</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
                     </div>
                 </div>

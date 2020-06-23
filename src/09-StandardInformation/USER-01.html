@@ -12,11 +12,11 @@ $(function () {
 		target: $('[data-ax5grid="first-grid"]'),
 		header: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 33
 		},
 		body: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 37
 		},
 		columns: [
 		{
@@ -97,12 +97,12 @@ $(function () {
 		],
 		page: {
             navigationItemCount: 9,
-            height: 40,
+            height: 26,
             display: true,
-            //firstIcon: '|<',
+            firstIcon: '<i class="direction first"></i>',
 			prevIcon: '<i class="direction prev"></i>',
 			nextIcon: '<i class="direction next"></i>',
-            //lastIcon: '>|',
+			lastIcon: '<i class="direction last"></i>',
             onChange: function () {
 				// 페이지 번호 눌렀을때 호출
             	search(this.page.selectPage);
@@ -176,24 +176,26 @@ function search(_pageNo) {
 		<div class="innerArea">
 			<div class="roundBox">
 				<div class="setBox">
-					<div class="searchWrap line">
-						<select name="" id="" class="selectD">
+					<div class="searchWrap">
+						<select name="" id="" class="selectD ty1 wd143">
 							<option value="">사용자 ID</option>
 						</select>
-						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-						<button type="button" class="btn search">검색</button>
+						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd630">
+						<div class="setBoxBtns">
+							<button type="button" class="btns ty4">검색</button>
+						</div>
 					</div>
 				</div>
 				<div class="tableWrap">
 					<div class="tableTop">
 						<span class="totalNum">총 <em>100</em>건</span>
 						<div class="rightArea">
-							<a href="#" class="btnTxt white">수정</a>
-							<a href="#" class="btnTxt">추가</a>
+							<button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+							<button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
 						</div>
 					</div>
 
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
 				</div>
 			</div>
@@ -204,6 +206,227 @@ function search(_pageNo) {
 	<!-- FOOTER -->
 	@@include('footer.html')
 	<!-- //FOOTER -->
+
+
+
+<!-- 사용자 관리 - 사용자 관리 추가 pop-up -->
+<div class="popup" style="display:none" data-pop="pop1">
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>사용자 관리 추가</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">사용자 정보</strong>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>사용자 ID</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">증복확인</button>
+									</div>
+								</td>
+								<th>한글 성명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>사용자 비밀번호</th>
+								<td><input type="password" class="inpTxt"></td>
+								<th>비밀번호 확인</th>
+								<td><input type="password" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>권한명</th>
+								<td>
+									<div class="inpWrap">
+										<select name="" id="" class="selectD">
+											<option value="">1Depth 부서명</option>
+										</select>
+										<button type="button" class="btnSelect">1Depth 부서 선택</button>
+									</div>
+								</td>
+								<th>대표부서명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>부서명</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly>
+										<button type="button" class="btnSelect">부서 선택</button>
+									</div>
+								</td>
+								<th>직급명</th>
+								<td>
+									<select name="" id="" class="selectD full">
+										<option value="">직급명</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>사원번호</th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>이메일ID</th>
+								<td>
+									<div class="inpWrap ty1 full">
+										<input type="text" class="inpTxt">
+										<span class="middleMark">@</span>
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>직통번호</th>
+								<td>
+									<div class="inpWrap ty2">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+								<th>휴대번호</th>
+								<td>
+									<div class="inpWrap ty2">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty12">저장</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //사용자 관리 - 사용자 관리 추가 pop-up -->
+
+<!-- 사용자 관리 - 사용자 관리 수정 pop-up -->
+<div class="popup" style="display:none" data-pop="pop2">
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>사용자 관리 수정</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">사용자 정보</strong>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>사용자 ID</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">증복확인</button>
+									</div>
+								</td>
+								<th>한글 성명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>사용자 비밀번호</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">비밀번호 변경</button>
+									</div>
+								</td>
+								<th>비밀번호 확인</th>
+								<td><input type="password" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>권한명</th>
+								<td>
+									<div class="inpWrap">
+										<select name="" id="" class="selectD">
+											<option value="">1Depth 부서명</option>
+										</select>
+										<button type="button" class="btnSelect">1Depth 부서 선택</button>
+									</div>
+								</td>
+								<th>대표부서명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>부서명</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly>
+										<button type="button" class="btnSelect">부서 선택</button>
+									</div>
+								</td>
+								<th>직급명</th>
+								<td>
+									<select name="" id="" class="selectD full">
+										<option value="">직급명</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>사원번호</th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>이메일ID</th>
+								<td>
+									<div class="inpWrap ty1 full">
+										<input type="text" class="inpTxt">
+										<span class="middleMark">@</span>
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>직통번호</th>
+								<td>
+									<div class="inpWrap ty2">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+								<th>휴대번호</th>
+								<td>
+									<div class="inpWrap ty2">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+										<input type="text" class="inpTxt">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>활성여부</th>
+								<td colspan="3">
+									<select name="" id="" class="selectD">
+										<option value="">활성</option>
+										<option value="">비활성</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty2">수정</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //사용자 관리 - 사용자 관리 수정 pop-up -->
+
 </div>
 
 </body>

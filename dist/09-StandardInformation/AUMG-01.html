@@ -25,11 +25,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "chk",
@@ -83,12 +83,12 @@
                 }],
                 page: {
                     navigationItemCount: 9,
-                    height: 40,
+                    height: 26,
                     display: true,
-                    //firstIcon: '|<',
+                    firstIcon: '<i class="direction first"></i>',
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
-                    //lastIcon: '>|',
+                    lastIcon: '<i class="direction last"></i>',
                     onChange: function() {
                         // 페이지 번호 눌렀을때 호출
                         search(this.page.selectPage);
@@ -352,13 +352,13 @@
                     <div class="tableWrap single">
                         <div class="tableTop">
                             <div class="rightArea">
-                                <a href="#" class="btnTxt red">삭제</a>
-                                <a href="#" class="btnTxt white">수정</a>
-                                <a href="#" class="btnTxt">추가</a>
+                                <button type="button" class="btns ty3" data-popopen="pop1">삭제</button>
+                                <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+                                <button type="button" class="btns openPop" data-popopen="pop1">추가</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
                     </div>
                 </div>
@@ -371,6 +371,295 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+
+        <!-- 권한관리 - 추가 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>권한관리 추가</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">권한관리</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>권한명</th>
+                                        <td>
+                                            <input type="text" class="inpTxt">
+                                        </td>
+                                        <th>권한구분</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">권한구분</option>
+                                            </select>
+                                        </td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                                <option value="">비활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">관리메뉴</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form etc">
+                                <colgroup>
+                                    <col style="width: auto">
+                                    <col style="width: 200px">
+                                    <col style="width: 230px">
+                                    <col style="width: 200px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td class="taL"><strong>데시보드</strong></td>
+                                        <td class="taL"><strong>폴더</strong></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> BOT상태
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> 전체ROI
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL"><strong>데시보드</strong></td>
+                                        <td class="taL"><strong>폴더</strong></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> BOT상태
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> 전체ROI
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty12">저장</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //권한관리 - 추가 pop-up -->
+
+        <!-- 권한관리 - 수정 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop2">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>권한관리 수정</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">권한관리</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>권한명</th>
+                                        <td>
+                                            <input type="text" class="inpTxt">
+                                        </td>
+                                        <th>권한구분</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">권한구분</option>
+                                            </select>
+                                        </td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                                <option value="">비활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">관리메뉴</strong>
+                            <button type="button" class="slideBtn">접기/펼치기</button>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form etc">
+                                <colgroup>
+                                    <col style="width: auto">
+                                    <col style="width: 200px">
+                                    <col style="width: 230px">
+                                    <col style="width: 200px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td class="taL"><strong>데시보드</strong></td>
+                                        <td class="taL"><strong>폴더</strong></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> BOT상태
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> 전체ROI
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL"><strong>데시보드</strong></td>
+                                        <td class="taL"><strong>폴더</strong></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> BOT상태
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="taL">
+                                            <span class="depthMark"></span> 전체ROI
+                                        </td>
+                                        <td class="taL">메뉴</td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">데이터표시 선택</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="selectD ty2 full">
+                                                <option value="">활성선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty2">수정</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //권한관리 - 수정 pop-up -->
+
     </div>
 
 </body>

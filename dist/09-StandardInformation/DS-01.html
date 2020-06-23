@@ -25,11 +25,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "no",
@@ -64,12 +64,12 @@
                 }],
                 page: {
                     navigationItemCount: 9,
-                    height: 40,
+                    height: 26,
                     display: true,
-                    //firstIcon: '|<',
+                    firstIcon: '<i class="direction first"></i>',
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
-                    //lastIcon: '>|',
+                    lastIcon: '<i class="direction last"></i>',
                     onChange: function() {
                         // 페이지 번호 눌렀을때 호출
                         search(this.page.selectPage);
@@ -321,19 +321,21 @@
             <div class="innerArea">
                 <div class="roundBox">
                     <div class="setBox">
-                        <div class="searchWrap line">
-                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-                            <button type="button" class="btn search">검색</button>
+                        <div class="searchWrap">
+                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd776">
+                            <div class="setBoxBtns">
+                                <button type="button" class="btns ty4">검색</button>
+                            </div>
                         </div>
                     </div>
                     <div class="tableWrap">
                         <div class="tableTop">
                             <div class="rightArea">
-                                <a href="#" class="btnTxt">추가</a>
+                                <button type="button" class="btns openPop" data-popopen="pop1">추가</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
                     </div>
                 </div>
@@ -346,6 +348,49 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+
+        <!-- 연관시스템 - 등록 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>연관시스템 등록</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">기본정보</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>시스템명</th>
+                                        <td>
+                                            <input type="text" class="inpTxt">
+                                        </td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty12">저장</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //연관시스템 - 등록 pop-up -->
     </div>
 
 </body>

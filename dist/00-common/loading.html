@@ -14,6 +14,21 @@
     <script src="../js/ax5grid.min.js"></script>
     <script src="../js/ui.js"></script>
 
+
+    <script>
+        $(function() {
+            var clickCnt = 0;
+            $('body').on('click', function() {
+                if (clickCnt === 0) {
+                    Spin();
+                    clickCnt++;
+                } else {
+                    SpinDestory();
+                    clickCnt = 0;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -188,61 +203,9 @@
             <div class="innerArea">
                 <div class="roundBox">
 
-                    <div class="botlist">
-                        <div class="botname">botname botname botname botname botname</div>
-                        <div class="botstat">온라인</div>
-                        <div class="bottime">BOT TIME</div>
+                    <div class="roundContent">
+                        <p style="font-size:50px; text-align:center; padding:100px 0; line-height:80px;">바탕 화면을 누르면 로딩화면이 나옵니다. <br> 다시 누르면 사라집니다.</p>
                     </div>
-
-                    <style>
-                        .botlist {
-                            position: relative;
-                            padding-left: 100px;
-                            font-size: 0;
-                        }
-
-                        .botname {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100px;
-                            height: 20px;
-                            padding: 0 10px;
-                            line-height: 20px;
-                            background: #ddd;
-                            font-size: 14px;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                        }
-
-                        .botname {
-                            transition: .5s
-                        }
-
-                        .botname:hover {
-                            width: 100%;
-                        }
-
-                        .botstat {
-                            display: inline-block;
-                            width: 100px;
-                            background: blue;
-                            height: 20px;
-                            font-size: 14px;
-                            text-align: center;
-                        }
-
-                        .bottime {
-                            display: inline-block;
-                            width: calc(100% - 100px);
-                            background: red;
-                            text-align: center;
-                            line-height: 20px;
-                            color: #fff;
-                            font-size: 14px;
-                        }
-                    </style>
 
                 </div>
             </div>

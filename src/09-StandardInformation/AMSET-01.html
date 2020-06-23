@@ -1,0 +1,535 @@
+@@include('head.html', {
+	"title": "알람설정"
+})
+
+<script type="text/javascript">
+$(function () {
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		header: {
+			align: "center",
+			columnHeight: 33
+		},
+		body: {
+			align: "center",
+			columnHeight: 37
+		},
+		columns: [
+		{
+			key: "no",
+			label: '<span class="dpib vm">순서</span>',
+			sortable: true,
+			align: "center",
+			width: 121
+		}, {
+			key: "col01",
+			label: '<span class="dpib vm">운영자명</span>',
+			sortable: true,
+			align: "center",
+			width: 184
+		}, {
+			key: "col02",
+			label: '<span class="dpib vm">과제알람수신방법</span>',
+			sortable: true,
+			align: "center",
+			width: 208
+		}, {
+			key: "col03",
+			label: '<span class="dpib vm">라이선스알람 수신방법</span>',
+			sortable: true,
+			align: "center",
+			width: 240
+		}, {
+			key: "col04",
+			label: '<span class="dpib vm">활성여부</span>',
+			sortable: true,
+			align: "center",
+			width: 173,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "active" :
+						returnValue = '<span class="bold color3">활성</span>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}, {
+			key: "col05",
+			label: '<span class="dpib vm">마지막 수정일</span>',
+			sortable: true,
+			align: "center",
+			width: 178
+		}
+		],
+		page: {
+            navigationItemCount: 9,
+            height: 26,
+            display: true,
+			firstIcon: '<i class="direction first"></i>',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+            lastIcon: '<i class="direction last"></i>',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+
+	search(0);
+});
+
+function search(_pageNo) {
+	var list = [
+		{no: (_pageNo*10)+1, col01: "AAAA", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "active", col05: "2020-05-11"},
+		{no: (_pageNo*10)+2, col01: "BBBB", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "비활성", col05: "2020-05-11"},
+		{no: (_pageNo*10)+3, col01: "운영자C", col02: "사용안함", col03: "사용안함", col04: "active", col05: "2020-05-11"},
+		{no: (_pageNo*10)+4, col01: "운영자D", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "비활성", col05: "2020-05-11"},
+		{no: (_pageNo*10)+5, col01: "운영자E", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "active", col05: "2020-05-11"},
+		{no: (_pageNo*10)+6, col01: "운영자F", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "비활성", col05: "2020-05-11"},
+		{no: (_pageNo*10)+7, col01: "AAAA", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "active", col05: "2020-05-11"},
+		{no: (_pageNo*10)+8, col01: "AAAA", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "비활성", col05: "2020-05-11"},
+		{no: (_pageNo*10)+9, col01: "AAAA", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "active", col05: "2020-05-11"},
+		{no: (_pageNo*10)+10, col01: "AAAA", col02: "SMS + MAIL", col03: "MAIL ONLY", col04: "비활성", col05: "2020-05-11"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+
+</script>
+</head>
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "active",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>알람설정</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">과제관리</a>
+					<a href="#">알람설정</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+
+				<div class="setBox">
+					<div class="searchWrap">
+						<span class="tit">검색어</span>
+						<select name="" id="" class="selectD ty1">
+							<option value="">AA</option>
+						</select>
+						<input type="text" class="inpTxt wd493 ty1">
+						<div class="setBoxBtns">
+							<button type="button" class="btns ty4">검색</button>
+							<button type="button" class="btns ty7">초기화</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="tableWrap">
+					<div class="tableTop">
+						<span class="totalNum">총 <em>100</em>건</span>
+						<div class="rightArea">
+							<button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
+						</div>
+					</div>
+
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+
+
+
+<!-- 알람설정 - 등록/수정 pop-up -->
+<div class="popup" style="display:none;" data-pop="pop1">
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>알람등록</h3></div>
+		<div class="popCont">
+			<!-- 기본정보 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기본정보</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<colgroup>
+							<col style="width: 88px">
+							<col style="width: auto">
+							<col style="width: 88px">
+							<col style="width: auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>운영자명 <span class="essential">필수입력</span></th>
+								<td>
+									<input type="text" class="inpTxt wd100" readonly value="A20200630">
+									<input type="text" class="inpTxt wd100" readonly value="홍길동">
+									<button type="text" class="btns ty8">운영자선택</button>
+								</td>
+								<th>활성여부 <span class="essential">필수입력</span></th>
+								<td>
+									<select name="" id="" class="selectD wd120">
+										<option value="">활성</option>
+										<option value="">비활성</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// 기본정보 -->
+
+			<!-- 운영과제 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">운영과제</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">	
+					<div class="tblScroll ty1">
+						<table class="table text">
+							<colgroup>
+								<col style="width: auto">
+								<col style="width: 137px">
+								<col style="width: 137px">
+								<col style="width: 137px">
+								<col style="width: 86px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="taL">과제명</th>
+									<th class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" class="chkAllTxt" data-chkallline="chkline1">전체</label>
+										</span>
+									</th>
+									<th class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" class="chkAllTxt" data-chkallline="chkline2">전체</label>
+										</span>
+									</th>
+									<th class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" class="chkAllTxt" data-chkallline="chkline3">전체</label>
+										</span>
+									</th>
+									<th>행삭제</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="taL">과제 A</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline1">성공</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline2">실패</label>
+										</span>
+									</td>
+									<td class="taL">
+										<span class="inpD check">
+											<label><input type="checkbox" data-chkline="chkline3">지연</label>
+										</span>
+									</td>
+									<td>
+										<button type="text" class="btns ty9">삭제</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="itemAdd">
+						<button type="text" class="btns ty10 full">운영과제 추가</button>
+					</div>
+
+					<div class="rndInner">
+						<div class="rndInnerCont">
+							<table class="table form">
+								<colgroup>
+									<col style="width: 88px">
+									<col style="width: auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>알람구분</th>
+										<td>
+											<span class="inpD check">
+												<label><input type="checkbox">SMS+MAIL</label>
+											</span>
+											<span class="inpD check">
+												<label><input type="checkbox">MAIL ONLY</label>
+											</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 운영과제 -->
+
+			<!-- 라이센스 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">라이센스</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<div class="rndInner">
+						<div class="rndInnerCont">
+							<table class="table form">
+								<colgroup>
+									<col style="width: 88px">
+									<col style="width: auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>알람구분</th>
+										<td>
+											<span class="inpD check">
+												<label><input type="checkbox">MAIL</label>
+											</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 라이센스 -->
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty1">등록</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //알람설정 - 등록/수정 pop-up -->
+
+
+
+</div>
+
+</body>
+</html>

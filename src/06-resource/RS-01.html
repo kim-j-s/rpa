@@ -12,11 +12,11 @@ $(function () {
 		target: $('[data-ax5grid="first-grid"]'),
 		header: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 33
 		},
 		body: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 37
 		},
 		columns: [
 		{
@@ -70,12 +70,12 @@ $(function () {
 		],
 		page: {
             navigationItemCount: 9,
-            height: 40,
+            height: 26,
             display: true,
-            //firstIcon: '|<',
+            firstIcon: '<i class="direction first"></i>',
 			prevIcon: '<i class="direction prev"></i>',
 			nextIcon: '<i class="direction next"></i>',
-            //lastIcon: '>|',
+			lastIcon: '<i class="direction last"></i>',
             onChange: function () {
 				// 페이지 번호 눌렀을때 호출
             	search(this.page.selectPage);
@@ -142,19 +142,16 @@ function search(_pageNo) {
 		<div class="innerArea">
 			<div class="roundBox">
 				<div class="setBox">
-					<div class="searchWrap line">
-						<select name="" id="" class="selectD">
+					<div class="searchWrap">
+						<select name="" id="" class="selectD ty1 wd173">
 							<option value="">BOT 별명</option>
 							<option value="">제목</option>
 						</select>
-						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-						<button type="button" class="btn search">검색</button>
-						<button type="button" class="btn reset">초기화</button>
-					</div>
-					<div class="line">
-						<span class="inpD check">
-							<label><input type="checkbox">나의 과제만 보기</label>
-						</span>
+						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd734">
+						<div class="setBoxBtns">
+							<button type="button" class="btns ty4">검색</button>
+							<button type="button" class="btns ty7">초기화</button>
+						</div>
 					</div>
 				</div>
 				<div class="tableWrap">
@@ -166,11 +163,11 @@ function search(_pageNo) {
 								<option value="">정렬</option>
 								<option value="">정렬</option>
 							</select>
-							<a href="#" class="btnTxt">BOT 추가</a>
+							<button type="button" class="btns openPop" data-popopen="pop1">BOT 추가</button>
 						</div>
 					</div>
 
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
 				</div>
 			</div>
@@ -181,6 +178,88 @@ function search(_pageNo) {
 	<!-- FOOTER -->
 	@@include('footer.html')
 	<!-- //FOOTER -->
+
+
+
+<!-- BOT 추가하기 pop-up -->
+<div class="popup" style="display:none" data-pop="pop1">
+	<div class="dimm"></div>
+	<div class="popBox type1 wd520">
+		<div class="popTop"><h3>BOT 추가</h3></div>
+		<div class="popCont">
+			<div class="tableWrap">
+				<table class="table text">
+					<colgroup>
+						<col style="width: 70px">
+						<col style="width: auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>선택</th>
+							<th>BOT명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT1BOT1BOT1BOT1BOT1BOT1BOT1BOT1BOT1</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT2</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT3BOT3BOT3</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT4BOT4BOT4BOT4BOT4BOT4</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT5</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="inpD check">
+									<label><input type="checkbox"></label>
+								</span>
+							</td>
+							<td class="taL">BOT6</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns">추가</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //BOT 추가하기 pop-up -->
 </div>
 
 </body>

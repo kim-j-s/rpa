@@ -1,0 +1,139 @@
+@@include('head.html', {
+	"title": "조직관리 - 정렬순서"
+})
+<link rel="stylesheet" href="../css/zTreeStyle.css">
+<script type="text/javascript" src="../js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.excheck.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.exedit.min.js"></script>
+
+<script>
+var setting = {
+	edit: {
+		drag: {
+			autoExpandTrigger: true,
+			prev: dropPrev,
+			inner: dropInner,
+			next: dropNext
+		},
+		enable: true,
+		showRemoveBtn: false,
+		showRenameBtn: false
+	},
+	data: {
+		simpleData: {
+			enable: true
+		}
+	},
+	callback: {
+		beforeDrag: beforeDrag
+	}
+};
+
+var zNodes =[
+	{ id:1, pId:0, name:"홈", open:true},
+	{ id:11, pId:1, name:"대시보드"},
+	{ id:2, pId:0, name:"운영현황", open:true},
+	{ id:21, pId:2, name:"BOT상태"},
+	{ id:22, pId:2, name:"과제수행이력"},
+	{ id:3, pId:0, name:"BOT관리", open:true},
+	{ id:31, pId:3, name:"BOT관리"},
+	{ id:4, pId:0, name:"통계", open:true},
+	{ id:41, pId:4, name:"과제별"},
+	{ id:42, pId:4, name:"BOT별"},
+	{ id:5, pId:0, name:"과제관리", open:true},
+	{ id:51, pId:5, name:"과제요청"},
+	{ id:51, pId:5, name:"운영과제"},
+	{ id:51, pId:5, name:"속성정보"},
+	{ id:6, pId:0, name:"커뮤니티", open:true},
+	{ id:61, pId:6, name:"공지사항"},
+	{ id:61, pId:6, name:"자료실"},
+	{ id:7, pId:0, name:"이동불가", open:true},
+	{ id:71, pId:7, name:"이동불가", drag:false},
+	{ id:71, pId:7, name:"이동불가", drag:false}
+];
+
+function dropPrev(treeId, nodes, targetNode) {
+	var pNode = targetNode.getParentNode();
+	if (pNode && pNode.dropInner === false) {
+		return false;
+	} else {
+		for (var i=0,l=curDragNodes.length; i<l; i++) {
+			var curPNode = curDragNodes[i].getParentNode();
+			if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function dropInner(treeId, nodes, targetNode) {
+	if (targetNode && targetNode.dropInner === false) {
+		return false;
+	} else {
+		for (var i=0,l=curDragNodes.length; i<l; i++) {
+			if (!targetNode && curDragNodes[i].dropRoot === false) {
+				return false;
+			} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function dropNext(treeId, nodes, targetNode) {
+	var pNode = targetNode.getParentNode();
+	if (pNode && pNode.dropInner === false) {
+		return false;
+	} else {
+		for (var i=0,l=curDragNodes.length; i<l; i++) {
+			var curPNode = curDragNodes[i].getParentNode();
+			if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function beforeDrag(treeId, treeNodes) {
+	for (var i=0,l=treeNodes.length; i<l; i++) {
+		if (treeNodes[i].drag === false) {
+			curDragNodes = null;
+			return false;
+		} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+			curDragNodes = null;
+			return false;
+		}
+	}
+	curDragNodes = treeNodes;
+	return true;
+}
+
+$(document).ready(function(){
+	$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+});
+</script>
+
+</head>
+<body>
+<!-- 조직관리 - 정렬순서 pop-up -->
+<div class="popup windowPop">
+	<div class="popBox type1">
+		<div class="popTop"><h3>정렬순서 선택</h3></div>
+		<div class="popCont scrollArea">
+			<div class="treeField">
+				<ul id="treeDemo" class="ztree"></ul>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty2">수정</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //조직관리 - 정렬순서 pop-up -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Error2</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+
+
+    <script>
+        $(function() {
+            $('.openClick').click(function() {
+                var data = $(this).data('winopen');
+                var win = window.open(data, "PopupWin", "width=360,height=200");
+            });
+        });
+    </script>
+
+
+
+
+</head>
+
+<body class="white pd0">
+
+    <div style="padding:100px 0; text-align:center;">
+        <button type="button" class="btns openClick" data-winopen="alert-01.html">Confirm</button>
+        <button type="button" class="btns openClick" data-winopen="alert-02.html">Confirm2</button>
+        <button type="button" class="btns openClick" data-winopen="alert-03.html">Error</button>
+        <button type="button" class="btns openClick" data-winopen="alert-04.html">Error2</button>
+    </div>
+
+</body>
+
+</html>

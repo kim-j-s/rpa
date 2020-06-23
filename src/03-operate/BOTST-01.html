@@ -1,405 +1,36 @@
 @@include('head.html', {
 	"title": "BOT상태"
 })
+<script src="../js/moment.js"></script>
+<script src="../js/moment-timezone-with-data.js"></script>
 
-<script type="text/javascript">
+<script>
+var update = function () {
+	moment.tz.setDefault("Asia/Seoul");
+	var dateT = moment().format('HH');
+	var dateM = moment().format('mm');
+	var Now = Number(dateT * 60) + Number(dateM);
+	var Left = Now / 1440 * 100;
+	var Per = Left.toFixed(1);
+	var per2 = 960 * Per / 100;
+	var fix = per2 + 132;
+	$('.rtMark').css('left', fix + 'px');
+};
 
-// 색상표
-var colorBox1 = '<span class="colorBox"></span>';
-var colorBox2 = '<span class="colorBox ty1"></span>';
-var colorBox3 = '<span class="colorBox ty2"></span>';
-var colorBox4 = '<span class="colorBox ty3"></span>';
-var colorBox5 = '<span class="colorBox ty4"></span>';
-
-$(function () {
-
-	/* 그리드 객체 생성 */
-	firstGrid = new ax5.ui.grid();
-
-	firstGrid.setConfig({
-		target: $('[data-ax5grid="first-grid"]'),
-		header: {
-			align: "center",
-			columnHeight: 46
-		},
-		body: {
-			align: "center",
-			columnHeight: 46
-		},
-		columns: [
-		{
-			key: "col01",
-			label: '<span class="dpib vm">BOT명</span>',
-			sortable: true,
-			align: "center",
-			width: 120
-		}, {
-			key: "col02",
-			label: '<span class="dpib vm">연결상태</span>',
-			sortable: true,
-			align: "center",
-			width: 120
-		}, {
-			key: undefined,
-			label: "시간",
-			columns: [
-				{
-					key: "time1",
-					label: "1",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time2",
-					label: "2",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time3",
-					label: "3",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time4",
-					label: "4",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time5",
-					label: "5",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time6",
-					label: "6",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time7",
-					label: "7",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time8",
-					label: "8",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time9",
-					label: "9",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time10",
-					label: "10",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time11",
-					label: "11",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time12",
-					label: "12",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time13",
-					label: "13",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time14",
-					label: "14",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time15",
-					label: "15",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time16",
-					label: "16",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time17",
-					label: "17",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time18",
-					label: "18",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time19",
-					label: "19",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time20",
-					label: "20",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time21",
-					label: "21",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time22",
-					label: "22",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time23",
-					label: "23",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}, {
-					key: "time24",
-					label: "24",
-					align: "left",
-					width: 36,
-					formatter: function () {
-						var returnValue = "";
-						switch (this.value) {
-							default:
-								returnValue = this.value;
-								break;
-						}// end switch
-						return returnValue;
-					}
-				}
-			]
-		},
-		],
-	});
+$(function(){
+	update();
+	setInterval(update, 1000);
 
 
-	firstGrid.setData([
-		{col01: "BOT1", col02: "온라인", time1: colorBox2 + colorBox2, time2: colorBox2 + colorBox2, time3: colorBox2 + colorBox2, time4: colorBox2 + colorBox2},
-		{col01: "BOT2", col02: "온라인", time5: colorBox3 + colorBox3, time6: colorBox3 + colorBox3, time7: colorBox3 + colorBox3, time8: colorBox3 + colorBox3},
-		{col01: "BOT3", col02: "온라인", time9: colorBox4 + colorBox4, time10: colorBox4 + colorBox4, time11: colorBox4 + colorBox4, time12: colorBox4 + colorBox4},
-		{col01: "BOT4", col02: "온라인", time13: colorBox5 + colorBox5, time14: colorBox5 + colorBox5, time15: colorBox5 + colorBox5, time16: colorBox5 + colorBox5},
-		{col01: "BOT5", col02: "온라인", time17: colorBox2 + colorBox2, time18: colorBox2 + colorBox2, time19: colorBox2 + colorBox2, time20: colorBox2 + colorBox2},
-		{col01: "BOT6", col02: "온라인", time21: colorBox3 + colorBox3, time22: colorBox3 + colorBox3, time23: colorBox3 + colorBox3, time24: colorBox3 + colorBox3},
-		{col01: "BOT7", col02: "온라인", time1: colorBox2 + colorBox2, time2: colorBox2 + colorBox2, time3: colorBox2 + colorBox2, time4: colorBox2 + colorBox2},
-		{col01: "BOT8", col02: "온라인", time5: colorBox3 + colorBox3, time6: colorBox3 + colorBox3, time7: colorBox3 + colorBox3, time8: colorBox3 + colorBox3},
-		{col01: "BOT9", col02: "온라인", time9: colorBox4 + colorBox4, time10: colorBox4 + colorBox4, time11: colorBox4 + colorBox4, time12: colorBox4 + colorBox4},
-		{col01: "BOT10", col02: "온라인", time13: colorBox2 + colorBox3, time14: colorBox4 + colorBox5, time15: colorBox2 + colorBox3, time16: colorBox4 + colorBox5},
-	]);
+	openWindow()
+	function openWindow(){
+		$('.botEventState').click(function(){
+			var win = window.open("BOTST-01-p01.html", "PopupWin", "width=1080,height=700");
+		});
+	}
 });
 </script>
+
 </head>
 <body>
 
@@ -433,32 +64,214 @@ $(function () {
 
 		<div class="innerArea">
 			<div class="roundBox">
+
 				<div class="setBox">
-					<div class="searchWrap line">
+					<div class="searchWrap">
 						<span class="tit">시간 카운터</span>
-						<input type="text" class="inpTxt">
-						<span class="tit">시간 갱신</span>
-						<div class="inpWrap">
-							<span class="inpD check">
-								<label><input type="checkbox">자동</label>
-							</span>
-							<input type="text" class="inpTxt"> <span>분</span>
+						<input type="text" class="inpTxt wd80 brdTy1" readonly="">
+						<div class="schGroup ml50">
+							<div class="activeChkbox" >
+								<input type="checkbox" name="" id="active" class="botActiveChkbox">
+								<label for="active">가동갱신</label>
+							</div>
+							<div class="inpWrap2 txtAdd wd85">
+								<input type="text" class="inpTxt wd56" disabled> <span class="txt">분</span>
+							</div>
+							<!-- <button type="button" class="btn rndBtn" disabled>적용</button> -->
+							<button type="button" class="btns ty6" disabled>적용</button>
 						</div>
-
-						<div class="btnGroup">
-							<button type="button" class="reset">즉시갱신</button>
-							<button type="button" class="confirm">적용</button>
-						</div>
-
+						<button type="button" class="btns ty5 fr">즉시갱신</button>
 					</div>
 				</div>
-				<div class="tableWrap">
-					<div class="tableTop">
-						<span class="totalNum">오늘날짜 : <em>2020-05-28</em></span>
+
+				<div class="botStateWrap">
+					<div class="botStateHeader">
+						<div class="date">2020-01-01</div>
+						<div class="botLineState">
+							<span class="ty1">온라인</span>
+							<span class="ty2">오프라인</span>
+						</div>
+						<div class="botRstWrap">
+							<span class="ty1">실패</span>
+							<span class="ty2">지연진행중</span>
+							<span class="ty3">성공</span>
+							<span class="ty4">진행중</span>
+							<span class="ty5">성공</span>
+						</div>
 					</div>
-
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 626px;" class="noPd"></div>
-
+					<div class="botStateListWrap">
+						<div class="inner">
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 1</div>
+								<div class="botFullName">BOTNAME 1 BOTNAME 1 BOTNAME 1 BOTNAME 1 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty1" data-active-start="0" data-active-time="288">실패</span>
+									<span class="botEventState ty2" data-active-start="288" data-active-time="130">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="576" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="900" data-active-time="220">진행중</span>
+									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 2</div>
+								<div class="botFullName">BOTNAME 2 BOTNAME 2 BOTNAME 2 BOTNAME 2 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty2" data-active-start="30" data-active-time="100">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="144" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="576" data-active-time="150">진행중</span>
+									<span class="botEventState ty5" data-active-start="800" data-active-time="300">성공</span>
+									<span class="botEventState ty1" data-active-start="1100" data-active-time="100">실패</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 3</div>
+								<div class="botFullName">BOTNAME 3 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="5" data-active-time="150">성공</span>
+									<span class="botEventState ty4" data-active-start="200" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="400" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="600" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="800" data-active-time="90">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList offline">
+								<div class="botStateName">BOTNAME 4</div>
+								<div class="botFullName">BOTNAME 4 BOTNAME 4 BOTNAME 4 BOTNAME 4 BOTNAME 4 <span class="is offline"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="120" data-active-time="50">성공</span>
+									<span class="botEventState ty4" data-active-start="300" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="600" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="900" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="1100" data-active-time="150">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 5</div>
+								<div class="botFullName">BOTNAME 5 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty1" data-active-start="0" data-active-time="288">실패</span>
+									<span class="botEventState ty2" data-active-start="288" data-active-time="130">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="576" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="900" data-active-time="220">진행중</span>
+									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 6</div>
+								<div class="botFullName">BOTNAME 6 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty2" data-active-start="30" data-active-time="100">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="144" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="576" data-active-time="150">진행중</span>
+									<span class="botEventState ty5" data-active-start="800" data-active-time="300">성공</span>
+									<span class="botEventState ty1" data-active-start="1100" data-active-time="100">실패</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 7</div>
+								<div class="botFullName">BOTNAME 7 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="5" data-active-time="150">성공</span>
+									<span class="botEventState ty4" data-active-start="200" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="400" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="600" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="800" data-active-time="90">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList offline">
+								<div class="botStateName">BOTNAME 8</div>
+								<div class="botFullName">BOTNAME 8 <span class="is offline"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="120" data-active-time="50">성공</span>
+									<span class="botEventState ty4" data-active-start="300" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="600" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="900" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="1100" data-active-time="150">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 9</div>
+								<div class="botFullName">BOTNAME 9 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty1" data-active-start="0" data-active-time="288">실패</span>
+									<span class="botEventState ty2" data-active-start="288" data-active-time="130">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="576" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="900" data-active-time="220">진행중</span>
+									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 10</div>
+								<div class="botFullName">BOTNAME 10 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty2" data-active-start="30" data-active-time="100">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="144" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="576" data-active-time="150">진행중</span>
+									<span class="botEventState ty5" data-active-start="800" data-active-time="300">성공</span>
+									<span class="botEventState ty1" data-active-start="1100" data-active-time="100">실패</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 11</div>
+								<div class="botFullName">BOTNAME 11 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="5" data-active-time="150">성공</span>
+									<span class="botEventState ty4" data-active-start="200" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="400" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="600" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="800" data-active-time="90">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList offline">
+								<div class="botStateName">BOTNAME 12</div>
+								<div class="botFullName">BOTNAME 12 <span class="is offline"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="120" data-active-time="50">성공</span>
+									<span class="botEventState ty4" data-active-start="300" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="600" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="900" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="1100" data-active-time="150">지연진행중</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 13</div>
+								<div class="botFullName">BOTNAME 13 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty1" data-active-start="0" data-active-time="288">실패</span>
+									<span class="botEventState ty2" data-active-start="288" data-active-time="130">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="576" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="900" data-active-time="220">진행중</span>
+									<span class="botEventState ty5" data-active-start="1152" data-active-time="500">성공</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 14</div>
+								<div class="botFullName">BOTNAME 14 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty2" data-active-start="30" data-active-time="100">지연진행중</span>
+									<span class="botEventState ty3" data-active-start="144" data-active-time="300">성공(지연)</span>
+									<span class="botEventState ty4" data-active-start="576" data-active-time="150">진행중</span>
+									<span class="botEventState ty5" data-active-start="800" data-active-time="300">성공</span>
+									<span class="botEventState ty1" data-active-start="1100" data-active-time="100">실패</span>
+								</div>
+							</div>
+							<div class="botStateList">
+								<div class="botStateName">BOTNAME 15</div>
+								<div class="botFullName">BOTNAME 15 <span class="is online"></span></div>
+								<div class="botStateTimeLine">
+									<span class="botEventState ty3" data-active-start="5" data-active-time="150">성공</span>
+									<span class="botEventState ty4" data-active-start="200" data-active-time="120">진행중</span>
+									<span class="botEventState ty5" data-active-start="400" data-active-time="180">성공</span>
+									<span class="botEventState ty1" data-active-start="600" data-active-time="60">실패</span>
+									<span class="botEventState ty2" data-active-start="800" data-active-time="90">지연진행중</span>
+								</div>
+							</div>
+						</div>
+						<span class="rtMark">
+							<span class="rtMarkTop"></span>
+							<span class="rtMarkBottom"></span>
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>

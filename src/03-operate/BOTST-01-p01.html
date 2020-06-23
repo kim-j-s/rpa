@@ -12,11 +12,11 @@ $(function () {
 		target: $('[data-ax5grid="first-grid"]'),
 		header: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 33
 		},
 		body: {
 			align: "center",
-			columnHeight: 46
+			columnHeight: 37
 		},
 		columns: [
 		{
@@ -79,6 +79,12 @@ $(function () {
 		{col01: "box2", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:10", col05: "2020-05-28 12:00"},
 		{col01: "box3", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:20", col05: "2020-05-28 12:00"},
 		{col01: "box4", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:30", col05: "2020-05-28 12:00"},
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00"},
+		{col01: "box2", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:10", col05: "2020-05-28 12:00"},
+		{col01: "box3", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:20", col05: "2020-05-28 12:00"},
+		{col01: "box4", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:30", col05: "2020-05-28 12:00"},
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00"},
+		{col01: "box1", col02: "AA-401 유효분석 확인", col03: "유효효과 확인", col04: "2020-05-28 12:00", col05: "2020-05-28 12:00"},
 	]);
 
 
@@ -86,7 +92,7 @@ $(function () {
 	setTimeout(function(){
 		var tblHeaderHeight = $('[data-ax5grid-panel-scroll="'+ 'header' +'"]').outerHeight();
 		var tblBodyHeight = $('[data-ax5grid-panel-scroll="'+ 'body' +'"]').outerHeight();
-		firstGrid.setHeight(tblHeaderHeight + tblBodyHeight + 30);
+		firstGrid.setHeight(tblHeaderHeight + tblBodyHeight + 60);
 	}, 300);
 
 });
@@ -95,7 +101,8 @@ $(function () {
 <body>	
 
 <!-- RPA 수행현황 등록 pop-up -->
-<div class="popup botDetail windowPop">
+<div class="popup noScroll">
+	<div class="dimm"></div>
 	<div class="popBox type1">
 		<div class="popTop"><h3>RPA 수행현황</h3></div>
 		<div class="popCont scrollArea">
@@ -105,7 +112,9 @@ $(function () {
 					<button type="button" class="slideBtn">접기/펼치기</button>
 				</div>
 				<div class="tblSlide">
-					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%;" height="450px"></div>
+					<div class="innerScroll ty1">
+						<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height:450px;" class="white"></div>
+					</div>
 				</div>
 			</div>
 			<div class="tableWrap">

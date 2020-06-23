@@ -14,6 +14,7 @@
     <script src="../js/ax5grid.min.js"></script>
     <script src="../js/ui.js"></script>
 
+    <script src="../js/ckeditor.js"></script>
 
     <script type="text/javascript">
         var re = '<span class="reMark"><span class="text">Re</span></span>';
@@ -27,11 +28,11 @@
                 target: $('[data-ax5grid="first-grid"]'),
                 header: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 33
                 },
                 body: {
                     align: "center",
-                    columnHeight: 46
+                    columnHeight: 37
                 },
                 columns: [{
                     key: "no",
@@ -68,12 +69,12 @@
                 }],
                 page: {
                     navigationItemCount: 9,
-                    height: 40,
+                    height: 26,
                     display: true,
-                    //firstIcon: '|<',
+                    firstIcon: '<i class="direction first"></i>',
                     prevIcon: '<i class="direction prev"></i>',
                     nextIcon: '<i class="direction next"></i>',
-                    //lastIcon: '>|',
+                    lastIcon: '<i class="direction last"></i>',
                     onChange: function() {
                         // 페이지 번호 눌렀을때 호출
                         search(this.page.selectPage);
@@ -336,25 +337,28 @@
             <div class="innerArea">
                 <div class="roundBox">
                     <div class="setBox">
-                        <div class="searchWrap line">
-                            <select name="" id="" class="selectD">
+                        <div class="searchWrap">
+                            <select name="" id="" class="selectD ty1 wd173">
                                 <option value="">제목</option>
                                 <option value="">작성자</option>
                             </select>
-                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt">
-                            <button type="button" class="btn search">검색</button>
-                            <button type="button" class="btn reset">초기화</button>
+                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd734">
+                            <div class="setBoxBtns">
+                                <button type="button" class="btns ty4">검색</button>
+                                <button type="button" class="btns ty7">초기화</button>
+                            </div>
                         </div>
+
                     </div>
                     <div class="tableWrap">
                         <div class="tableTop">
                             <span class="totalNum">총 <em>100</em>건</span>
                             <div class="rightArea">
-                                <a href="#" class="btnTxt">등록</a>
+                                <button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 580px;"></div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
 
                     </div>
                 </div>
@@ -367,6 +371,67 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+
+        <!-- 공지사항 등록/수정 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>공지사항</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap etc">
+                        <table class="table form">
+                            <tbody>
+                                <tr>
+                                    <th>제목</th>
+                                    <td>
+                                        <input type="text" class="inpTxt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>내용</th>
+                                    <td>
+                                        <textarea name="content" id="editor"></textarea>
+                                        <script>
+                                            ckEditor();
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>첨부파일</th>
+                                    <td>
+                                        <div class="inpFileWrap">
+                                            <div class="inpFileList">
+                                                <div class="inpFileBtnEle">
+                                                    <button type="button" class="btns ty8 etc" onclick="fileUploadAdd(this)">파일찾기</button>
+                                                </div>
+                                                <input type="file" class="inpfile">
+                                                <input type="text" class="inpTxt" placeholder="파일을 첨부하세요" readonly>
+                                                <div class="inpFileBtns">
+                                                    <button type="button" class="btns ty15" onclick="fileUploadListDelete(this)">삭제</button>
+                                                    <button type="button" class="btns ty14" onclick="fileUploadListAdd(this)">추가</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="downloadInfoText">- 파일 1개당 크기 50MB, 전체 파일 크기 300M까지 지원</p>
+                    </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="btns ty11">취소</button>
+                <button type="button" class="btns ty12">저장</button>
+            </div>
+            <button type="button" class="btnPopClose">팝업닫기</button>
+        </div>
+    </div>
+    <!-- //공지사항 등록/수정 pop-up -->
     </div>
 
 </body>
