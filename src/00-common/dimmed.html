@@ -1,0 +1,467 @@
+@@include('head.html', {
+	"title": "layer Popup"
+})
+</head>
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "active",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>요청관리</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">과제관리</a>
+					<a href="#">요청관리</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+
+				<div class="roundContent">
+					<a href="" class="btns ty1">팝업 호출</a>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+
+
+
+
+
+
+<!-- 과제변경 수정 pop-up -->
+<div class="popup" >
+	<div class="dimm"></div>
+	<div class="popBox type1">
+		<div class="popTop"><h3>과제변경</h3></div>
+		<div class="popCont scrollArea">
+
+			<!-- 기본정보 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기본정보</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>과제명 <span class="essential">필수입력</span></th>
+								<td><input type="text" class="inpTxt" readonly value="매출"></td>
+								<th>과제코드</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly>
+										<button type="button" class="btnSelect load">이전 정보 가져오기</button>
+									</div>
+								</td>
+								<th>BPM일련번호</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>과제빈도</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<select name="" id="" class="selectD">
+											<option value="">년</option>
+											<option value="">월</option>
+											<option value="">주</option>
+											<option value="">일</option>
+										</select>
+									</div>
+								</td>
+								<th>정기실행여부</th>
+								<td>
+									<select name="" id="" class="selectD full">
+										<option value="">정기실행여부</option>
+									</select>
+								</td>
+								<th>일인당 처리 건수</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>건</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>요청자 <span class="essential">필수입력</span></th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect load">요청자 검색</button>
+									</div>
+								</td>
+								<th>요청자 사번 <span class="essential">필수입력</span></th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>요청일자  <span class="essential">필수입력</span></th>
+								<td>
+									<div class="dateWrap full">
+										<span class="datePicker">
+											<span class="dateBox">
+												<input type="text" class="dateFrom inpTxt" name="from" readonly="">
+											</span>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>요청사유 <span class="essential">필수입력</span></th>
+								<td colspan="5">
+									<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th>연관시스템</th>
+								<td colspan="5" class="pd0">
+									<div class="checkGroup">
+										<span class="inpD check">
+											<label><input type="checkbox">SAP</label>
+										</span>
+										<span class="inpD check">
+											<label><input type="checkbox">사내메일</label>
+										</span>
+										<span class="inpD check">
+											<label><input type="checkbox">Microsoft Explorer</label>
+										</span>
+										<span class="inpD check">
+											<label><input type="checkbox">Microsoft Excel 2013</label>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// 기본정보 -->
+
+			<!-- 기초 데이터 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기초 데이터</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>직접직 처리 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>분</span>
+									</div>
+								</td>
+								<th>직접직 절감 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>분</span>
+									</div>
+								</td>
+								<th>직접직 처리 인원</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>명</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>간접직 처리 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>분</span>
+									</div>
+								</td>
+								<th>간접직 절감 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>분</span>
+									</div>
+								</td>
+								<th>간접직 처리 인원</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>명</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>연관 인원</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>명</span>
+									</div>
+								</td>
+								<th>간접 효과 비용</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt"> <span>원</span>
+									</div>
+								</td>
+								<td colspan="2">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>간접 효과<br> 비용 설명</th>
+								<td colspan="5">
+									<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// 기초 데이터 -->
+
+			<!-- 기대 효과 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기대 효과</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>직접직 효과 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="40"> <span>분</span>
+									</div>
+								</td>
+								<th>직접직 효과 비용</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+									</div>
+								</td>
+								<td colspan="2">&nbsp;</td>
+							</tr>
+							<tr>
+								<th>간접직 효과 시간</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="40"> <span>분</span>
+									</div>
+								</td>
+								<th>간접직 효과 비용</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+									</div>
+								</td>
+								<th>총 효과 비용</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt" readonly value="40"> <span>원</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// 기대 효과 -->
+
+			<!-- 상태 -->
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">상태</strong>
+					<button type="button" class="slideBtn">접기/펼치기</button>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>검토내용</th>
+								<td>
+									<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th>관련파일</th>
+								<td>
+									@@include('download.html')
+								</td>
+							</tr>
+							<tr>
+								<th>진행상태</th>
+								<td>
+									<span class="radioBox">
+										<input type="radio" id="progress01" name="progress"><label for="progress01">대기</label>
+									</span>
+									<span class="radioBox">
+										<input type="radio" id="progress02" name="progress"><label for="progress02">진행</label>
+									</span>
+									<span class="radioBox">
+										<input type="radio" id="progress03" name="progress"><label for="progress03">대기</label>
+									</span>
+									<span class="radioBox">
+										<input type="radio" id="progress04" name="progress"><label for="progress04">불가</label>
+									</span>
+								</td>
+							</tr>
+							<!-- 진행상태 - 불가 선택 할 경우 노출 -->
+							<tr>
+								<th>불가사유</th>
+								<td>
+									<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+								</td>
+							</tr>
+							<!--// 진행상태 - 불가 선택 할 경우 노출 -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// 상태 -->
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty2">수정</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //과제변경 수정 pop-up -->
+
+<!-- 템플릿 - 추가/수정 pop-up -->
+<div class="popup" style="z-index:10002;">
+	<div class="dimm"></div>	
+	<div class="popBox type1">
+		<div class="popTop"><h3>템플릿</h3></div>
+		<div class="popCont scrollArea">
+			<div class="tableWrap">
+				<div class="tableTitleWrap">
+					<strong class="tableTitle">기본정보</strong>
+				</div>
+				<div class="tblSlide">
+					<table class="table form">
+						<tbody>
+							<tr>
+								<th>과제코드</th>
+								<td>
+									<div class="inpWrap">
+										<input type="text" class="inpTxt">
+										<button type="button" class="btnSelect">선택</button>
+									</div>
+								</td>
+								<th>과제명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>템플릿코드</th>
+								<td><input type="text" class="inpTxt"></td>
+								<th>템플릿명</th>
+								<td><input type="text" class="inpTxt"></td>
+							</tr>
+							<tr>
+								<th>사용여부</th>
+								<td colspan="3">
+									<select name="" id="" class="selectD">
+										<option value="">사용</option>
+										<option value="">미사용</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td colspan="3">
+									@@include('download.html')
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<button type="button" class="btns ty11">취소</button>
+			<button type="button" class="btns ty12">저장</button>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //템플릿 - 추가/수정 pop-up -->
+
+<!-- 부서 선택 pop-up -->
+<div class="popup" style="z-index:10003">
+	<div class="dimm"></div>
+	<div class="popBox type1 wd520">
+		<div class="popTop"><h3>부서 선택</h3></div>
+		<div class="popCont">
+			<div class="searchWrap flex">
+				<div class="flexAuto">
+					<input type="text" class="inpTxt">
+				</div>
+				<button type="button" class="btns ty4">검색</button>
+			</div>
+			<div class="tableWrap">
+				<table class="table text">
+					<colgroup>
+						<col style="width: auto">
+						<col style="width: 110px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>부서</th>
+							<th>선택</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="taL">it사업본부</td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL">개발본부</td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL">디지털혁신사업본부</td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL">네트워크사업부</td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+						<tr>
+							<td class="taL">컨설턴트본부</td>
+							<td><button type="button" class="btnTxt white">선택</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<button type="button" class="btnPopClose">팝업닫기</button>
+	</div>
+</div>
+<!-- //부서 선택 pop-up -->
+
+
+
+</div>
+
+</body>
+</html>

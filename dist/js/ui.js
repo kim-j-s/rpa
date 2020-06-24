@@ -51,7 +51,6 @@ function openPop(){
 		//$('body').addClass('hidden');
 		var href = $(this).attr('href');
 		var data = $(this).data('popopen');
-		console.log(data);
 		$(href).fadeIn(100);	
 		$('[data-pop="'+ data +'"]').fadeIn(100);
 		return false;
@@ -172,7 +171,7 @@ $(function(){
 	openPop();
 	openWindows();
 	closePop();
-	//naviShow();
+	naviShow();
 	inputDesign();
 	chkAllTxt();
 	$('.inpD').find('input').on('change', function(){

@@ -18,13 +18,13 @@
     <script type="text/javascript">
         $(function() {
 
-            var ChangeBtn = '<button type="button" class="btnSelect ml30">순서 변경</button>';
-
             /* 그리드 객체 생성 */
             firstGrid = new ax5.ui.grid();
 
             firstGrid.setConfig({
                 target: $('[data-ax5grid="first-grid"]'),
+                //frozenColumnIndex: 1,
+                frozenRowIndex: 0,
                 header: {
                     align: "center",
                     columnHeight: 33
@@ -34,19 +34,6 @@
                     columnHeight: 37
                 },
                 columns: [{
-                    key: "chk",
-                    label: '<span class="dpib vm">선택</span>',
-                    align: "center",
-                    width: 80,
-                    editor: {
-                        type: "checkbox",
-                        config: {
-                            height: 18,
-                            trueValue: "Y",
-                            falseValue: "N"
-                        }
-                    }
-                }, {
                     key: "no",
                     label: '<span class="dpib vm">순서</span>',
                     sortable: true,
@@ -56,29 +43,21 @@
                     key: "col01",
                     label: '<span class="dpib vm">공통그룹코드</span>',
                     sortable: true,
-                    align: "left",
-                    width: 322
+                    align: "center",
+                    width: 184
                 }, {
                     key: "col02",
                     label: '<span class="dpib vm">공통그룹명</span>',
                     sortable: true,
-                    align: "left",
-                    width: 322
+                    align: "center",
+                    width: 143
                 }, {
                     key: "col03",
-                    label: '<span class="dpib vm">정렬순서</span>',
-                    sortable: true,
-                    align: "center",
-                    width: 200,
-                    formatter: function() {
-                        return this.value + ChangeBtn;
-                    }
-                }, {
-                    key: "col04",
                     label: '<span class="dpib vm">활성여부</span>',
                     sortable: true,
                     align: "center",
-                    width: 100,
+                    //width: 120,
+                    width: 150,
                     formatter: function() {
                         var returnValue = "";
                         switch (this.value) {
@@ -92,108 +71,95 @@
                         return returnValue;
                     }
                 }],
-                page: {
-                    navigationItemCount: 9,
-                    height: 26,
-                    display: true,
-                    firstIcon: '<i class="direction first"></i>',
-                    prevIcon: '<i class="direction prev"></i>',
-                    nextIcon: '<i class="direction next"></i>',
-                    lastIcon: '<i class="direction last"></i>',
-                    onChange: function() {
-                        // 페이지 번호 눌렀을때 호출
-                        search(this.page.selectPage);
-                    }
-                },
             });
-            search(0);
+
+            firstGrid.setData([{
+                    no: "1",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "2",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "3",
+                    col01: "BBBBBB",
+                    col02: "중간관리자",
+                    col03: "비활성"
+                },
+                {
+                    no: "4",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "5",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "6",
+                    col01: "BBBBBB",
+                    col02: "중간관리자",
+                    col03: "비활성"
+                },
+                {
+                    no: "7",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "9",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "10",
+                    col01: "BBBBBB",
+                    col02: "중간관리자",
+                    col03: "비활성"
+                },
+                {
+                    no: "11",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "12",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "13",
+                    col01: "BBBBBB",
+                    col02: "중간관리자",
+                    col03: "비활성"
+                },
+                {
+                    no: "14",
+                    col01: "AAAAAA",
+                    col02: "일반사용자",
+                    col03: "active"
+                },
+                {
+                    no: "15",
+                    col01: "BBBBBB",
+                    col02: "중간관리자",
+                    col03: "비활성"
+                },
+            ]);
+
         });
-
-
-        function search(_pageNo) {
-
-            var list = [{
-                    no: (_pageNo * 10) + 1,
-                    col01: "AAAAAA",
-                    col02: "일반사용자",
-                    col03: "1",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 2,
-                    col01: "BBBBBBB",
-                    col02: "중간관리자",
-                    col03: "1",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 3,
-                    col01: "AAAAAA",
-                    col02: "일반사용자",
-                    col03: "2",
-                    col04: "비활성"
-                },
-                {
-                    no: (_pageNo * 10) + 4,
-                    col01: "BBBBBBB",
-                    col02: "중간관리자",
-                    col03: "2",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 5,
-                    col01: "AAAAAA",
-                    col02: "일반사용자",
-                    col03: "2",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 6,
-                    col01: "BBBBBBB",
-                    col02: "중간관리자",
-                    col03: "3",
-                    col04: "비활성"
-                },
-                {
-                    no: (_pageNo * 10) + 7,
-                    col01: "AAAAAA",
-                    col02: "일반사용자",
-                    col03: "3",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 8,
-                    col01: "BBBBBBB",
-                    col02: "중간관리자",
-                    col03: "3",
-                    col04: "active"
-                },
-                {
-                    no: (_pageNo * 10) + 9,
-                    col01: "AAAAAA",
-                    col02: "일반사용자",
-                    col03: "4",
-                    col04: "비활성"
-                },
-                {
-                    no: (_pageNo * 10) + 10,
-                    col01: "BBBBBBB",
-                    col02: "중간관리자",
-                    col03: "4",
-                    col04: "active"
-                }
-            ];
-
-            firstGrid.setData({
-                list: list,
-                page: {
-                    currentPage: _pageNo,
-                    pageSize: 10,
-                    totalElements: 500,
-                    totalPages: 500
-                }
-            });
-        }
     </script>
 
 </head>
@@ -370,17 +336,52 @@
 
             <div class="innerArea">
                 <div class="roundBox">
-                    <div class="setBox">
-                        <div class="searchWrap">
-                            <select name="" id="" class="selectD ty1 wd143">
-                                <option value="">사용자 ID</option>
-                            </select>
-                            <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd630">
-                            <div class="setBoxBtns">
-                                <button type="button" class="btns ty4">검색</button>
+                    <!-- d
+				<div class="setBox">
+					<div class="searchWrap">
+						<select name="" id="" class="selectD ty1 wd143">
+							<option value="">사용자 ID</option>
+						</select>
+						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd630">
+						<div class="setBoxBtns">
+							<button type="button" class="btns ty4">검색</button>
+						</div>
+					</div>
+				</div>
+				 -->
+
+
+                    <div class="doubleEles">
+                        <div class="innerEle">
+                            <div class="taR mb13">
+                                <button type="button" class="btns ty2">수정</button>
+                                <button type="button" class="btns ty1">등록</button>
                             </div>
+
+                            <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="height: 450px;"></div>
+
                         </div>
+                        <div class="innerEle">2</div>
                     </div>
+
+                    <style>
+                        .doubleEles {
+                            overflow: hidden;
+                            font-size: 0;
+                        }
+
+                        .doubleEles>.innerEle {
+                            display: inline-block;
+                            width: 542px;
+                            vertical-align: top;
+                            font-size: 14px;
+                        }
+
+                        .doubleEles>.innerEle+.innerEle {
+                            margin-left: 20px;
+                        }
+                    </style>
+
                     <div class="tableWrap">
                         <div class="tableTop">
                             <div class="rightArea">
@@ -390,7 +391,7 @@
                             </div>
                         </div>
 
-                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 450px;"></div>
+
 
                     </div>
                 </div>
