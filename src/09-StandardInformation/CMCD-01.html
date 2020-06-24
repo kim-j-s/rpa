@@ -7,10 +7,10 @@ $(function () {
 
 	/* 그리드 객체 생성 */
 	firstGrid = new ax5.ui.grid();
+	firstgrid2 = new ax5.ui.grid();
 
 	firstGrid.setConfig({
 		target: $('[data-ax5grid="first-grid"]'),
-		//frozenColumnIndex: 1,
 		frozenRowIndex: 0,
 		header: {
 			align: "center",
@@ -32,7 +32,7 @@ $(function () {
 			label: '<span class="dpib vm">공통그룹코드</span>',
 			sortable: true,
 			align: "center",
-			width: 184
+			width: 182
 		}, {
 			key: "col02",
 			label: '<span class="dpib vm">공통그룹명</span>',
@@ -45,7 +45,7 @@ $(function () {
 			sortable: true,
 			align: "center",
 			//width: 120,
-			width: 150,
+			width: 120,
 			formatter: function () {
 				var returnValue = "";
 				switch (this.value) {
@@ -60,9 +60,85 @@ $(function () {
 			}
 		}
 		],
+		page: {
+            height: 0,
+        },
 	});
 
 	firstGrid.setData([
+		{no: "1", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "2", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "3", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
+		{no: "4", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "5", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "6", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
+		{no: "7", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "9", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "10", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
+		{no: "11", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "12", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "13", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
+		{no: "14", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
+		{no: "15", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
+	]);
+
+	firstgrid2.setConfig({
+		target: $('[data-ax5grid="first-grid2"]'),
+		frozenRowIndex: 0,
+		header: {
+			align: "center",
+			columnHeight: 33
+		},
+		body: {
+			align: "center",
+			columnHeight: 37
+		},
+		columns: [
+		{
+			key: "no",
+			label: '<span class="dpib vm">순서</span>',
+			sortable: true,
+			align: "center",
+			width: 80
+		}, {
+			key: "col01",
+			label: '<span class="dpib vm">공통그룹코드</span>',
+			sortable: true,
+			align: "center",
+			width: 182
+		}, {
+			key: "col02",
+			label: '<span class="dpib vm">공통그룹명</span>',
+			sortable: true,
+			align: "center",
+			width: 143
+		}, {
+			key: "col03",
+			label: '<span class="dpib vm">활성여부</span>',
+			sortable: true,
+			align: "center",
+			//width: 120,
+			width: 120,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "active" :
+						returnValue = '<span class="bold color3">활성</span>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}
+		],
+		page: {
+            height: 0,
+        },
+	});
+
+	firstgrid2.setData([
 		{no: "1", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
 		{no: "2", col01: "AAAAAA", col02: "일반사용자", col03: "active"},
 		{no: "3", col01: "BBBBBB", col02: "중간관리자", col03: "비활성"},
@@ -117,51 +193,41 @@ $(function () {
 
 		<div class="innerArea">
 			<div class="roundBox">
-				<!-- d
-				<div class="setBox">
-					<div class="searchWrap">
-						<select name="" id="" class="selectD ty1 wd143">
-							<option value="">사용자 ID</option>
-						</select>
-						<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd630">
-						<div class="setBoxBtns">
-							<button type="button" class="btns ty4">검색</button>
-						</div>
-					</div>
-				</div>
-				 -->
-
-
 				<div class="doubleEles">
 					<div class="innerEle">
-						<div class="taR mb13">
+						<h3 class="title">공통그룹코드관리</h3>
+						<div class="searchWrap">
+							<select name="" id="" class="selectD ty1 wd120">
+								<option value="">공통그룹코드</option>
+							</select>
+							<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
+							<div class="setBoxBtns fr">
+								<button type="button" class="btns ty4">검색</button>
+							</div>
+						</div>
+						<div class="innerBtns">
 							<button type="button" class="btns ty2">수정</button>
 							<button type="button" class="btns ty1">등록</button>
 						</div>
-
-						<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="height: 450px;"></div>
-
+						<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="height: 366px;"></div>
 					</div>
-					<div class="innerEle">2</div>
-				</div>
-
-<style>
-.doubleEles {overflow:hidden; font-size:0;}
-.doubleEles > .innerEle {display:inline-block; width:542px; vertical-align:top; font-size:14px;}
-.doubleEles > .innerEle + .innerEle {margin-left:20px;}
-</style>
-
-				<div class="tableWrap">
-					<div class="tableTop">
-						<div class="rightArea">
-							<button type="button" class="btns ty3">삭제</button>
-							<button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
-							<button type="button" class="btns openPop" data-popopen="pop1">추가</button>
+					<div class="innerEle">
+						<h3 class="title">공통그룹코드</h3>
+						<div class="searchWrap">
+							<select name="" id="" class="selectD ty1 wd120">
+								<option value="">공통코드</option>
+							</select>
+							<input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
+							<div class="setBoxBtns fr">
+								<button type="button" class="btns ty4">검색</button>
+							</div>
 						</div>
+						<div class="innerBtns">
+							<button type="button" class="btns ty2">수정</button>
+							<button type="button" class="btns ty1">등록</button>
+						</div>
+						<div data-ax5grid="first-grid2" data-ax5grid-config='{}' style="height: 366px;"></div>
 					</div>
-
-					
-
 				</div>
 			</div>
 		</div>
