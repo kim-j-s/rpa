@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>조직관리 - 정렬순서</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 조직관리 - 정렬순서 pop-up -->
+    <div class="popup windowPop">
+        <div class="popBox type1">
+            <div class="popTop">
+                <h3>정렬순서 선택</h3>
+            </div>
+            <div class="popCont scrollArea">
+                <div class="tableWrap">
+                    <div class="tableTitleWrap">
+                        <strong class="tableTitle">정렬순서 변경</strong>
+                    </div>
+                    <div class="sorWrap">
+                        <div class="inner">
+                            <div class="sortListWrap">
+                                <div class="sortListItem">메뉴명1</div>
+                                <div class="sortListItem">메뉴명2</div>
+                                <div class="sortListItem">메뉴명3</div>
+                                <div class="sortListItem">메뉴명4</div>
+                                <div class="sortListItem">메뉴명5</div>
+                                <div class="sortListItem">메뉴명6</div>
+                                <div class="sortListItem">메뉴명7</div>
+                                <div class="sortListItem">메뉴명8</div>
+                                <div class="sortListItem">메뉴명9</div>
+                                <div class="sortListItem">메뉴명10</div>
+                                <div class="sortListItem">메뉴명11</div>
+                                <div class="sortListItem">메뉴명12</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .sorWrap {
+                            padding: 15px 0 15px 18px;
+                            border: 1px solid #c7d1e0;
+                            border-top: 1px solid #e7eaef;
+                            background: #f6f9fd;
+                        }
+
+                        .sorWrap>.inner {
+                            position: relative;
+                            padding-right: 23px;
+                        }
+
+                        .sortListWrap {
+                            max-height: 340px;
+                            overflow: auto;
+                        }
+
+                        .sortListItem {
+                            padding: 6px 13px;
+                            border: 1px solid #d5dee9;
+                            font-size: 14px;
+                            color: #464646;
+                            line-height: 20px;
+                            border-radius: 3px;
+                            background: #fff;
+                            cursor: pointer;
+                            transition: 0.5s;
+                        }
+
+                        .sortListItem.sliChecked {
+                            border: 1px solid #0c79f8;
+                        }
+
+                        .sortListItem:hover {
+                            border: 1px solid #0c79f8;
+                            box-shadow: 0px 0px 7px 7px rgba(117, 176, 255, 0.35);
+                        }
+                    </style>
+
+                </div>
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="btns ty11">취소</button>
+                <button type="button" class="btns ty2">수정</button>
+            </div>
+            <button type="button" class="btnPopClose">팝업닫기</button>
+        </div>
+    </div>
+    <!-- //조직관리 - 정렬순서 pop-up -->
+</body>
+
+</html>
