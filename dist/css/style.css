@@ -591,7 +591,6 @@ body.hidden {overflow-y:hidden;}
 .fileList li .btn + .btn {margin-left:5px;}
 .downloadInfoText {padding:6px 0 6px 12px; font-size:12px; line-height:16px;}
 
-
 .innerContWrap {}
 .innerCont {position:relative;}
 .innerCont + .innerCont {border-top:1px solid #e3eaf3;}
@@ -684,7 +683,6 @@ body.hidden {overflow-y:hidden;}
   from { opacity:0; }
 }
 
-
 .doubleEles {position:relative; padding-top:30px; overflow:hidden; font-size:0;}
 .doubleEles > .innerEle {display:inline-block; vertical-align:top; font-size:14px;}
 .doubleEles > .innerEle .innerEleCont { border-radius:8px; border:1px solid #c7d1e0; background:#f6f9fd; overflow:hidden;}
@@ -692,19 +690,29 @@ body.hidden {overflow-y:hidden;}
 .doubleEles.ty2 > .innerEle {width:598px;}
 .doubleEles.ty2 > .innerEle + .innerEle {width:486px;}
 .doubleEles > .innerEle + .innerEle {margin-left:20px;}
-/*
-.doubleEles > .innerEle .title {padding:0 15px; font-weight:700; font-size:16px; color:#0c79f8; line-height:39px; border-bottom:1px solid #d1dae9;}
-*/
 .doubleEles > .innerEle .searchWrap {padding:5px 15px; border-bottom:1px solid #d1dae9;}
 .doubleEles > .innerEle .innerBtns {padding:20px 15px 13px 15px; text-align:right;}
 .innerEle .tableTitleWrap {border:none; border-bottom:1px solid #d1dae9;}
+
+.sorWrap {position:relative; border:1px solid #c7d1e0; border-top:1px solid #e7eaef; border-radius:0 0 8px 8px; background:#f6f9fd;}
+.sorWrap > .inner {position:relative; padding:15px 43px 15px 18px;}
+.sorWrap > .sortUpDown {position:absolute; top:15px; right:-1px; width:32px; height:calc(100% - 30px); overflow:hidden;}
+.sorWrap > .sortUpDown > button {width:100%; height:50%; border:1px solid #c7d0da; text-indent:-9999px; transition:.5s;}
+.sorWrap > .sortUpDown > .sortDownBtn {height:calc(50% + 1px); margin-top:-1px;}
+.sortUpBtn {border-radius:3px 3px 0 0; background:#e6ebf1 url(../images/icon/icon_sorting_up.png) no-repeat center center;}
+.sortUpBtn:hover {background:#0c79f8 url(../images/icon/icon_sorting_up_on.png) no-repeat center center;}
+.sortDownBtn {border-radius:0 0 3px 3px; background:#e6ebf1 url(../images/icon/icon_sorting_down.png) no-repeat center center;}
+.sortDownBtn:hover {background:#0c79f8 url(../images/icon/icon_sorting_down_on.png) no-repeat center center;}
+.sortListWrap {max-height:340px; overflow:auto;}
+.sortListItem {position:relative; padding:6px 13px; border:1px solid #d5dee9; font-size:14px; color:#464646; line-height:20px; border-radius:3px; background:#fff; cursor:pointer; transition:0.5s;}
+.sortListItem:hover {z-index:1; border:1px solid #0c79f8; box-shadow:0px 0px 10px 0px rgba(12,121,248,0.5);}
+.sortListItem.Inactive {background:#f9f9f9; color:#888;}
 
 
 /* ztree */
 .treeField {border-radius:8px; background:#fff;}
 .treeField.ty1 {border-radius:0 0 8px 8px; border:1px solid #c7d1e0;}
 .treeField > .inner	{max-height:724px; /* border:15px solid #f9fcff; */ border-radius:8px; overflow:auto;}
-
 
 .ztree {padding:20px 47px;}
 .ztree * {color:#464646; font-family:'Nanum Barun Gothic',dotum,sans-serif;}
