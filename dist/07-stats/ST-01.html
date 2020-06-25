@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>과제별 ROI</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/ax5grid.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/ax5core.min.js"></script>
+    <script src="../js/ax5grid.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+
+    <script type="text/javascript">
+        $(function() {
+
+            /* 그리드 객체 생성 */
+            firstGrid = new ax5.ui.grid();
+
+            firstGrid.setConfig({
+                target: $('[data-ax5grid="first-grid"]'),
+                showRowSelector: true,
+                rowSelectorColumnWidth: 60,
+                header: {
+                    align: "center",
+                    columnHeight: 34
+                },
+                body: {
+                    align: "center",
+                    columnHeight: 37
+                },
+                columns: [{
+                    key: "col01",
+                    label: '<span class="dpib vm">과제명</span>',
+                    sortable: true,
+                    align: "left",
+                    width: 160
+                }, {
+                    key: "col02",
+                    label: '<span class="dpib vm">간접효과금액<br>(천원)</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 110
+                }, {
+                    key: "col03",
+                    label: '<span class="dpib vm">직접효과금액<br>(천원)</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 110
+                }, {
+                    key: "col04",
+                    label: '<span class="dpib vm">투입비용<br>(천원)</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 110
+                }, {
+                    key: "col05",
+                    label: '<span class="dpib vm">예상<br>ROI(%)</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 90
+                }, {
+                    key: "col06",
+                    label: '<span class="dpib vm">수행<br>ROI(%)</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 90
+                }, {
+                    label: '<span class="thTop"><em>1Q</em>(01.01~03.31)</span>',
+                    columns: [ // child columns
+                        {
+                            key: "col07",
+                            label: "<span>수행건수</span>",
+                            width: 85,
+                            sortable: true,
+                        },
+                        {
+                            key: "col08",
+                            label: "<span>절감시간<br>(분)</span>",
+                            width: 85,
+                            sortable: true,
+                        },
+                        {
+                            key: "col09",
+                            label: "<span>효과금액<br>(천원)</span>",
+                            width: 85,
+                            sortable: true,
+                        },
+                        {
+                            key: "col10",
+                            label: "<span>ROI<br>(%)</span>",
+                            width: 60,
+                            sortable: true,
+                        }
+                    ]
+                }, {
+                    label: '<span class="thTop"><em>2Q</em>(01.01~03.31)</span>',
+                    columns: [ // child columns
+                        {
+                            key: "col11",
+                            label: "<span>수행건수</span>",
+                            width: 85,
+                            sortable: true
+                        },
+                        {
+                            key: "col12",
+                            label: "<span>절감시간<br>(분)</span>",
+                            width: 85,
+                            sortable: true
+                        },
+                        {
+                            key: "col13",
+                            label: "<span>효과금액<br>(천원)</span>",
+                            width: 85,
+                            sortable: true
+                        },
+                        {
+                            key: "col14",
+                            label: "<span>ROI<br>(%)</span>",
+                            width: 60,
+                            sortable: true
+                        }
+                    ]
+                }],
+                page: {
+                    navigationItemCount: 9,
+                    height: 26,
+                    display: true,
+                    firstIcon: '<i class="direction first"></i>',
+                    prevIcon: '<i class="direction prev"></i>',
+                    nextIcon: '<i class="direction next"></i>',
+                    lastIcon: '<i class="direction last"></i>',
+                    onChange: function() {
+                        // 페이지 번호 눌렀을때 호출
+                        search(this.page.selectPage);
+                    }
+                },
+            });
+
+            search(0);
+        });
+
+        function search(_pageNo) {
+            var list = [{
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                },
+                {
+                    col01: "AA-402.대리점 영업관리 자동화",
+                    col02: "1,855",
+                    col03: "2,881",
+                    col04: "2,131",
+                    col05: "80",
+                    col06: "80",
+                    col07: "80",
+                    col08: "80",
+                    col09: "80",
+                    col10: "80"
+                }
+            ];
+
+            firstGrid.setData({
+                list: list,
+                page: {
+                    currentPage: _pageNo,
+                    pageSize: 10,
+                    totalElements: 500,
+                    totalPages: 500
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!-- HEADER -->
+        <header>
+            <div class="innerArea">
+                <h1 class="logo"><a href="#">RPA Portal</a></h1>
+                <ul class="utilMenu">
+                    <li><button type="button" class="mypage">마이페이지</button></li>
+                    <li><button type="button" class="system">시스템</button></li>
+                    <li><button type="button" class="logout">로그아웃</button></li>
+                </ul>
+            </div>
+            <div class="gnbWrap">
+                <ul class="gnbTop">
+                    <li class=""><span>과제관리</span></li>
+                    <li class=""><span>운영업무</span></li>
+                    <li class=""><span>커뮤니티</span></li>
+                    <li class=""><span>헬프데스크</span></li>
+                    <li class="active"><span>통계</span></li>
+                    <li class=""><span>자원관리</span></li>
+                    <li class=""><span>기준정보</span></li>
+                </ul>
+                <div class="gnbAll" style="display: none;">
+                    <div class="gnbCont">
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>과제관리</strong>
+                                <ul>
+                                    <li><a href="#">요청관리</a></li>
+                                    <li><a href="#">요청검토관리</a></li>
+                                    <li><a href="#">개발진행현황</a></li>
+                                    <li><a href="#">사용템플릿관리</a></li>
+                                </ul>
+                            </div>
+                            <div class="menuWrap">
+                                <strong>자원관리</strong>
+                                <ul>
+                                    <li><a href="#">BOT 관리</a></li>
+                                    <li><a href="#">Device Pool 관리</a></li>
+                                    <li><a href="#">Queue 관리</a></li>
+                                    <li><a href="#">라이선스 관리</a></li>
+                                    <li><a href="#">Credential관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>운영업무</strong>
+                                <ul>
+                                    <li><a href="#">정기(스케쥴) 실행</a></li>
+                                    <li><a href="#">비정기 실행</a></li>
+                                    <li><a href="#">시스템 상태</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">전체시스템 상태정보 조회</a></li>
+                                            <li><a href="#">시스템 장애이력 조회</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">BPM업무</a></li>
+                                    <li><a href="#">BOT 산정</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">과제별 BOT산정 사용율 분석</a></li>
+                                            <li><a href="#">전체 BOT 개수 적정량 산정</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">이슈 관리</a></li>
+                                    <li><a href="#">장애 관리</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>통계</strong>
+                                <ul>
+                                    <li><a href="#">BOT 별 ROI</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">산출/조회</a></li>
+                                            <li><a href="#">업무처리결과 조회</a></li>
+                                            <li><a href="#">가동시간 조회</a></li>
+                                            <li><a href="#">실패시간</a></li>
+                                            <li><a href="#">상세업무 건수</a></li>
+                                            <li><a href="#">업무처리 시간</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">과제 별 ROI</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">산출/조회</a></li>
+                                            <li><a href="#">과제별 업무처리결과</a></li>
+                                            <li><a href="#">과제별 가동시간</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">부서별 집계</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">ROI TOP5</a></li>
+                                            <li><a href="#">과제개수 TOP5</a></li>
+                                            <li><a href="#">자동화적용시간 TOP5</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>기준정보</strong>
+                                <ul>
+                                    <li><a href="#">사용자</a></li>
+                                    <li><a href="#">권한설정</a></li>
+                                    <li><a href="#">조직관리</a></li>
+                                    <li><a href="#">메뉴관리</a></li>
+                                    <li><a href="#">난이도/적합도 기준</a></li>
+                                    <li><a href="#">임율 관리</a></li>
+                                    <li>
+                                        <a href="#">알람 설정</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">이메일</a></li>
+                                            <li><a href="#">PUSH</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">공통코드관리</a></li>
+                                    <li>
+                                        <a href="#">RPA Solution DB접속정보</a>
+                                        <ul class="subMenu">
+                                            <li><a href="#">AA</a></li>
+                                            <li><a href="#">BP</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="menuWrap">
+                                <strong>커뮤니티</strong>
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">양식관리</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Q&amp;A</a></li>
+                                    <li><a href="#">지식관리</a></li>
+                                </ul>
+                            </div>
+                            <div class="menuWrap">
+                                <strong>헬프데스크</strong>
+                                <ul>
+                                    <li><a href="#">개발 가이드</a></li>
+                                    <li><a href="#">Best Practic</a></li>
+                                    <li><a href="#">공통 모듈</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //HEADER -->
+
+        <!-- CONTENT -->
+        <div class="container">
+
+            <div class="topBox">
+                <div class="innerArea">
+                    <h2>과제별 ROI</h2>
+                    <div class="navigation">
+                        <a href="#">홈</a>
+                        <a href="#">통계</a>
+                        <a href="#">과제별 ROI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="innerArea">
+                <div class="roundBox">
+                    <div class="setBox">
+                        <div class="searchWrap">
+                            <span class="tit">표시주기</span>
+                            <span class="radioBox">
+							<input type="radio" id="day" name="period"><label for="day">일</label>
+						</span>
+                            <span class="radioBox">
+							<input type="radio" id="week" name="period"><label for="week">주</label>
+						</span>
+                            <span class="radioBox">
+							<input type="radio" id="month" name="period"><label for="month">월</label>
+						</span>
+                            <span class="tit">검색기간</span>
+                            <div class="dateWrap">
+                                <span class="datePicker">
+								<span class="dateBox">
+									<input type="text" class="dateFrom inpTxt ty1" name="from" readonly="">
+								</span>
+                                <span class="dash">~</span>
+                                <span class="dateBox">
+									<input type="text" class="dateTo inpTxt ty1" name="to" readonly="">
+								</span>
+                                </span>
+                            </div>
+                            <div class="setBoxBtns">
+                                <button type="button" class="btns ty4">검색</button>
+                                <button type="button" class="btns ty7">초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <div class="tableTop">
+                            <div class="rightArea">
+                                <button type="button" class="btns openPop" data-popopen="pop1">이력 데이터 Export</button>
+                            </div>
+                        </div>
+                        <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 480px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //CONTENT -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
+        </footer>
+        <!-- //FOOTER -->
+    </div>
+
+</body>
+
+</html>

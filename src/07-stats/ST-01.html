@@ -1,0 +1,204 @@
+@@include('head.html', {
+	"title": "과제별 ROI"
+})
+
+<script type="text/javascript">
+$(function () {
+
+	/* 그리드 객체 생성 */
+	firstGrid = new ax5.ui.grid();
+
+	firstGrid.setConfig({
+		target: $('[data-ax5grid="first-grid"]'),
+		showRowSelector: true,
+		rowSelectorColumnWidth: 60,
+		header: {
+			align: "center",
+			columnHeight: 34
+		},
+		body: {
+			align: "center",
+			columnHeight: 37
+		},
+		columns: [
+		{
+			key: "col01",
+			label: '<span class="dpib vm">과제명</span>',
+			sortable: true,
+			align: "left",
+			width: 160
+		}, {
+			key: "col02",
+			label: '<span class="dpib vm">간접효과금액<br>(천원)</span>',
+			sortable: true,
+			align: "center",
+			width: 110
+		}, {
+			key: "col03",
+			label: '<span class="dpib vm">직접효과금액<br>(천원)</span>',
+			sortable: true,
+			align: "center",
+			width: 110
+		}, {
+			key: "col04",
+			label: '<span class="dpib vm">투입비용<br>(천원)</span>',
+			sortable: true,
+			align: "center",
+			width: 110
+		}, {
+			key: "col05",
+			label: '<span class="dpib vm">예상<br>ROI(%)</span>',
+			sortable: true,
+			align: "center",
+			width: 90
+		}, {
+			key: "col06",
+			label: '<span class="dpib vm">수행<br>ROI(%)</span>',
+			sortable: true,
+			align: "center",
+			width: 90
+		}, {
+			label: '<span class="thTop"><em>1Q</em>(01.01~03.31)</span>',
+			columns: [ // child columns
+				{key: "col07", label: "<span>수행건수</span>", width: 85, sortable: true,},
+				{key: "col08", label: "<span>절감시간<br>(분)</span>", width: 85, sortable: true,},
+				{key: "col09", label: "<span>효과금액<br>(천원)</span>", width: 85, sortable: true,},
+				{key: "col10", label: "<span>ROI<br>(%)</span>", width: 60, sortable: true,}
+			]
+		}, {
+			label: '<span class="thTop"><em>2Q</em>(01.01~03.31)</span>',
+			columns: [ // child columns
+				{key: "col11", label: "<span>수행건수</span>", width: 85, sortable: true},
+				{key: "col12", label: "<span>절감시간<br>(분)</span>", width: 85, sortable: true},
+				{key: "col13", label: "<span>효과금액<br>(천원)</span>", width: 85, sortable: true},
+				{key: "col14", label: "<span>ROI<br>(%)</span>", width: 60, sortable: true}
+			]
+		}
+		],
+		page: {
+      navigationItemCount: 9,
+      height: 26,
+      display: true,
+			firstIcon: '<i class="direction first"></i>',
+			prevIcon: '<i class="direction prev"></i>',
+			nextIcon: '<i class="direction next"></i>',
+			lastIcon: '<i class="direction last"></i>',
+            onChange: function () {
+				// 페이지 번호 눌렀을때 호출
+            	search(this.page.selectPage);
+            }
+        },
+	});
+
+	search(0);
+});
+
+function search(_pageNo) {
+	var list = [
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"},
+		{col01: "AA-402.대리점 영업관리 자동화", col02: "1,855", col03: "2,881", col04: "2,131", col05: "80", col06: "80", col07: "80", col08: "80", col09: "80", col10: "80"}
+	];
+
+	firstGrid.setData(
+		{
+	        list: list,
+	        page: {
+	            currentPage: _pageNo,
+	            pageSize: 10,
+	            totalElements: 500,
+	            totalPages: 500
+	        }
+	    }
+	);
+}
+</script>
+</head>
+<body>	
+<div class="wrap">
+
+	<!-- HEADER -->
+	@@include('header.html', {
+		"과제관리": "",
+		"운영업무": "",
+		"커뮤니티": "",
+		"헬프데스크": "",
+		"통계": "active",
+		"자원관리": "",
+		"기준정보": ""
+	})
+	<!-- //HEADER -->
+	
+	<!-- CONTENT -->
+	<div class="container">
+
+		<div class="topBox">
+			<div class="innerArea">
+				<h2>과제별 ROI</h2>
+				<div class="navigation">
+					<a href="#">홈</a>
+					<a href="#">통계</a>
+					<a href="#">과제별 ROI</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="innerArea">
+			<div class="roundBox">
+				<div class="setBox">
+					<div class="searchWrap">
+						<span class="tit">표시주기</span>
+						<span class="radioBox">
+							<input type="radio" id="day" name="period"><label for="day">일</label>
+						</span>
+						<span class="radioBox">
+							<input type="radio" id="week" name="period"><label for="week">주</label>
+						</span>
+						<span class="radioBox">
+							<input type="radio" id="month" name="period"><label for="month">월</label>
+						</span>
+						<span class="tit">검색기간</span>
+						<div class="dateWrap">
+							<span class="datePicker">
+								<span class="dateBox">
+									<input type="text" class="dateFrom inpTxt ty1" name="from" readonly="">
+								</span>
+								<span class="dash">~</span>
+								<span class="dateBox">
+									<input type="text" class="dateTo inpTxt ty1" name="to" readonly="">
+								</span>
+							</span>
+						</div>
+						<div class="setBoxBtns">
+							<button type="button" class="btns ty4">검색</button>
+							<button type="button" class="btns ty7">초기화</button>
+						</div>
+					</div>
+				</div>
+				<div class="tableWrap">
+					<div class="tableTop">
+						<div class="rightArea">
+							<button type="button" class="btns openPop" data-popopen="pop1">이력 데이터 Export</button>
+						</div>
+					</div>
+					<div data-ax5grid="first-grid" data-ax5grid-config='{}' style="width:100%; height: 480px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+
+	<!-- FOOTER -->
+	@@include('footer.html')
+	<!-- //FOOTER -->
+</div>
+
+</body>
+</html>
