@@ -94,6 +94,7 @@ footer .copyright strong{color:#0c79f8}
 .wd194 {width:194px !important;}
 .wd200 {width:200px !important;}
 .wd240 {width:240px !important;}
+.wd250 {width:250px !important;}
 .wd310 {width:310px !important;}
 .wd493 {width:493px !important;}
 .wd520 {width:520px !important;}
@@ -463,7 +464,7 @@ table.form .checkGroup {padding:10px 12px 0 12px;}
 
 /* radios */
 .inpD.radio label:before{background-position-x:-20px;}
-.radioBox {display:inline-block; position:relative; padding-left:28px; line-height:20px; text-align:left;}
+.radioBox {display:inline-block; position:relative; padding-left:28px; line-height:16px; text-align:left;}
 .radioBox + .radioBox {margin-left:16px;}
 .radioBox input {position:absolute; top:0; left:0; z-index:1; opacity:0;}
 .radioBox label {margin-bottom:0; font-weight:400; font-size:14px; cursor:pointer;}
@@ -471,7 +472,7 @@ table.form .checkGroup {padding:10px 12px 0 12px;}
 .radioBox input:checked + label:after {background-position-y:-32px;}
 .radioBox input[disabled] + label:after {background-position-y:-16px;}
 .radioBox input[disabled]:checked + label:after {background-position-y:0px;}
-.radioBox.single {min-width:20px; padding-left:20px;}
+.radioBox.single {min-width:16px; padding-left:16px;}
 .radioBox.single label {font-size:0;}
 
 
@@ -676,22 +677,24 @@ body.hidden {overflow-y:hidden;}
 
 
 .doubleEles {position:relative; padding-top:30px; overflow:hidden; font-size:0;}
-.doubleEles > .innerEle {display:inline-block; width:542px; vertical-align:top; font-size:14px; border-radius:8px; border:1px solid #c7d1e0; background:#f6f9fd; overflow:hidden;}
+.doubleEles > .innerEle {display:inline-block; vertical-align:top; font-size:14px;}
+.doubleEles > .innerEle .innerEleCont { border-radius:8px; border:1px solid #c7d1e0; background:#f6f9fd; overflow:hidden;}
+.doubleEles.ty1 > .innerEle {width:542px;}
+.doubleEles.ty2 > .innerEle {width:598px;}
+.doubleEles.ty2 > .innerEle + .innerEle {width:486px;}
 .doubleEles > .innerEle + .innerEle {margin-left:20px;}
-.doubleEles > .innerEle .title {padding:0 15px; font-weight:700; font-size:16px; color:#0c79f8; line-height:39px;}
-.doubleEles > .innerEle .searchWrap {padding:5px 15px; border-top:1px solid #d1dae9; border-bottom:1px solid #d1dae9;}
+.doubleEles > .innerEle .title {padding:0 15px; font-weight:700; font-size:16px; color:#0c79f8; line-height:39px; border-bottom:1px solid #d1dae9;}
+.doubleEles > .innerEle .searchWrap {padding:5px 15px; border-bottom:1px solid #d1dae9;}
 .doubleEles > .innerEle .innerBtns {padding:20px 15px 13px 15px; text-align:right;}
 
 /* ztree */
 .treeField {border:1px solid #dbe4ef; border-radius:8px; background:#fff;}
-.treeField > .inner	{max-height:724px; border:15px solid #f9fcff; border-radius:8px; overflow:auto;}
+.treeField > .inner	{max-height:724px; /* border:15px solid #f9fcff; */ border-radius:8px; overflow:auto;}
 
-.ztree {padding:15px;}
+.ztree {padding:20px 47px;}
 .ztree * {color:#464646; font-family:'Nanum Barun Gothic',dotum,sans-serif;}
 .ztree .color6 {color:#888;}
-
 .ztree li span.button.ico_docu + .node_name {cursor:default;}
-
 
 
 /* DatePicker */

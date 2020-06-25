@@ -468,51 +468,55 @@
 
             <div class="topBox">
                 <div class="innerArea">
-                    <h2>공통코드</h2>
+                    <h2>공통그룹코드관리</h2>
                     <div class="navigation">
                         <a href="#">홈</a>
                         <a href="#">기준정보</a>
-                        <a href="#">공통코드</a>
+                        <a href="#">공통그룹코드관리</a>
                     </div>
                 </div>
             </div>
 
             <div class="innerArea">
                 <div class="roundBox">
-                    <div class="doubleEles">
+                    <div class="doubleEles ty1">
                         <div class="innerEle">
-                            <h3 class="title">공통그룹코드관리</h3>
-                            <div class="searchWrap">
-                                <select name="" id="" class="selectD ty1 wd120">
-                                    <option value="">공통그룹코드</option>
-                                </select>
-                                <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
-                                <div class="setBoxBtns fr">
-                                    <button type="button" class="btns ty4">검색</button>
+                            <div class="innerEleCont">
+                                <h3 class="title">공통그룹코드관리</h3>
+                                <div class="searchWrap">
+                                    <select name="" id="" class="selectD ty1 wd120">
+                                        <option value="">공통그룹코드</option>
+                                    </select>
+                                    <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
+                                    <div class="setBoxBtns fr">
+                                        <button type="button" class="btns ty4">검색</button>
+                                    </div>
                                 </div>
+                                <div class="innerBtns">
+                                    <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+                                    <button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
+                                </div>
+                                <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="height: 366px;"></div>
                             </div>
-                            <div class="innerBtns">
-                                <button type="button" class="btns ty2">수정</button>
-                                <button type="button" class="btns ty1">등록</button>
-                            </div>
-                            <div data-ax5grid="first-grid" data-ax5grid-config='{}' style="height: 366px;"></div>
                         </div>
                         <div class="innerEle">
-                            <h3 class="title">공통그룹코드</h3>
-                            <div class="searchWrap">
-                                <select name="" id="" class="selectD ty1 wd120">
-                                    <option value="">공통코드</option>
-                                </select>
-                                <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
-                                <div class="setBoxBtns fr">
-                                    <button type="button" class="btns ty4">검색</button>
+                            <div class="innerEleCont">
+                                <h3 class="title">공통코드관리</h3>
+                                <div class="searchWrap">
+                                    <select name="" id="" class="selectD ty1 wd120">
+                                        <option value="">공통코드</option>
+                                    </select>
+                                    <input type="text" placeholder="검색어를 입력해주세요" class="inpTxt ty1 wd240">
+                                    <div class="setBoxBtns fr">
+                                        <button type="button" class="btns ty4">검색</button>
+                                    </div>
                                 </div>
+                                <div class="innerBtns">
+                                    <button type="button" class="btns ty2 openPop" data-popopen="pop4">수정</button>
+                                    <button type="button" class="btns ty1 openPop" data-popopen="pop3">등록</button>
+                                </div>
+                                <div data-ax5grid="first-grid2" data-ax5grid-config='{}' style="height: 366px;"></div>
                             </div>
-                            <div class="innerBtns">
-                                <button type="button" class="btns ty2">수정</button>
-                                <button type="button" class="btns ty1">등록</button>
-                            </div>
-                            <div data-ax5grid="first-grid2" data-ax5grid-config='{}' style="height: 366px;"></div>
                         </div>
                     </div>
                 </div>
@@ -525,6 +529,192 @@
             <p class="copyright">Copyrightⓒ2020. echoit <strong>RPA Portal</strong>. ALL RIGHT RESERVED.</p>
         </footer>
         <!-- //FOOTER -->
+
+
+
+        <!-- 공통그룹코드 - 등록 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop1">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>공통그룹코드</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">공통그룹코드 등록</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>공통그룹코드</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                        <th>공통그룹명</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>활성여부</th>
+                                        <td colspan="3">
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty1">등록</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //공통그룹코드 - 등록 pop-up -->
+
+        <!-- 공통그룹코드 - 수정 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop2">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>공통그룹코드</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">공통그룹코드 수정</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>공통그룹코드</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                        <th>공통그룹명</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>활성여부</th>
+                                        <td colspan="3">
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty12">저장</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //공통그룹코드 - 수정 pop-up -->
+
+        <!-- 공통코드 - 등록 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop3">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>공통코드</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">공통코드 등록</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>공통그룹명</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">공통그룹명</option>
+                                            </select>
+                                        </td>
+                                        <th>공통코드</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>공통코드명</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty1">등록</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //공통코드 - 등록 pop-up -->
+
+        <!-- 공통코드 - 수정 pop-up -->
+        <div class="popup" style="display:none" data-pop="pop4">
+            <div class="dimm"></div>
+            <div class="popBox type1">
+                <div class="popTop">
+                    <h3>공통코드</h3>
+                </div>
+                <div class="popCont scrollArea">
+                    <div class="tableWrap">
+                        <div class="tableTitleWrap">
+                            <strong class="tableTitle">공통코드 수정</strong>
+                        </div>
+                        <div class="tblSlide">
+                            <table class="table form">
+                                <tbody>
+                                    <tr>
+                                        <th>공통그룹명</th>
+                                        <td>
+                                            <select name="" id="" class="selectD full">
+                                                <option value="">공통그룹명</option>
+                                            </select>
+                                        </td>
+                                        <th>공통코드</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>공통코드명</th>
+                                        <td><input type="text" class="inpTxt"></td>
+                                        <th>활성여부</th>
+                                        <td>
+                                            <select name="" id="" class="selectD">
+                                                <option value="">활성</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnGroup">
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty12">저장</button>
+                </div>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+        </div>
+        <!-- //공통코드 - 수정 pop-up -->
     </div>
 
 </body>

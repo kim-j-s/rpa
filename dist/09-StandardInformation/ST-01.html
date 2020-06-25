@@ -419,21 +419,76 @@
 
             <div class="innerArea">
                 <div class="roundBox">
-                    <div class="tableWrap">
-                        <div class="tableTop">
-                            <div class="rightArea">
+                    <div class="doubleEles ty2">
+
+                        <!-- ztree -->
+                        <div class="innerEle">
+                            <div class="taR mb13">
                                 <button type="button" class="btns ty16" data-popopen="pop3">순서변경</button>
-                                <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
                                 <button type="button" class="btns ty1 openPop" data-popopen="pop1">등록</button>
                             </div>
-                        </div>
-
-                        <div class="treeField">
-                            <div class="inner">
-                                <ul id="treeDemo" class="ztree"></ul>
+                            <div class="innerEleCont">
+                                <div class="treeField">
+                                    <div class="inner">
+                                        <ul id="treeDemo" class="ztree"></ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!--// ztree -->
 
+
+                        <div class="innerEle">
+                            <div class="taR mb13">
+                                <button type="button" class="btns ty2 openPop" data-popopen="pop2">수정</button>
+                            </div>
+                            <div class="innerEleCont">
+                                <div class="title">상세정보</div>
+                                <table class="table form">
+                                    <colgroup>
+                                        <col style="width: 85px">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>상위부서</th>
+                                            <td>
+                                                <input type="text" class="inpTxt wd250" readonly value="A202000">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>부서코드</th>
+                                            <td>
+                                                <input type="text" class="inpTxt wd250" readonly value="부서코드">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>부서명</th>
+                                            <td>
+                                                <input type="text" class="inpTxt" readonly value="부서명">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>활성여부</th>
+                                            <td>
+                                                <select name="" id="" class="selectD" disabled>
+                                                    <option value="">활성</option>
+                                                    <option value="">비활성</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!--
+						상세 상단의 수정버튼을 눌렀을 경우 활성화 영역
+						-->
+                            <div class="btnGroup">
+                                <button type="button" class="btns ty11">취소</button>
+                                <button type="button" class="btns ty12">저장</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -20,29 +20,46 @@ $(function () {
 		},
 		columns: [
 		{
+			key: "radio",
+			label: '<span class="dpib vm">선택</span>',
+			align: "center",
+			width: 80,
+			formatter: function () {
+				var returnValue = "";
+				switch (this.value) {
+					case "radio" :
+						returnValue = '<div class="radioBox single"><input type="radio" id="radio'+ this.dindex +'" name="ccc"><label for="radio' + this.dindex +'">선택</label></div>';
+						break;
+					default:
+						returnValue = this.value;
+						break;
+				}// end switch
+				return returnValue;
+			}
+		}, {
 			key: "col01",
 			label: '<span class="dpib vm">년</span>',
 			sortable: true,
 			align: "center",
-			width: 276
+			width: 256
 		}, {
 			key: "col02",
 			label: '<span class="dpib vm">직접직(초)</span>',
 			sortable: true,
 			align: "center",
-			width: 276
+			width: 256
 		}, {
 			key: "col03",
 			label: '<span class="dpib vm">간접직(초)</span>',
 			sortable: true,
 			align: "center",
-			width: 276
+			width: 256
 		}, {
 			key: "col04",
 			label: '<span class="dpib vm">RPA(초)</span>',
 			sortable: true,
 			align: "center",
-			width: 276
+			width: 256
 		}
 		],
 		page: {
@@ -66,16 +83,16 @@ $(function () {
 function search(_pageNo) {
 
     var list = [
-		{col01: "2020", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2019", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2018", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2017", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2016", col02: "4.5원", col03: "4.5원", col04: "4.5원"},
-		{col01: "2015", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2014", col02: "2.2원", col03: "2.2원", col04: "2.2원"},
-		{col01: "2013", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2012", col02: "2원", col03: "2원", col04: "2원"},
-		{col01: "2012", col02: "2원", col03: "2원", col04: "2원"}
+		{radio: "radio", col01: "2020", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2019", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2018", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2017", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2016", col02: "4.5원", col03: "4.5원", col04: "4.5원"},
+		{radio: "radio", col01: "2015", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2014", col02: "2.2원", col03: "2.2원", col04: "2.2원"},
+		{radio: "radio", col01: "2013", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2012", col02: "2원", col03: "2원", col04: "2원"},
+		{radio: "radio", col01: "2012", col02: "2원", col03: "2원", col04: "2원"}
 	];
 
 	firstGrid.setData(
