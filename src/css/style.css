@@ -421,6 +421,7 @@ table.form .inpWrap.ty2 .inpTxt:first-child {width:46px;}
 .btns.ty15:hover {border:1px solid #667689; background:#707c8b url(../images/icon/btn_x_black_small_on.png) no-repeat center center;}
 .btns.ty16:before {top:-1px; width:14px; height:13px; margin-right:6px; background:url(../images/icon/icon_change.png) no-repeat;}
 .btns.ty17 {width:45px; min-width:0px; background:#657487 url(../images/icon/icon_search.png) no-repeat center center; text-indent:-9999px;}
+.btns.ty17:hover {background-color:#053062;}
 
 
 /* INPUT */
@@ -502,8 +503,9 @@ select::-ms-expand{display:none}
 
 
 /* textarea */
-.textarea {display:block; width:100%; height:74px; padding:10px; border:1px solid #dde1e5; border-radius:3px; line-height:20px; resize:none;}
+.textarea {display:block; width:100%; height:74px; padding:10px; border:1px solid #dde1e5; border-radius:3px; line-height:20px; resize:none; transition:0.5s; outline:none;}
 .textarea[readonly] {background:#f6f9fd;}
+.textarea:focus {border:1px solid #0c79f8;}
 
 
 /* PAGING */
@@ -713,7 +715,7 @@ body.hidden {overflow-y:hidden;}
 /* ztree */
 .treeField {border-radius:8px; background:#fff;}
 .treeField.ty1 {border-radius:0 0 8px 8px; border:1px solid #c7d1e0;}
-.treeField > .inner	{max-height:724px; /* border:15px solid #f9fcff; */ border-radius:8px; overflow:auto;}
+.treeField > .inner	{max-height:600px; border-radius:8px; overflow:auto;}
 
 .ztree {padding:20px 47px;}
 .ztree * {color:#464646; font-family:'Nanum Barun Gothic',dotum,sans-serif;}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>BOT별 수행이력관리</title>
+    <title>BOT 관리</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ax5grid.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -32,6 +32,12 @@
                     columnHeight: 37
                 },
                 columns: [{
+                    key: "col00",
+                    label: '<span class="dpib vm">RPA 구분</span>',
+                    sortable: true,
+                    align: "center",
+                    width: 150
+                }, {
                     key: "col01",
                     label: '<span class="dpib vm">BOT</span>',
                     sortable: true,
@@ -66,7 +72,7 @@
                     label: '<span class="dpib vm">역활</span>',
                     sortable: true,
                     align: "center",
-                    width: 354
+                    width: 204
                 }],
                 page: {
                     navigationItemCount: 9,
@@ -92,6 +98,7 @@
             // 리스트 안변하는거 같아서 pageNo 붙여서 변화되는거 확인
             for (var i = 0; i < 10; i++) {
                 list.push({
+                    col00: "AA",
                     col01: "RPA01",
                     col02: "2020-05-28",
                     col03: "2020-05-28",
@@ -274,11 +281,11 @@
 
             <div class="topBox">
                 <div class="innerArea">
-                    <h2>BOT별 수행이력관리</h2>
+                    <h2>BOT 관리</h2>
                     <div class="navigation">
                         <a href="#">홈</a>
                         <a href="#">운영업무</a>
-                        <a href="#">BOT별 수행이력관리</a>
+                        <a href="#">BOT 관리</a>
                     </div>
                 </div>
             </div>
@@ -322,231 +329,88 @@
 
 
 
-        <!-- BOT 관리 상세 pop-up -->
+
+        <!-- BOT 가져오기 pop-up -->
         <div class="popup" style="display:none" data-pop="pop1">
             <div class="dimm"></div>
-            <div class="popBox type1">
+            <div class="popBox type1 wd520">
                 <div class="popTop">
-                    <h3>BOT 관리상세</h3>
+                    <h3>BOT 가져오기</h3>
                 </div>
-                <div class="popCont scrollArea">
+                <div class="popCont">
                     <div class="tableWrap">
-                        <div class="tableTitleWrap">
-                            <strong class="tableTitle">BOT 정보</strong>
-                            <button type="button" class="slideBtn">접기/펼치기</button>
-                        </div>
-                        <div class="tblSlide">
-                            <table class="table form">
-                                <tbody>
-                                    <tr>
-                                        <th>RPA 구분</th>
-                                        <td>
-                                            <select name="" id="" class="selectD full">
-                                                <option value="">AA/BP</option>
-                                            </select>
-                                        </td>
-                                        <th>BOT 별명</th>
-                                        <td><input type="text" class="inpTxt"></td>
-                                        <th>예약가능시간</th>
-                                        <td>
-                                            <div class="inpWrap etc">
-                                                <select name="" id="" class="selectD">
-                                                    <option value="">00</option>
-                                                    <option value="">01</option>
-                                                    <option value="">02</option>
-                                                    <option value="">03</option>
-                                                    <option value="">04</option>
-                                                    <option value="">05</option>
-                                                    <option value="">06</option>
-                                                    <option value="">07</option>
-                                                    <option value="">08</option>
-                                                    <option value="">09</option>
-                                                    <option value="">10</option>
-                                                    <option value="">11</option>
-                                                    <option value="">12</option>
-                                                    <option value="">13</option>
-                                                    <option value="">14</option>
-                                                    <option value="">15</option>
-                                                    <option value="">16</option>
-                                                    <option value="">17</option>
-                                                    <option value="">18</option>
-                                                    <option value="">19</option>
-                                                    <option value="">20</option>
-                                                    <option value="">21</option>
-                                                    <option value="">22</option>
-                                                    <option value="">23</option>
-                                                </select>
-                                                <span class="text">시 ~ </span>
-                                                <select name="" id="" class="selectD">
-                                                    <option value="">00</option>
-                                                    <option value="">01</option>
-                                                    <option value="">02</option>
-                                                    <option value="">03</option>
-                                                    <option value="">04</option>
-                                                    <option value="">05</option>
-                                                    <option value="">06</option>
-                                                    <option value="">07</option>
-                                                    <option value="">08</option>
-                                                    <option value="">09</option>
-                                                    <option value="">10</option>
-                                                    <option value="">11</option>
-                                                    <option value="">12</option>
-                                                    <option value="">13</option>
-                                                    <option value="">14</option>
-                                                    <option value="">15</option>
-                                                    <option value="">16</option>
-                                                    <option value="">17</option>
-                                                    <option value="">18</option>
-                                                    <option value="">19</option>
-                                                    <option value="">20</option>
-                                                    <option value="">21</option>
-                                                    <option value="">22</option>
-                                                    <option value="">23</option>
-                                                </select>
-                                                <span class="text">시</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>상태</th>
-                                        <td>상태값 노출</td>
-                                        <th>누적업무시간</th>
-                                        <td><em>00</em> 시간 <em>00</em> 분</td>
-                                        <th>할당과제수</th>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <th>역할</th>
-                                        <td colspan="5"><input type="text" class="inpTxt"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>BOT 명</th>
-                                        <td>hostname</td>
-                                        <th>BOT 상태</th>
-                                        <td>대기중</td>
-                                        <th>접속상태</th>
-                                        <td>오프라인</td>
-                                    </tr>
-                                    <tr>
-                                        <th>BOT 아이디</th>
-                                        <td>Username</td>
-                                        <th>담당부서</th>
-                                        <td>
-                                            <div class="inpWrap">
-                                                <input type="text" class="inpTxt">
-                                                <button type="button" class="btnSelect">선택</button>
-                                            </div>
-                                        </td>
-                                        <th>담당자</th>
-                                        <td>
-                                            <div class="inpWrap">
-                                                <input type="text" class="inpTxt">
-                                                <button type="button" class="btnSelect">선택</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>라이선스기간</th>
-                                        <td>YYYY-MM-DD</td>
-                                        <th>아이피</th>
-                                        <td><input type="text" class="inpTxt"></td>
-                                        <th>포트</th>
-                                        <td><input type="text" class="inpTxt"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>로그인 정보</th>
-                                        <td colspan="3">
-                                            <div class="inpWrap etc">
-                                                <span class="text">아이디</span>
-                                                <input type="text" class="inpTxt">
-                                                <span class="text">비밀번호</span>
-                                                <input type="password" class="inpTxt">
-                                            </div>
-                                        </td>
-                                        <th>위치</th>
-                                        <td><input type="text" class="inpTxt"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>BOT 사양</th>
-                                        <td colspan="5">
-                                            <div class="inpWrap etc">
-                                                <span class="text">운영체제</span>
-                                                <input type="text" class="inpTxt">
-                                                <span class="text">CPU</span>
-                                                <input type="text" class="inpTxt">
-                                                <span class="text">RAM</span>
-                                                <input type="text" class="inpTxt">
-                                                <span class="text">그래픽카드</span>
-                                                <input type="text" class="inpTxt">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tableWrap">
-                        <div class="tableTitleWrap">
-                            <strong class="tableTitle">등록된 과제 스케줄</strong>
-                            <button type="button" class="slideBtn">접기/펼치기</button>
-                        </div>
-                        <div class="tblSlide">
-                            <table class="table text">
-                                <colgroup>
-                                    <col style="width: 150px">
-                                    <col style="width: 180px">
-                                    <col style="width: 100px">
-                                    <col style="width: 120px">
-                                    <col style="width: 100px">
-                                    <col style="width: auto">
-                                    <col style="width: 130px">
-                                    <col style="width: 130px">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>과제명</th>
-                                        <th>프로세스 담당부서</th>
-                                        <th>담당자</th>
-                                        <th>스케줄주기</th>
-                                        <th>세부세팅</th>
-                                        <th>시간</th>
-                                        <th>시작일</th>
-                                        <th>종료일</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="taL">과제A</td>
-                                        <td class="taL">프로세스A 부서A</td>
-                                        <td>담당자 A</td>
-                                        <td></td>
-                                        <td>김관리</td>
-                                        <td></td>
-                                        <td>2020-05-28</td>
-                                        <td>2020-05-28</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="taL">과제A</td>
-                                        <td class="taL">프로세스A 부서A</td>
-                                        <td>담당자 A</td>
-                                        <td></td>
-                                        <td>김관리</td>
-                                        <td></td>
-                                        <td>2020-05-28</td>
-                                        <td>2020-05-28</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table class="table text">
+                            <colgroup>
+                                <col style="width: 80px">
+                                <col style="width: 150px">
+                                <col style="width: auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>RPA 구분</th>
+                                    <th>BOT 명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="inpD check single">
+									<label><input type="checkbox"></label>
+								</span>
+                                    </td>
+                                    <td class="taL">AA</td>
+                                    <td class="taL">RAP01</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="inpD check single">
+									<label><input type="checkbox"></label>
+								</span>
+                                    </td>
+                                    <td class="taL">BP</td>
+                                    <td class="taL">RAP01</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="inpD check single">
+									<label><input type="checkbox"></label>
+								</span>
+                                    </td>
+                                    <td class="taL">AA</td>
+                                    <td class="taL">RAP01</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="inpD check single">
+									<label><input type="checkbox"></label>
+								</span>
+                                    </td>
+                                    <td class="taL">BP</td>
+                                    <td class="taL">RAP01</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="inpD check single">
+									<label><input type="checkbox"></label>
+								</span>
+                                    </td>
+                                    <td class="taL">AA</td>
+                                    <td class="taL">RAP01</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="btnGroup">
-                    <button type="button" class="btns ty2">수정</button>
+                    <button type="button" class="btns ty11">취소</button>
+                    <button type="button" class="btns ty13">선택</button>
                 </div>
                 <button type="button" class="btnPopClose">팝업닫기</button>
             </div>
         </div>
-        <!-- //BOT 관리 상세 pop-up -->
+        <!-- //BOT 가져오기 pop-up -->
+
     </div>
 
 </body>

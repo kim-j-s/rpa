@@ -171,7 +171,7 @@ $(function(){
 	openPop();
 	openWindows();
 	closePop();
-	//naviShow();
+	naviShow();
 	inputDesign();
 	chkAllTxt();
 	$('.inpD').find('input').on('change', function(){

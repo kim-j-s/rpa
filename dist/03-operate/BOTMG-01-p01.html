@@ -26,6 +26,9 @@
                 <h3>BOT 관리상세</h3>
             </div>
             <div class="popCont scrollArea">
+                <div class="taR mb13">
+                    <button type="button" class="btns ty2">수정</button>
+                </div>
                 <div class="tableWrap">
                     <div class="tableTitleWrap">
                         <strong class="tableTitle">BOT 정보</strong>
@@ -51,65 +54,8 @@
                                     </td>
                                     <th>BOT 별명</th>
                                     <td><input type="text" class="inpTxt"></td>
-                                    <th>예약가능시간</th>
-                                    <td>
-                                        <div class="inpWrap etc">
-                                            <select name="" id="" class="selectD">
-                                                <option value="">00</option>
-                                                <option value="">01</option>
-                                                <option value="">02</option>
-                                                <option value="">03</option>
-                                                <option value="">04</option>
-                                                <option value="">05</option>
-                                                <option value="">06</option>
-                                                <option value="">07</option>
-                                                <option value="">08</option>
-                                                <option value="">09</option>
-                                                <option value="">10</option>
-                                                <option value="">11</option>
-                                                <option value="">12</option>
-                                                <option value="">13</option>
-                                                <option value="">14</option>
-                                                <option value="">15</option>
-                                                <option value="">16</option>
-                                                <option value="">17</option>
-                                                <option value="">18</option>
-                                                <option value="">19</option>
-                                                <option value="">20</option>
-                                                <option value="">21</option>
-                                                <option value="">22</option>
-                                                <option value="">23</option>
-                                            </select>
-                                            <span class="text">시 ~ </span>
-                                            <select name="" id="" class="selectD">
-                                                <option value="">00</option>
-                                                <option value="">01</option>
-                                                <option value="">02</option>
-                                                <option value="">03</option>
-                                                <option value="">04</option>
-                                                <option value="">05</option>
-                                                <option value="">06</option>
-                                                <option value="">07</option>
-                                                <option value="">08</option>
-                                                <option value="">09</option>
-                                                <option value="">10</option>
-                                                <option value="">11</option>
-                                                <option value="">12</option>
-                                                <option value="">13</option>
-                                                <option value="">14</option>
-                                                <option value="">15</option>
-                                                <option value="">16</option>
-                                                <option value="">17</option>
-                                                <option value="">18</option>
-                                                <option value="">19</option>
-                                                <option value="">20</option>
-                                                <option value="">21</option>
-                                                <option value="">22</option>
-                                                <option value="">23</option>
-                                            </select>
-                                            <span class="text">시</span>
-                                        </div>
-                                    </td>
+                                    <th>역할</th>
+                                    <td><input type="text" class="inpTxt"></td>
                                 </tr>
                                 <tr>
                                     <th>상태</th>
@@ -118,10 +64,6 @@
                                     <td><em>00</em> 시간 <em>00</em> 분</td>
                                     <th>할당과제수</th>
                                     <td>5</td>
-                                </tr>
-                                <tr>
-                                    <th>역할</th>
-                                    <td colspan="5"><input type="text" class="inpTxt"></td>
                                 </tr>
                                 <tr>
                                     <th>BOT 명</th>
@@ -135,23 +77,18 @@
                                     <th>BOT 아이디</th>
                                     <td>Username</td>
                                     <th>담당부서</th>
-                                    <td>
-                                        <div class="inpWrap">
-                                            <input type="text" class="inpTxt">
-                                            <button type="button" class="btns ty8 etc">선택</button>
-                                        </div>
-                                    </td>
+                                    <td><input type="text" class="inpTxt"></td>
                                     <th>담당자</th>
                                     <td>
                                         <div class="inpWrap">
                                             <input type="text" class="inpTxt">
-                                            <button type="button" class="btns ty8 etc">선택</button>
+                                            <button type="button" class="btns ty17">검색</button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>라이선스기간</th>
-                                    <td>YYYY-MM-DD</td>
+                                    <th>접속상태</th>
+                                    <td>온라인/오프라인</td>
                                     <th>아이피</th>
                                     <td><input type="text" class="inpTxt"></td>
                                     <th>포트</th>
@@ -197,19 +134,21 @@
                     <div class="tblSlide">
                         <table class="table text">
                             <colgroup>
-                                <col style="width: 150px">
-                                <col style="width: 180px">
-                                <col style="width: 100px">
+                                <col style="width: 110px">
+                                <col style="width: 120px">
                                 <col style="width: 120px">
                                 <col style="width: 100px">
+                                <col style="width: 110px">
+                                <col style="width: 100px">
                                 <col style="width: auto">
-                                <col style="width: 130px">
-                                <col style="width: 130px">
+                                <col style="width: 120px">
+                                <col style="width: 120px">
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th>과제명</th>
-                                    <th>프로세스 담당부서</th>
+                                    <th>프로세스</th>
+                                    <th>담당부서</th>
                                     <th>담당자</th>
                                     <th>스케줄주기</th>
                                     <th>세부세팅</th>
@@ -221,7 +160,8 @@
                             <tbody>
                                 <tr>
                                     <td class="taL">과제A</td>
-                                    <td class="taL">프로세스A 부서A</td>
+                                    <td class="taL">프로세스A</td>
+                                    <td class="taL">부서A</td>
                                     <td>담당자 A</td>
                                     <td></td>
                                     <td>김관리</td>
@@ -231,7 +171,8 @@
                                 </tr>
                                 <tr>
                                     <td class="taL">과제A</td>
-                                    <td class="taL">프로세스A 부서A</td>
+                                    <td class="taL">프로세스A</td>
+                                    <td class="taL">부서A</td>
                                     <td>담당자 A</td>
                                     <td></td>
                                     <td>김관리</td>
@@ -245,7 +186,7 @@
                 </div>
             </div>
             <div class="btnGroup">
-                <button type="button" class="btns ty2">수정</button>
+                <button type="button" class="btns ty11">닫기</button>
             </div>
             <button type="button" class="btnPopClose">팝업닫기</button>
         </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>과제변경 - 수정</title>
+    <title>운영과제 - 수정</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ax5grid.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -18,14 +18,18 @@
 
 <body>
 
-    <!-- 과제변경 수정 pop-up -->
+    <!-- 운영과제 수정 pop-up -->
     <div class="popup">
         <div class="dimm"></div>
         <div class="popBox type1">
             <div class="popTop">
-                <h3>과제변경 수정</h3>
+                <h3>운영과제 수정</h3>
             </div>
             <div class="popCont scrollArea">
+
+                <div class="btnGroup ar mt0 pb6">
+                    <button type="button" class="btns">요청과제 검색</button>
+                </div>
 
                 <!-- 기본정보 -->
                 <div class="tableWrap">
@@ -48,12 +52,7 @@
                                     <th>과제명 <span class="essential">필수입력</span></th>
                                     <td><input type="text" class="inpTxt" readonly value="매출"></td>
                                     <th>과제코드</th>
-                                    <td>
-                                        <div class="inpWrap">
-                                            <input type="text" class="inpTxt" readonly>
-                                            <button type="button" class="btns ty17">검색</button>
-                                        </div>
-                                    </td>
+                                    <td><input type="text" class="inpTxt"></td>
                                     <th>BPM일련번호</th>
                                     <td><input type="text" class="inpTxt"></td>
                                 </tr>
@@ -70,6 +69,21 @@
                                             </select>
                                         </div>
                                     </td>
+                                    <th>RPA구분 <span class="essential">필수입력</span></th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">구분</option>
+                                        </select>
+                                    </td>
+                                    <th>프로세스명</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt" readonly>
+                                            <button type="button" class="btns ty17">검색</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>정기실행여부</th>
                                     <td>
                                         <select name="" id="" class="selectD full">
@@ -82,8 +96,6 @@
                                             <input type="text" class="inpTxt"> <span>건</span>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
                                     <th>요청자 <span class="essential">필수입력</span></th>
                                     <td>
                                         <div class="inpWrap">
@@ -91,28 +103,12 @@
                                             <button type="button" class="btns ty17">검색</button>
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
                                     <th>요청자 사번 <span class="essential">필수입력</span></th>
                                     <td><input type="text" class="inpTxt"></td>
-                                    <th>요청일자 <span class="essential">필수입력</span></th>
-                                    <td>
-                                        <div class="dateWrap full">
-                                            <span class="datePicker">
-											<span class="dateBox">
-												<input type="text" class="dateFrom inpTxt" name="from" readonly="">
-											</span>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>요청사유 <span class="essential">필수입력</span></th>
-                                    <td colspan="5">
-                                        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th>연관시스템</th>
-                                    <td colspan="5" class="pd0">
+                                    <td colspan="3" class="pd0">
                                         <div class="checkGroup">
                                             <span class="inpD check">
 											<label><input type="checkbox">SAP</label>
@@ -210,9 +206,7 @@
                                 <tr>
                                     <th>간접 효과<br> 비용 설명</th>
                                     <td colspan="5">
-                                        <textarea name="" id="" cols="30" rows="10" class="textarea">
-내용
-									</textarea>
+                                        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
                                     </td>
                                 </tr>
                             </tbody>
@@ -279,10 +273,10 @@
                 </div>
                 <!--// 기대 효과 -->
 
-                <!-- 상태 -->
+                <!-- 실행정보 -->
                 <div class="tableWrap">
                     <div class="tableTitleWrap">
-                        <strong class="tableTitle">상태</strong>
+                        <strong class="tableTitle">실행정보</strong>
                         <button type="button" class="slideBtn">접기/펼치기</button>
                     </div>
                     <div class="tblSlide">
@@ -290,17 +284,76 @@
                             <colgroup>
                                 <col style="width: 120px">
                                 <col style="width: auto">
+                                <col style="width: 140px">
+                                <col style="width: auto">
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>검토내용</th>
+                                    <th>RPA 처리 시간</th>
                                     <td>
-                                        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt"> <span>분</span>
+                                        </div>
+                                    </td>
+                                    <th class="wd140">처리시간 제한 알람</th>
+                                    <td>
+                                        <select name="" id="" class="selectD full">
+                                            <option value="">제한 알람</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>스케쥴현황</th>
+                                    <td colspan="3"><input type="text" class="inpTxt"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--// 실행정보 -->
+
+                <!-- 개발정보 -->
+                <div class="tableWrap">
+                    <div class="tableTitleWrap">
+                        <strong class="tableTitle">개발정보</strong>
+                        <button type="button" class="slideBtn">접기/펼치기</button>
+                    </div>
+                    <div class="tblSlide">
+                        <table class="table form">
+                            <colgroup>
+                                <col style="width: 120px">
+                                <col style="width: auto">
+                                <col style="width: 120px">
+                                <col style="width: auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>개발공수</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt"> <span>(M/D)</span>
+                                        </div>
+                                    </td>
+                                    <th>투입비</th>
+                                    <td>
+                                        <div class="inpWrap">
+                                            <input type="text" class="inpTxt"> <span>원</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>개발담당자</th>
+                                    <td colspan="3">
+                                        <div class="searchWrap mb0">
+                                            <input type="text" class="inpTxt" readonly>
+                                            <input type="text" placeholder="담당자명" class="inpTxt">
+                                            <button type="button" class="btns ty17">검색</button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>관련파일</th>
-                                    <td>
+                                    <td colspan="3">
                                         <div class="inpFileWrap">
                                             <div class="inpFileList">
                                                 <div class="inpFileBtnEle">
@@ -319,27 +372,30 @@
                     </td>
                     </tr>
                     <tr>
+                        <th>내용</th>
+                        <td colspan="3">
+                            <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>진행상태</th>
                         <td>
                             <span class="radioBox">
 										<input type="radio" id="progress01" name="progress"><label for="progress01">대기</label>
 									</span>
                             <span class="radioBox">
-										<input type="radio" id="progress02" name="progress"><label for="progress02">진행</label>
+										<input type="radio" id="progress02" name="progress"><label for="progress02">운영</label>
 									</span>
                             <span class="radioBox">
-										<input type="radio" id="progress03" name="progress"><label for="progress03">대기</label>
-									</span>
-                            <span class="radioBox">
-										<input type="radio" id="progress04" name="progress"><label for="progress04">불가</label>
+										<input type="radio" id="progress03" name="progress"><label for="progress03">폐기</label>
 									</span>
                         </td>
                     </tr>
                     <!-- 진행상태 - 불가 선택 할 경우 노출 -->
                     <tr>
-                        <th>불가사유</th>
-                        <td>
-                            <textarea name="" id="" cols="30" rows="10" class="textarea">불가사유</textarea>
+                        <th>폐기사유</th>
+                        <td colspan="3">
+                            <textarea name="" id="" cols="30" rows="10" class="textarea">폐기사유</textarea>
                         </td>
                     </tr>
                     <!--// 진행상태 - 불가 선택 할 경우 노출 -->
@@ -347,16 +403,16 @@
                     </table>
                 </div>
             </div>
-            <!--// 상태 -->
+            <!--// 개발정보 -->
         </div>
         <div class="btnGroup">
             <button type="button" class="btns ty11">취소</button>
-            <button type="button" class="btns ty2">수정</button>
+            <button type="button" class="btns ty12">저장</button>
         </div>
         <button type="button" class="btnPopClose">팝업닫기</button>
     </div>
     </div>
-    <!-- //과제변경 수정 pop-up -->
+    <!-- //운영과제 수정 pop-up -->
 
 </body>
 
