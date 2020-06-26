@@ -624,6 +624,7 @@ body.hidden {overflow-y:hidden;}
 .popSchArea {margin-top:5px; padding-right:3px; border-radius:3px; float:right; font-size:0; background:#657487;}
 .popSchArea > .inpTxt {width:410px; border:1px solid #bac5d3;}
 .popSchArea > .btns.ty17 {margin-left:-2px; border-radius:0; box-shadow:none;}
+.popSchArea.etc {display:inline-block; margin-top:0; float:none;}
 
 .botStateWrap {}
 .botStateHeader {position:relative; height:88px; padding-top:25px; overflow:hidden;}
@@ -694,6 +695,9 @@ body.hidden {overflow-y:hidden;}
 .doubleEles > .innerEle .searchWrap {padding:5px 15px; border-bottom:1px solid #d1dae9;}
 .doubleEles > .innerEle .innerBtns {padding:20px 15px 13px 15px; text-align:right;}
 .innerEle .tableTitleWrap {border:none; border-bottom:1px solid #d1dae9;}
+.innerEle .innerBtns .totalNum {display:inline-block; vertical-align:middle; line-height:30px; float:left;}
+.innerEle .innerBtns .totalNum em {font-weight:500; color:#0c79f8; letter-spacing:0;}
+
 
 .sorWrap {position:relative; border:1px solid #c7d1e0; border-top:1px solid #e7eaef; border-radius:0 0 8px 8px; background:#f6f9fd;}
 .sorWrap > .inner {position:relative; padding:15px 43px 15px 18px;}
