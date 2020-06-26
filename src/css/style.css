@@ -7,7 +7,7 @@ header{position:relative; z-index:100; border-bottom:1px solid #315f94; backgrou
 header .innerArea{position:relative;}
 header .logo{position:absolute; top:18px; left:44px;}
 header .logo a{display:block; width:94px; height:20px; background:url(../images/icon/logo.png) no-repeat center; text-indent:-9999px;}
-header .utilMenu{position:absolute; top:15px; right:40px; font-size:0;}
+header .utilMenu{position:absolute; top:12px; right:40px; font-size:0;}
 header .utilMenu li{display:inline-block;}
 header .utilMenu li + li{margin-left:22px;}
 header .utilMenu li button{display:block; width:30px; height:30px; background-repeat:no-repeat; background-position:center; text-indent:-9999px;}
@@ -854,4 +854,7 @@ body.hidden {overflow-y:hidden;}
 
 
 
-
+/* guideLine Css */
+.guideLine {padding:20px 0;}
+.guideLine:before {content:attr(data-guidetxt); display:block; padding:5px; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#fff; color:red;}
+.guideLine:after {content:attr(data-guidetxt); display:block; padding:5px; text-align:center; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#fff; color:red;}

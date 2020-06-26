@@ -452,39 +452,151 @@
                                 </div>
                                 <table class="table form">
                                     <colgroup>
-                                        <col style="width: 85px">
+                                        <col style="width: 120px">
                                         <col style="width: auto">
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th>상위부서</th>
-                                            <td>
-                                                <input type="text" class="inpTxt wd250" readonly value="A202000">
-                                            </td>
+                                            <th>상위메뉴</th>
+                                            <td><input type="text" class="inpTxt" readonly></td>
                                         </tr>
                                         <tr>
-                                            <th>부서코드</th>
-                                            <td>
-                                                <input type="text" class="inpTxt wd250" readonly value="부서코드">
-                                            </td>
+                                            <th>메뉴코드</th>
+                                            <td><input type="text" class="inpTxt" readonly></td>
                                         </tr>
                                         <tr>
-                                            <th>부서명</th>
+                                            <th>메뉴구분</th>
                                             <td>
-                                                <input type="text" class="inpTxt" readonly value="부서명">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>활성여부</th>
-                                            <td>
-                                                <select name="" id="" class="selectD" disabled>
-                                                    <option value="">활성</option>
-                                                    <option value="">비활성</option>
+                                                <select name="" id="" class="selectD full" disabled>
+                                                    <option value="">메뉴구분</option>
                                                 </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴명</th>
+                                            <td><input type="text" class="inpTxt" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <th>데이터구분</th>
+                                            <td>
+                                                <select name="" id="" class="selectD full" disabled>
+                                                    <option value="">데이터구분</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>최소 데이터표시</th>
+                                            <td>
+                                                <select name="" id="" class="selectD full" disabled>
+                                                    <option value="">최소데이터표시</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>최소 데이터<br> 수정 가능여부</th>
+                                            <td>
+                                                <select name="" id="" class="selectD full" disabled>
+                                                    <option value="">최소데이터 수정 가능여부</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴표시여부</th>
+                                            <td>
+                                                <select name="" id="" class="selectD full" disabled>
+                                                    <option value="">메뉴표시여부</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>URL</th>
+                                            <td>
+                                                <input type="text" class="inpTxt" readonly>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
+
+                                <div class="guideLine" data-guidetxt="- 수정 화면 -">
+                                    <table class="table form">
+                                        <colgroup>
+                                            <col style="width: 120px">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>상위메뉴</th>
+                                                <td>
+                                                    <div class="inpWrap">
+                                                        <input type="text" class="inpTxt" readonly>
+                                                        <button type="button" class="btns ty8">메뉴선택</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>메뉴코드</th>
+                                                <td>
+                                                    <div class="inpWrap">
+                                                        <input type="text" class="inpTxt">
+                                                        <button type="button" class="btns ty8 etc">중복확인</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>메뉴구분</th>
+                                                <td>
+                                                    <select name="" id="" class="selectD full">
+                                                        <option value="">메뉴구분</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>메뉴명</th>
+                                                <td><input type="text" class="inpTxt"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>데이터구분</th>
+                                                <td>
+                                                    <select name="" id="" class="selectD full">
+                                                        <option value="">데이터구분</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>최소 데이터표시</th>
+                                                <td>
+                                                    <select name="" id="" class="selectD full">
+                                                        <option value="">최소데이터표시</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>최소 데이터<br> 수정 가능여부</th>
+                                                <td>
+                                                    <select name="" id="" class="selectD full">
+                                                        <option value="">최소데이터 수정 가능여부</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>메뉴표시여부</th>
+                                                <td>
+                                                    <select name="" id="" class="selectD full">
+                                                        <option value="">메뉴표시여부</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>URL</th>
+                                                <td>
+                                                    <input type="text" class="inpTxt">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
                             </div>
 
                             <!--
